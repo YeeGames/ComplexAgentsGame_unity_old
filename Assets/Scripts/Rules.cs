@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ComplexAgentsGame2D;
 
-public class Rules : MonoBehaviour
+namespace ComplexAgentsGame2D
 {
-    // Start is called before the first frame update
-    void Start()
+    interface IRules
     {
-        
+        void setRuleName();
     }
 
-    // Update is called once per frame
-    void Update()
+    class AbstractRules
     {
-        
+    }
+
+    public class Rules : MonoBehaviour
+    {
+        // Start is called before the first frame update
+        void Start()
+        {
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        }
     }
 }
