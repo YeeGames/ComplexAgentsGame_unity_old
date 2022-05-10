@@ -32,7 +32,7 @@ public class AgentSettings : MonoBehaviour
     public Vector2 acceleration;
     public Vector2 momentum;
 
-    public enum Stand
+    public enum Team
     {
         A,
         B,
