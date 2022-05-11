@@ -1,66 +1,70 @@
 using UnityEngine;
 
-public class AgentSettings : MonoBehaviour
+namespace ComplexAgentsGame2D
 {
-    public enum ChingType
+    [CreateAssetMenu]
+    public class AgentSettings : ScriptableObject
     {
-        Yi,
-        Yin,
-        Yang,
-        Tian,
-        Ren,
-        Di,
-        Mu,
-        Huo,
-        Tu,
-        Jin,
-        Shui,
-        Qian,
-        Kun,
-        Zhen,
-        Xun,
-        Kan,
-        Li,
-        Gen,
-        Dui
+        public enum ElementsChangeType
+        {
+            Yi,
+            Yin,
+            Yang,
+            Tian,
+            Ren,
+            Di,
+            Mu,
+            Huo,
+            Tu,
+            Jin,
+            Shui,
+            Qian,
+            Kun,
+            Zhen,
+            Xun,
+            Kan,
+            Li,
+            Gen,
+            Dui
+        }
+
+        public float mass = 1f;
+        public float energy;
+        public Vector2 position;
+        public Vector2 velocity;
+        public Vector2 acceleration;
+        public Vector2 momentum;
+
+        public enum Team
+        {
+            A,
+            B,
+            C,
+            D,
+            E,
+            F,
+            G,
+            H,
+            I,
+            J,
+            K,
+            L,
+            M,
+            N,
+            O,
+            P,
+            Q,
+            R,
+            S,
+            T,
+            U,
+            V,
+            W,
+            X,
+            Y,
+            Z
+        }
+
+        public Color color = Color.red;
     }
-
-    public float mass;
-    public float energy;
-    public Vector2 position;
-    public Vector2 velocity;
-    public Vector2 acceleration;
-    public Vector2 momentum;
-
-    public enum Team
-    {
-        A,
-        B,
-        C,
-        D,
-        E,
-        F,
-        G,
-        H,
-        I,
-        J,
-        K,
-        L,
-        M,
-        N,
-        O,
-        P,
-        Q,
-        R,
-        S,
-        T,
-        U,
-        V,
-        W,
-        X,
-        Y,
-        Z
-    }
-
-    public Color color;
 }
