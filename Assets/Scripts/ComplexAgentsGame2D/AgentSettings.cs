@@ -5,6 +5,7 @@ namespace ComplexAgentsGame2D
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject
     {
+        // public GameSettings gameSettings;
         public enum ElementsChangeType
         {
             Yi,
@@ -65,6 +66,6 @@ namespace ComplexAgentsGame2D
             Z
         }
 
-        public Color color = Color.red;
+        public Color color;
     }
 }
