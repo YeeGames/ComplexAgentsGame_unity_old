@@ -15,14 +15,14 @@ namespace ComplexAgentsGame2D
 
         public float radiusSize = 1f;
 
-        private Material material;
+        private SpriteRenderer spriteRenderer;
         private Transform target;
 
         public void SetColor(Color color)
         {
-            if (material != null)
+            if (spriteRenderer != null)
             {
-                material.color = color;
+                spriteRenderer.color = color;
             }
         }
 
@@ -35,7 +35,7 @@ namespace ComplexAgentsGame2D
 
         void Awake()
         {
-            material = transform.GetComponentInChildren<SpriteRenderer>().material;
+            spriteRenderer = transform.GetComponent<SpriteRenderer>();
         }
 
         // Start is called before the first frame update

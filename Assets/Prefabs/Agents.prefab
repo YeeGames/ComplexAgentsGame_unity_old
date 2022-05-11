@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b75bd87eea24c5c9c50fd98c1714365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 0}
-  color: {r: 0, g: 0, b: 1, a: 0}
+  agentPrefab: {fileID: 3914938320483849384, guid: e0eee79012a3740479ac05e6daa34272,
+    type: 3}
   gameSettings: {fileID: 11400000, guid: 701c94620ae94446391baf4d9514459a, type: 2}
+  color: {r: 0, g: 0, b: 1, a: 0}
   agentSettings: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
