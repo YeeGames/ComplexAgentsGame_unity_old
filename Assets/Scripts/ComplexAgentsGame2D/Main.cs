@@ -1,4 +1,7 @@
-public class Main
+namespace ComplexAgentsGame2D
 {
+    public class Main
+    {
         
+    }
 }

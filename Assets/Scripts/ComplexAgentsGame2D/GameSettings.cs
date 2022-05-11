@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace ComplexAgentsGame2D
 {
-    public class GameSettings : MonoBehaviour
+    [CreateAssetMenu]
+    public class GameSettings : ScriptableObject
     {
         public int dimention = 2;
         public int numOfAgent = 10;
-        public Color color;
+        public Color color = Color.green;
     }
 }

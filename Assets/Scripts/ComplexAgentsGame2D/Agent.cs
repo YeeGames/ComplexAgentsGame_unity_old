@@ -8,15 +8,17 @@ namespace ComplexAgentsGame2D
 {
     public class Agent : MonoBehaviour
     {
-        public AgentSettings agentSettings;
+        public AgentSettings settings;
 
         public Vector2 position;
+        public Vector2 forward;
 
-        public float size;
+        public float radiusSize = 1f;
 
         private Material material;
+        private Transform target;
 
-        public void setColor(Color color)
+        public void SetColor(Color color)
         {
             if (material != null)
             {
@@ -24,9 +26,16 @@ namespace ComplexAgentsGame2D
             }
         }
 
+        public void Initialize(AgentSettings settings, Transform target)
+        {
+            this.target = target;
+            this.settings = settings;
+            this.transform.position = this.position;
+        }
+
         void Awake()
         {
-            material = transform.GetComponentInChildren<MeshRenderer>().material;
+            material = transform.GetComponentInChildren<SpriteRenderer>().material;
         }
 
         // Start is called before the first frame update
@@ -41,7 +50,7 @@ namespace ComplexAgentsGame2D
 
         private void FixedUpdate()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }
