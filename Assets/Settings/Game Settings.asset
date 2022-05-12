@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Game Settings
   m_EditorClassIdentifier: 
   dimention: 2
-  numOfAgent: 10
+  numOfAgent: 30
   color: {r: 1, g: 1, b: 1, a: 1}

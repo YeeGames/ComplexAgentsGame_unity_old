@@ -9,7 +9,7 @@ namespace ComplexAgentsGame2D
     public class Agent : MonoBehaviour
     {
         public AgentSettings settings;
-
+        public Team team;
         public Vector2 position;
         public Vector2 forward;
 
