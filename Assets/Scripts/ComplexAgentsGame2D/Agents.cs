@@ -11,22 +11,22 @@ namespace ComplexAgentsGame2D
     {
         public Agent agentPrefab;
         public GameSettings gameSettings;
-        public Color color = Color.green;
+        public Color colour = Color.green;
         public AgentSettings agentSettings;
         public float radiusSize = 30f;
 
         private void Awake()
         {
-            color = gameSettings.color;
+            // this.colour = gameSettings.colour;
             // Deploy agents
             for (var i = 0; i < gameSettings.numOfAgent; i++)
             {
                 Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                 Agent agent = Instantiate(agentPrefab);
                 agent.SetPosition(pos);
-                Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
+                // Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
                 // agent.transform.forward = (Vector2) Random.insideUnitCircle;
-                agent.SetColor(gameSettings.color);
+                agent.SetColor(this.colour);
             }
         }
 
