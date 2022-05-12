@@ -13,10 +13,15 @@ namespace ComplexAgentsGame2D
         public Vector2 position;
         public Vector2 forward;
 
-        public float radiusSize = 1f;
+        public float radius = 10f;
 
         private SpriteRenderer spriteRenderer;
-        private Transform target;
+        // private Transform target;
+
+        public void SetPosition(Vector2 pos)
+        {
+            transform.position = pos;
+        }
 
         public void SetColor(Color color)
         {
@@ -28,7 +33,7 @@ namespace ComplexAgentsGame2D
 
         public void Initialize(AgentSettings settings, Transform target)
         {
-            this.target = target;
+            // this.target = target;
             this.settings = settings;
             this.transform.position = this.position;
         }
