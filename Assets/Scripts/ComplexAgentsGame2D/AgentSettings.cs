@@ -66,6 +66,6 @@ namespace ComplexAgentsGame2D
             Z
         }
 
-        public Color color;
+        public Color color=Color.blue;
     }
 }

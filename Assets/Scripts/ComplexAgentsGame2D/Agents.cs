@@ -11,21 +11,21 @@ namespace ComplexAgentsGame2D
     {
         public Agent agentPrefab;
         public GameSettings gameSettings;
-        public Color color;
+        public Color color = Color.green;
         public AgentSettings agentSettings;
+        public float radiusSize = 30f;
 
         private void Awake()
         {
-            this.color = gameSettings.color;
+            color = gameSettings.color;
             // Deploy agents
-            for (int i = 0; i < gameSettings.numOfAgent; i++)
+            for (var i = 0; i < gameSettings.numOfAgent; i++)
             {
-                Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * 10;
-                Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
-                // Agent agent = Instantiate(Resources.Load<Agent>("Assets/Prefabs/Agent.prefab"));
+                Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                 Agent agent = Instantiate(agentPrefab);
-                agent.position = (Vector2) pos;
-                agent.forward = (Vector2) Random.insideUnitCircle;
+                agent.SetPosition(pos);
+                Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
+                // agent.transform.forward = (Vector2) Random.insideUnitCircle;
                 agent.SetColor(gameSettings.color);
             }
         }
@@ -33,7 +33,6 @@ namespace ComplexAgentsGame2D
         // Start is called before the first frame update
         void Start()
         {
-            // transform.position = (Vector2) (Random.insideUnitCircle * 10f);
         }
 
         // Update is called once per frame
