@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -51,6 +52,12 @@ namespace ComplexAgentsGame2D
         // Update is called once per frame
         void Update()
         {
+            transform.Translate(Vector2.zero * Time.deltaTime * settings.speed);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("触发触发器。");
         }
 
         private void FixedUpdate()
