@@ -33,6 +33,7 @@ namespace ComplexAgentsGame2D
         public float energy;
         public Vector2 position;
         public Vector2 velocity;
+        public float speed = 1f;
         public Vector2 acceleration;
         public Vector2 momentum;
 
@@ -66,6 +67,6 @@ namespace ComplexAgentsGame2D
             Z
         }
 
-        public Color color=Color.blue;
+        public Color color = Color.blue;
     }
 }

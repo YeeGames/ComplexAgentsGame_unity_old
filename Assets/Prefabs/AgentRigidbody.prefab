@@ -119,10 +119,10 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: e5a13729988494a0eb2db2ac42457bde, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3914938320483849384
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
+  team: {fileID: 0}
   position: {x: 0, y: 0}
   forward: {x: 0, y: 0}
-  radiusSize: 1
+  radius: 10
