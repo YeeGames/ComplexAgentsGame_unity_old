@@ -49,4 +49,5 @@ MonoBehaviour:
   gameSettings: {fileID: 11400000, guid: 701c94620ae94446391baf4d9514459a, type: 2}
   colour: {r: 0, g: 1, b: 0, a: 1}
   agentSettings: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
-  radiusSize: 30
+  radiusSize: 10
+  numAgent: 10
