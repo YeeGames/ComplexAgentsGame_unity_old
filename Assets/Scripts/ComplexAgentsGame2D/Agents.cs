@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
@@ -27,27 +28,38 @@ namespace ComplexAgentsGame2D
             for (var i = 0; i < numAgent; i++)
             {
                 Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
-                Agent particleYang = Instantiate(agentPrefab);
-                particleYang.SetPosition(pos);
-                Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
-                particleYang.velocity = (Vector2) Random.insideUnitCircle;
-                particleYang.set.type = AgentSettings.EType.Yang;
-                particleYang.SetColor(Color.red);
+                Agent dotTai = Instantiate(agentPrefab);
+                dotTai.SetPosition(pos);
+                Debug.Log("Position of particle " + i.ToString() + " is " + pos.ToString());
+                // dotTai.velocity = (Vector2) Random.insideUnitCircle;
+                dotTai.set.type = AgentSettings.EType.Tai;
+                dotTai.SetColor(Color.red);
             }
 
             // agentPrefab.set.type = AgentSettings.EType.Yin;
             // agentPrefab.SetColor(Color.blue);
-            for (var i = 0; i < numAgent; i++)
-            {
-                Vector2 pos = (Vector2) (this.transform.position) + (Vector2) (this.transform.forward * radiusSize) +
-                              Random.insideUnitCircle * radiusSize;
-                Agent particleYin = Instantiate(agentPrefab);
-                particleYin.SetPosition(pos);
-                Debug.Log("Position of agent " + i.ToString() + " is " + pos.ToString());
-                particleYin.transform.forward = (Vector2) Random.insideUnitCircle;
-                particleYin.set.type = AgentSettings.EType.Yin;
-                particleYin.SetColor(Color.blue);
-            }
+        // TODO 加上Yin和Yang   
+        //     foreach (var type in {
+        //         AgentSettings.EType.Yang,
+        //     })
+        //     {
+        //     }
+        //
+        //
+        //     for (var i = 0; i < numAgent; i++)
+        //     {
+        //         Vector2 pos = (Vector2) (this.transform.position) + (Vector2) (this.transform.forward * radiusSize) +
+        //                       Random.insideUnitCircle * radiusSize;
+        //         Agent dotYin = Instantiate(agentPrefab);
+        //         dotYin.SetPosition(pos);
+        //         Debug.Log("Position of " +
+        //                   AgentSettings.EType.Yin.ToString() + " agent " + i.ToString() + " is " + pos.ToString());
+        //         Vector2 vel = Random.insideUnitCircle;
+        //         dotYin.transform.forward = vel;
+        //         Debug.Log("Velocity of agent " + i.ToString() + " is " + vel.ToString());
+        //         dotYin.set.type = AgentSettings.EType.Yin;
+        //         dotYin.SetColor(Color.blue);
+        //     }
         }
 
         // Start is called before the first frame update
