@@ -6,7 +6,19 @@ namespace ComplexAgentsGame2D
     public class AgentSettings : ScriptableObject
     {
         // public GameSettings gameSettings;
-        public enum ElementsChangeType
+
+
+        public float mass = 1f;
+        public float energy;
+        public Vector2 position;
+        public Vector2 velocity;
+        public float speed = 1f;
+        public Vector2 acceleration;
+        public Vector2 momentum;
+        public Team team;
+        public EType type;
+
+        public enum EType
         {
             Yi,
             Yin,
@@ -28,15 +40,7 @@ namespace ComplexAgentsGame2D
             Gen,
             Dui
         }
-
-        public float mass = 1f;
-        public float energy;
-        public Vector2 position;
-        public Vector2 velocity;
-        public float speed = 1f;
-        public Vector2 acceleration;
-        public Vector2 momentum;
-
+        
         public enum Team
         {
             A,
