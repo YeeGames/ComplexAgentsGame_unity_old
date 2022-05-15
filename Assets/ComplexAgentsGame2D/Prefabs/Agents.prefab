@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 11400000, guid: 701c94620ae94446391baf4d9514459a, type: 2}
   agentSettings: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
-  speed: 10
+  speed: 30
   yeeTypes: 
   yeeType: 1
   agentPrefab: {fileID: 3914938320483849384, guid: e0eee79012a3740479ac05e6daa34272,
