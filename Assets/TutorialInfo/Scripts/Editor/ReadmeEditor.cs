@@ -3,7 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace TutorialInfo.Scripts.Editor
+namespace ComplexAgentsGame2D.TutorialInfo.Scripts.Editor
 {
     [CustomEditor(typeof(Readme))]
     [InitializeOnLoad]
@@ -214,7 +214,7 @@ namespace TutorialInfo.Scripts.Editor
             m_LinkStyle = new GUIStyle(m_BodyStyle);
             m_LinkStyle.wordWrap = false;
 
-            // Match selection colour which works nicely for both light and dark skins
+            // Match selection agentsColor which works nicely for both light and dark skins
             m_LinkStyle.normal.textColor = new Color(0x00 / 255f, 0x78 / 255f, 0xDA / 255f, 1f);
             m_LinkStyle.stretchWidth = false;
 

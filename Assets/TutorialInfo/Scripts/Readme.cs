@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TutorialInfo.Scripts
+namespace ComplexAgentsGame2D.TutorialInfo.Scripts
 {
     public class Readme : ScriptableObject
     {

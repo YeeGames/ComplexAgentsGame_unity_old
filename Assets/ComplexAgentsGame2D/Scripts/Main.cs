@@ -1,4 +1,4 @@
-namespace ComplexAgentsGame2D
+namespace ComplexAgentsGame2D.Scripts
 {
     public class Main
     {

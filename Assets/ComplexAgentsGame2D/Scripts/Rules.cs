@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using ComplexAgentsGame2D;
 
-namespace ComplexAgentsGame2D
+namespace ComplexAgentsGame2D.Scripts
 {
     interface IRules
     {

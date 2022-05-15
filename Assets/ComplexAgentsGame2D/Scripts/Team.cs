@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ComplexAgentsGame2D
+namespace ComplexAgentsGame2D.Scripts
 {
     public class Team : MonoBehaviour
     {
