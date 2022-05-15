@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5038881728993415723
+--- !u!1 &3869045930350941929
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1722038911113815791}
-  - component: {fileID: 5636938314640639805}
-  - component: {fileID: 5636938314640639804}
-  - component: {fileID: 5636938314640639795}
-  - component: {fileID: 3914938320483849384}
+  - component: {fileID: 185995132984442786}
+  - component: {fileID: 4473152119351482194}
+  - component: {fileID: 4091438048647650735}
+  - component: {fileID: 8555512875961958819}
+  - component: {fileID: 4005209301605936027}
   m_Layer: 0
-  m_Name: AgentEffectiveRigidbody
+  m_Name: AgentRigidbody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1722038911113815791
+--- !u!4 &185995132984442786
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038881728993415723}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 3869045930350941929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4133671059081515898}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 1722038911113815791}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5636938314640639805
+--- !u!212 &4473152119351482194
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038881728993415723}
+  m_GameObject: {fileID: 3869045930350941929}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -89,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5636938314640639804
+--- !u!58 &4091438048647650735
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038881728993415723}
+  m_GameObject: {fileID: 3869045930350941929}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: e5a13729988494a0eb2db2ac42457bde, type: 2}
@@ -105,14 +104,14 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &5636938314640639795
+--- !u!50 &8555512875961958819
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038881728993415723}
+  m_GameObject: {fileID: 3869045930350941929}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -126,6 +125,66 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &4005209301605936027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3869045930350941929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb893db1570d4eb5840cc291e82a6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastVelocity: {x: 0, y: 0}
+  mass: 1
+  energy: 1
+  position: {x: 0, y: 0}
+  speed: 1
+  acceleration: {x: 0, y: 0}
+  momentum: {x: 0, y: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: 10
+  team: {fileID: 0}
+  yeeType: 0
+  isVisual: 0
+  spriteRenderer: {fileID: 0}
+  rigidbody2D: {fileID: 0}
+--- !u!1 &5038881728993415723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722038911113815791}
+  - component: {fileID: 3914938320483849384}
+  m_Layer: 0
+  m_Name: AgentEffectiveRigidbody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1722038911113815791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038881728993415723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4133671059081515898}
+  - {fileID: 185995132984442786}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3914938320483849384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,14 +197,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb893db1570d4eb5840cc291e82a6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  set: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
-  team: {fileID: 0}
-  position: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
   lastVelocity: {x: 0, y: 0}
-  speed: 1
-  forward: {x: 0, y: 0}
-  radius: 10
+  mass: 1
+  energy: 1
+  position: {x: 0, y: 0}
+  speed: 10
+  acceleration: {x: 0, y: 0}
+  momentum: {x: 0, y: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: 10
+  team: {fileID: 0}
+  yeeType: 0
+  isVisual: 0
+  spriteRenderer: {fileID: 0}
+  rigidbody2D: {fileID: 0}
 --- !u!1 &7390600908263706594
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +224,7 @@ GameObject:
   - component: {fileID: 8217645256082238442}
   - component: {fileID: 2920252140851914252}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AgentEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +260,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 5
 --- !u!250 &8217645256082238442
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -228,11 +293,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb893db1570d4eb5840cc291e82a6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  set: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7, type: 2}
-  team: {fileID: 0}
-  position: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
   lastVelocity: {x: 0, y: 0}
+  mass: 1
+  energy: 1
+  position: {x: 0, y: 0}
   speed: 1
-  forward: {x: 0, y: 0}
-  radius: 10
+  acceleration: {x: 0, y: 0}
+  momentum: {x: 0, y: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: 10
+  team: {fileID: 0}
+  yeeType: 0
+  isVisual: 0
+  spriteRenderer: {fileID: 0}
+  rigidbody2D: {fileID: 0}

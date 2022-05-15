@@ -9,9 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef8c398df8504b14be05e4736e083707, type: 3}
-  m_Name: Game Settings
+  m_Script: {fileID: 11500000, guid: 56c00c7023654035866e3f5b465c829a, type: 3}
+  m_Name: Agent Settings
   m_EditorClassIdentifier: 
-  dimention: 2
-  numOfAgent: 10
+  mass: 1
+  energy: 0
+  position: {x: 0, y: 0}
+  velocity: {x: 0, y: 0}
+  speed: 1
+  acceleration: {x: 0, y: 0}
+  momentum: {x: 0, y: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
+  size: 10
+  team: {fileID: 0}
+  yeeType: 1

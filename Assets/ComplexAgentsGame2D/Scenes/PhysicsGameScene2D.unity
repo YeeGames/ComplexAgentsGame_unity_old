@@ -135,78 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RigidbodyParticles
       objectReference: {fileID: 0}
-    - target: {fileID: 325121577299000894, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: colour.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: colour.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: colour.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: numAgent
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: radiusSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: agentPrefab
-      value: 
-      objectReference: {fileID: 3914938320483849384, guid: e0eee79012a3740479ac05e6daa34272,
-        type: 3}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: gameSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: 701c94620ae94446391baf4d9514459a,
-        type: 2}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
-        type: 3}
-      propertyPath: agentSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: b2481fdaf692c46248a48c88733fb7e7,
-        type: 2}
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
@@ -221,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
@@ -276,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &644942297
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -328,7 +260,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &644942298
 Transform:
@@ -357,15 +289,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectiveRigidbodyParticles
       objectReference: {fileID: 0}
-    - target: {fileID: 2498366310268238284, guid: 93da57928e1554e949652a25dea4be35,
+    - target: {fileID: 325121577299000894, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
-      propertyPath: radiusSize
-      value: 10
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3727752456458541811, guid: 93da57928e1554e949652a25dea4be35,
         type: 3}

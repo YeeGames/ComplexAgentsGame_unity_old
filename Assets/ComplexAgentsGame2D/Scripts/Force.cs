@@ -1,7 +1,6 @@
-using System.Reflection;
 using UnityEngine;
 
-namespace ComplexAgentsGame2D
+namespace ComplexAgentsGame2D.Scripts
 {
     public class Force : MonoBehaviour
     {

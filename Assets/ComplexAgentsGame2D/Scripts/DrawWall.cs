@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ComplexAgentsGame2D
+namespace ComplexAgentsGame2D.Scripts
 {
     public class DrawWall : MonoBehaviour
     {
@@ -13,18 +13,18 @@ namespace ComplexAgentsGame2D
             Quaternion quaternion;				//Quaternion四元数
             LineRenderer line;          //LineRenderer组件
  
-            void Start()
+            void Awake()
             {
                 v = new Vector2(0, 0);
-                R = 6;
-                positionCount = 180;
+                R = 50;
+                positionCount = 360;
                 angle = 360f / (positionCount - 1);
                 line = GetComponent<LineRenderer>();
                 line.positionCount = positionCount;
+                DrawCircle();
             }
             void Update()
             {
-                DrawCircle();
             }
             void DrawCircle()
             {
