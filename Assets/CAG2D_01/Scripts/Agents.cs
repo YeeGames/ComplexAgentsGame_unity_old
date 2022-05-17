@@ -1,5 +1,6 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
+using CAG2D_00;
 
 namespace CAG2D_01.Scripts
 {
@@ -20,10 +21,11 @@ namespace CAG2D_01.Scripts
             {
                 Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                 Agent a = Instantiate(agentPrefab);
-                a.Initialize();
-
+                a.name = "agent " + i;
                 a.SetPosition(pos);
-                a.SetVelocity(Random.insideUnitCircle, speed);
+                a.velocity = Random.insideUnitCircle;
+                a.speed = speed;
+                a.SetVelocity(a.velocity, a.speed);
                 a.SetColor(agentsColor);
             }
         }

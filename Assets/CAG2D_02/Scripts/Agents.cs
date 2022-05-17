@@ -10,7 +10,7 @@ namespace CAG2D_02.Scripts
         public float speed = 30f;
         public Agent agentPrefab;
         public Color agentsColor = Color.white;
-        public float radiusSize = 10f;
+        public float radiusSize = 30f;
         public int numAgent = 100;
 
 
@@ -20,10 +20,11 @@ namespace CAG2D_02.Scripts
             {
                 Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                 Agent a = Instantiate(agentPrefab);
-                a.Initialize();
-
+                a.name = "agent " + i;
                 a.SetPosition(pos);
-                a.SetVelocity(Random.insideUnitCircle, speed);
+                a.velocity = Random.insideUnitCircle;
+                a.speed = speed;
+                a.SetVelocity(a.velocity, a.speed);
                 a.SetColor(agentsColor);
             }
         }
