@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace CAG2D_00.Scripts
+namespace CAG2D_02.Scripts
 {
     public class CircleWall : MonoBehaviour
     {

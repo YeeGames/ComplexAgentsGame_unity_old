@@ -3,7 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace ComplexAgentsGame2D.TutorialInfo.Scripts.Editor
+namespace TutorialInfo.Scripts.Editor
 {
     [CustomEditor(typeof(Readme))]
     [InitializeOnLoad]
