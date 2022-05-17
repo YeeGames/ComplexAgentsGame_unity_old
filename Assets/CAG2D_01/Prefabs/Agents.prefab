@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3727752456458541811}
-  - component: {fileID: 2498366310268238284}
+  - component: {fileID: -7749182644917708957}
   m_Layer: 0
   m_Name: Agents
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2498366310268238284
+--- !u!114 &-7749182644917708957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 325121577299000894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbc83623271242c0852f7fdd6de5549, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b47c2f6db642b6ae50e187af8cb2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 0}
   agentSettings: {fileID: 0}
   speed: 30
-  agentPrefab: {fileID: 3914938320483849384, guid: 4554401fd90f0425499e1720dd02b071,
+  agentPrefab: {fileID: 7145108475166731669, guid: 4554401fd90f0425499e1720dd02b071,
     type: 3}
   agentsColor: {r: 1, g: 1, b: 1, a: 1}
   radiusSize: 30

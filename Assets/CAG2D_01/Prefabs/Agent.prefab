@@ -142,8 +142,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722038911113815791}
-  - component: {fileID: 3914938320483849384}
   - component: {fileID: 8004930575998053242}
+  - component: {fileID: 7145108475166731669}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -169,24 +169,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3914938320483849384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038881728993415723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621d25bc1aa7b448f8a32ff173aa4bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastVelocity: {x: 0, y: 0}
-  color: {r: 1, g: 1, b: 1, a: 1}
-  mass: 1
-  position: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
-  speed: 10
 --- !u!50 &8004930575998053242
 Rigidbody2D:
   serializedVersion: 4
@@ -208,6 +190,24 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7145108475166731669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038881728993415723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c2bfe2637e4baaa4e3e6d7b3169545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastVelocity: {x: 0, y: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  mass: 1
+  position: {x: 0, y: 0}
+  velocity: {x: 0, y: 0}
+  speed: 30
 --- !u!1 &8664559872414916649
 GameObject:
   m_ObjectHideFlags: 0

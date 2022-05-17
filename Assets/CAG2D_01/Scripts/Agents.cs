@@ -27,6 +27,8 @@ namespace CAG2D_01.Scripts
                 a.speed = speed;
                 a.SetVelocity(a.velocity, a.speed);
                 a.SetColor(agentsColor);
+                a.magnitudeForce = 10f;
+                a.magnitudeForceRadius = 5f;
             }
         }
 
