@@ -6,21 +6,20 @@ namespace CAG2D_01.Scripts
     {
         [HideInInspector] public Vector2 lastVelocity;
 
+        public Color color = Color.white;
         public float mass = 1f;
-        public float energy = 1f;
-        public Vector2 position = new Vector2(0f, 0f);
-        public float speed = 10f;
-        public Vector2 acceleration = new Vector2(0f, 0f);
-        public Vector2 momentum = new Vector2(0f, 0f);
-        public float size = 10f;
-        public bool isVisual;
+        public Vector2 position;
+        public Vector2 velocity = new Vector2(0, 0);
+        public float speed = 30f;
 
-        public SpriteRenderer spriteRenderer;
-
-        public Rigidbody2D rigidbody2D;
-
-        Color color = Color.white;
         // private Transform target;
+        private SpriteRenderer spriteRenderer;
+        private Rigidbody2D rigidbody2D;
+        private PointEffector2D pointEffector;
+        private float energy = 1f;
+        private float size = 10f;
+        private Vector2 acceleration;
+        private Vector2 momentum;
 
         public void SetPosition(Vector2 pos)
         {
@@ -30,7 +29,6 @@ namespace CAG2D_01.Scripts
         public void SetVelocity(Vector2 vel, float spe)
         {
             rigidbody2D.velocity = vel * spe;
-            Debug.Log("self's vel is " + transform.forward.ToString());
         }
 
         public void SetColor(Color col)
@@ -39,17 +37,18 @@ namespace CAG2D_01.Scripts
             {
                 color = col;
                 spriteRenderer.color = color;
-                Debug.Log("agent " + this.name + " 's color is " + spriteRenderer.color);
             }
         }
 
-        // public void Initialize(AgentSettings agentSettings)
         public void Initialize()
         {
-            rigidbody2D = GetComponentInChildren<Rigidbody2D>();
-            spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
-            Debug.Log("component name is " + spriteRenderer.name);
-            rigidbody2D.velocity = new Vector2(0, 0) * speed;
+            transform.position = position;
+            pointEffector = GetComponentInChildren<PointEffector2D>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.color = color;
+            rigidbody2D = GetComponent<Rigidbody2D>();
+            rigidbody2D.mass = mass;
+            rigidbody2D.velocity = velocity * speed;
         }
 
         void Awake()
@@ -70,7 +69,7 @@ namespace CAG2D_01.Scripts
 
         private void FixedUpdate()
         {
-            transform.Translate(Vector2.zero * Time.deltaTime * speed);
+            this.transform.Translate(Vector2.zero * (Time.deltaTime * speed));
         }
     }
 }

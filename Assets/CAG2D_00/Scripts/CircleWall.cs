@@ -7,7 +7,7 @@ namespace CAG2D_00.Scripts
     {
         public LineRenderer lineRenderer; //LineRenderer组件
         public EdgeCollider2D edgeCollider2D;
-        // public new Rigidbody2D rigidbody2D;
+        public Rigidbody2D rigidbody2D;
 
         Vector3 v; //圆心
         float R; //半径
@@ -22,12 +22,9 @@ namespace CAG2D_00.Scripts
             positionCount = 360;
             angle = 360f / (positionCount - 1);
             lineRenderer = GetComponent<LineRenderer>();
-            // lineRenderer.To
             edgeCollider2D = GetComponent<EdgeCollider2D>();
-            // edgeCollider2DPointsSize=GetComponent<EdgeCollider2D>()
             lineRenderer.positionCount = positionCount;
             DrawCircle();
-            Color color = GetComponent<SpriteShapeRenderer>().color;
         }
 
         void Update()
