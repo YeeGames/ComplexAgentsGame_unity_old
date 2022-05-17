@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG2D_00.Scripts
+namespace CAG2D_02.Scripts
 {
     [CreateAssetMenu]
     public class GameSettings : ScriptableObject

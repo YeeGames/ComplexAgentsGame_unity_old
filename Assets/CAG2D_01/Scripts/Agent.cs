@@ -1,7 +1,6 @@
 using UnityEngine;
-using CAG2D_00.Scripts;
 
-namespace CAG2D_00.Scripts
+namespace CAG2D_01.Scripts
 {
     public class Agent : MonoBehaviour
     {

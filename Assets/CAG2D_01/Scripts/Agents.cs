@@ -1,8 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
-using CAG2D_00;
 
-namespace CAG2D_00.Scripts
+namespace CAG2D_01.Scripts
 {
     public class Agents : MonoBehaviour
     {

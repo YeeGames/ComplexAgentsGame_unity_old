@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 0}
   agentSettings: {fileID: 0}
-  speed: 30
+  speed: 10
   agentPrefab: {fileID: 3914938320483849384, guid: 7a8547e54d8b14564b0fd445a0393d66,
     type: 3}
   agentsColor: {r: 1, g: 1, b: 1, a: 1}
   radiusSize: 10
-  numAgent: 100
+  numAgent: 10
