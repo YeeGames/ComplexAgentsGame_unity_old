@@ -121,7 +121,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 29f0ec1dee9bb4a88bd3891c64e624e4, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &5038881728993415723
@@ -176,7 +176,6 @@ MonoBehaviour:
   speed: 10
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}
-  color: {r: 1, g: 1, b: 1, a: 1}
   size: 10
   isVisual: 0
   spriteRenderer: {fileID: 4473152119351482194}

@@ -96,7 +96,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3869045930350941929}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 29f0ec1dee9bb4a88bd3891c64e624e4, type: 2}
+  m_Material: {fileID: 6200000, guid: 076156be27a3c47de891a4884368e305, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -119,7 +119,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 29f0ec1dee9bb4a88bd3891c64e624e4, type: 2}
+  m_Material: {fileID: 6200000, guid: 076156be27a3c47de891a4884368e305, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
@@ -150,8 +150,8 @@ Transform:
   m_GameObject: {fileID: 5038881728993415723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4133671059081515898}
   - {fileID: 185995132984442786}
@@ -177,7 +177,6 @@ MonoBehaviour:
   speed: 10
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}
-  color: {r: 1, g: 1, b: 1, a: 1}
   size: 10
   isVisual: 0
   spriteRenderer: {fileID: 4473152119351482194}
@@ -224,7 +223,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7390600908263706594}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 29f0ec1dee9bb4a88bd3891c64e624e4, type: 2}
+  m_Material: {fileID: 6200000, guid: 076156be27a3c47de891a4884368e305, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
