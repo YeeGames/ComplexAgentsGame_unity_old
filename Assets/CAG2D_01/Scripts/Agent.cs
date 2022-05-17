@@ -12,7 +12,6 @@ namespace CAG2D_01.Scripts
         public float speed = 10f;
         public Vector2 acceleration = new Vector2(0f, 0f);
         public Vector2 momentum = new Vector2(0f, 0f);
-        public Color color = Color.white;
         public float size = 10f;
         public bool isVisual;
 
@@ -20,6 +19,7 @@ namespace CAG2D_01.Scripts
 
         public Rigidbody2D rigidbody2D;
 
+        Color color = Color.white;
         // private Transform target;
 
         public void SetPosition(Vector2 pos)

@@ -10,7 +10,7 @@ namespace CAG2D_01.Scripts
         public float speed = 30f;
         public Agent agentPrefab;
         public Color agentsColor = Color.white;
-        public float radiusSize = 10f;
+        public float radiusSize = 30f;
         public int numAgent = 100;
 
 

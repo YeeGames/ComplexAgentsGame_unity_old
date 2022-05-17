@@ -47,8 +47,8 @@ MonoBehaviour:
   gameSettings: {fileID: 0}
   agentSettings: {fileID: 0}
   speed: 30
-  agentPrefab: {fileID: 3914938320483849384, guid: 7a8547e54d8b14564b0fd445a0393d66,
+  agentPrefab: {fileID: 3914938320483849384, guid: e5b0ee1772ccd44a289a9bf500ca3d81,
     type: 3}
-  agentsColor: {r: 1, g: 1, b: 1, a: 1}
-  radiusSize: 10
+  agentsColor: {r: 1, g: 0, b: 0, a: 1}
+  radiusSize: 30
   numAgent: 100
