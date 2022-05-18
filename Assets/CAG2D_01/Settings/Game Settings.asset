@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef8c398df8504b14be05e4736e083707, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d0f5108a327140919e351df02c4c131, type: 3}
   m_Name: Game Settings
   m_EditorClassIdentifier: 
+  agentSettings: {fileID: 11400000, guid: a48add03ab80644659bd90e5a7c9b68c, type: 2}
   dimention: 2
   numAgent: 10
-  color: {r: 1, g: 0, b: 0, a: 1}
+  pauseTime: 0

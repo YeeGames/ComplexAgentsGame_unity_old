@@ -6,14 +6,19 @@ namespace CAG2D_01.Scripts
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject
     {
+        public string agentBaseName;
+        [HideInInspector] public string agentName;
+        public Color color = Color.white;
         public float mass = 1f;
-        public float energy = 1f;
-        public Vector2 position = new Vector2(0f, 0f);
-        public Vector2 velocity = new Vector2(0f, 0f);
-        public float speed = 1f;
-        public Vector2 acceleration = new Vector2(0f, 0f);
-        public Vector2 momentum = new Vector2(0f, 0f);
-        public Color color = Color.blue;
         public float size = 10f;
+        public float collisionRadius = 0.5f;
+        public Vector2 position;
+        public Vector2 velocity = new Vector2(0, 0);
+        public float speed = 0f;
+        public float magnitudeForce = -10f;
+        public float magnitudeForceRadius = 5f;
+        [HideInInspector] public float energy = 1f;
+        [HideInInspector] public Vector2 acceleration;
+        [HideInInspector] public Vector2 momentum;
     }
 }
