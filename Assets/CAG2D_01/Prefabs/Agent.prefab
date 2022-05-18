@@ -182,7 +182,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 29f0ec1dee9bb4a88bd3891c64e624e4, type: 2}
@@ -203,11 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastVelocity: {x: 0, y: 0}
-  color: {r: 1, g: 1, b: 1, a: 1}
-  mass: 1
-  position: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
-  speed: 30
+  set: {fileID: 11400000, guid: a48add03ab80644659bd90e5a7c9b68c, type: 2}
+  agentName: 
 --- !u!1 &8664559872414916649
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.U2D;
+using CAG2D_01.Scripts;
 
 namespace CAG2D_01.Scripts
 {
@@ -18,7 +18,7 @@ namespace CAG2D_01.Scripts
         void Awake()
         {
             v = new Vector2(0, 0);
-            R = 50;
+            R = 100;
             positionCount = 360;
             angle = 360f / (positionCount - 1);
             lineRenderer = GetComponent<LineRenderer>();

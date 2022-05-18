@@ -6,38 +6,50 @@ namespace CAG2D_01.Scripts
     {
         [HideInInspector] public Vector2 lastVelocity;
 
-        public Color color = Color.white;
-        public float mass = 1f;
-        public Vector2 position;
-        public Vector2 velocity = new Vector2(0, 0);
-        public float speed = 30f;
-        public float magnitudeForce = 10f;
-        public float magnitudeForceRadius = 5f;
+        public AgentSettings set;
+        public string agentName;
+
+        // public Color color = Color.white;
+        // public float mass = 1f;
+        // public float size = 10f;
+        // public float collisionRadius = 0.5f;
+        // public Vector2 position;
+        // public Vector2 velocity = new Vector2(0, 0);
+        // public float speed = 30f;
+        // public float magnitudeForce = -10f;
+        // public float magnitudeForceRadius = 5f;
 
 
-        private float ForceMagnitude
-        {
-            get => pointEffector.forceMagnitude;
-            set => pointEffector.forceMagnitude = magnitudeForce;
-        }
+        // [SerializeField] public float ForceMagnitude
+        // {
+        //     get => pointEffector.forceMagnitude;
+        //     set => pointEffector.forceMagnitude = value;
+        // }
+        //
+        //
+        // public float MagnitudeForceRadius
+        // {
+        //     get => colliderCircleCollider2D.radius;
+        //     set => colliderCircleCollider2D.radius = value;
+        // }
 
-
-        private float MagnitudeForceRadius
-        {
-            get => circleCollider2D.radius;
-            set => circleCollider2D.radius = magnitudeForceRadius;
-        }
-
+        // public Agent(float mass, Vector2 position, float speed, float magnitudeForce, float magnitudeForceRadius,
+        //     float size)
+        // {
+        //     this.mass = mass;
+        //     this.position = position;
+        //     this.speed = speed;
+        //     this.magnitudeForce = magnitudeForce;
+        //     this.magnitudeForceRadius = magnitudeForceRadius;
+        //     this.size = size;
+        // }
 
         // private Transform target;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidbody2D;
         private PointEffector2D pointEffector;
-        private CircleCollider2D circleCollider2D;
-        private float energy = 1f;
-        private float size = 10f;
-        private Vector2 acceleration;
-        private Vector2 momentum;
+        private CircleCollider2D colliderCircleCollider2D;
+        private CircleCollider2D effectorCircleCollider2D;
 
         public void SetPosition(Vector2 pos)
         {
@@ -54,26 +66,43 @@ namespace CAG2D_01.Scripts
         {
             if (spriteRenderer != null)
             {
-                color = col;
-                spriteRenderer.color = color;
+                spriteRenderer.color = col;
             }
         }
 
-        public void Initialize()
+        public void Initialize(AgentSettings agentSettings)
         {
-            transform.position = position;
-            pointEffector = GetComponentInChildren<PointEffector2D>();
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            circleCollider2D = GetComponentInChildren<CircleCollider2D>();
-            spriteRenderer.color = color;
+            this.set = agentSettings;
             rigidbody2D = GetComponent<Rigidbody2D>();
-            rigidbody2D.mass = mass;
-            rigidbody2D.velocity = velocity * speed;
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            pointEffector = GetComponentInChildren<PointEffector2D>();
+            colliderCircleCollider2D = GameObject.Find("AgentCollider").GetComponent<CircleCollider2D>();
+            effectorCircleCollider2D = GameObject.Find("AgentEffector").GetComponent<CircleCollider2D>();
+            name = set.agentName;
+            SetPosition(set.position);
+            SetVelocity(set.velocity, set.speed);
+            SetColor(set.color);
+            rigidbody2D.mass = set.mass;
+            colliderCircleCollider2D.radius = set.collisionRadius;
+            effectorCircleCollider2D.radius = set.magnitudeForceRadius;
+            pointEffector.forceMagnitude = set.magnitudeForce;
+        }
+
+        public void SetAgent(AgentSettings agentSettings)
+        {
+            set = agentSettings;
+            SetVelocity(set.velocity, set.speed);
+            spriteRenderer.color = set.color;
+            rigidbody2D.mass = set.mass;
+            rigidbody2D.velocity = set.velocity * set.speed;
+            colliderCircleCollider2D.radius = set.collisionRadius;
+            effectorCircleCollider2D.radius = set.magnitudeForceRadius;
+            pointEffector.forceMagnitude = set.magnitudeForce;
         }
 
         void Awake()
         {
-            Initialize();
+            Initialize(set);
         }
 
         // Start is called before the first frame update
@@ -84,12 +113,13 @@ namespace CAG2D_01.Scripts
         // Update is called once per frame
         void Update()
         {
+            // SetAgent(set);
             // transform.Translate(Vector2.zero * Time.deltaTime * gameSettings.spe);
         }
 
         private void FixedUpdate()
         {
-            this.transform.Translate(Vector2.zero * (Time.deltaTime * speed));
+            this.transform.Translate(Vector2.zero * (Time.deltaTime));
         }
     }
 }
