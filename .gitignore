@@ -1,6 +1,8 @@
 */.sync.ffs_db
 .plastic/*
 Assets/3rdAssets/*
+!Assets/MyPackages/*.unitypackage
+
 
 
 
@@ -704,7 +706,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.aab
-*.unitypackage
+[^(Assets)]/*.unitypackage
 *.app
 
 # Crashlytics generated file
