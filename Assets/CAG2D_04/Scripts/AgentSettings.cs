@@ -1,7 +1,7 @@
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
-namespace CAG2D_01.Scripts
+namespace CAG2D_04.Scripts
 {
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject

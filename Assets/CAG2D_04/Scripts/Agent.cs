@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG2D_01.Scripts
+namespace CAG2D_04.Scripts
 {
     public class Agent : MonoBehaviour
     {
@@ -9,42 +9,6 @@ namespace CAG2D_01.Scripts
         public AgentSettings set;
         public string agentName;
 
-        // public Color color = Color.white;
-        // public float mass = 1f;
-        // public float size = 10f;
-        // public float collisionRadius = 0.5f;
-        // public Vector2 position;
-        // public Vector2 velocity = new Vector2(0, 0);
-        // public float speed = 30f;
-        // public float magnitudeForce = -10f;
-        // public float magnitudeForceRadius = 5f;
-
-
-        // [SerializeField] public float ForceMagnitude
-        // {
-        //     get => pointEffector.forceMagnitude;
-        //     set => pointEffector.forceMagnitude = value;
-        // }
-        //
-        //
-        // public float MagnitudeForceRadius
-        // {
-        //     get => colliderCircleCollider2D.radius;
-        //     set => colliderCircleCollider2D.radius = value;
-        // }
-
-        // public Agent(float mass, Vector2 position, float speed, float magnitudeForce, float magnitudeForceRadius,
-        //     float size)
-        // {
-        //     this.mass = mass;
-        //     this.position = position;
-        //     this.speed = speed;
-        //     this.magnitudeForce = magnitudeForce;
-        //     this.magnitudeForceRadius = magnitudeForceRadius;
-        //     this.size = size;
-        // }
-
-        // private Transform target;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidbody2D;
         private PointEffector2D pointEffector;
@@ -113,8 +77,6 @@ namespace CAG2D_01.Scripts
         // Update is called once per frame
         void Update()
         {
-            // SetAgent(set);
-            // transform.Translate(Vector2.zero * Time.deltaTime * gameSettings.spe);
         }
 
         private void FixedUpdate()

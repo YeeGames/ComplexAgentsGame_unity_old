@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7fe6e90398a248baa4bf582a8360c65, type: 3}
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
-  agentBaseName: 
-  agentName: 99
+  agentBaseName: agent
+  agentName: agent99
   color: {r: 1, g: 1, b: 1, a: 1}
   mass: 1
   size: 10
   collisionRadius: 0.5
-  position: {x: -6.651202, y: 22.994598}
-  velocity: {x: 0.6290899, y: -0.43088862}
+  position: {x: -2.5783367, y: -17.507223}
+  velocity: {x: -0.5888392, y: 0.33998165}
   speed: 0
   magnitudeForce: -10
   magnitudeForceRadius: 5

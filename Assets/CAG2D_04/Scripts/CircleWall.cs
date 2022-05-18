@@ -1,10 +1,10 @@
 using UnityEngine;
-using CAG2D_01.Scripts;
 
-namespace CAG2D_01.Scripts
+namespace CAG2D_04.Scripts
 {
     public class CircleWall : MonoBehaviour
     {
+        public GameSettings gameSettings;
         public LineRenderer lineRenderer; //LineRenderer组件
         public EdgeCollider2D edgeCollider2D;
         public Rigidbody2D rigidbody2D;
@@ -18,10 +18,11 @@ namespace CAG2D_01.Scripts
         void Awake()
         {
             v = new Vector2(0, 0);
-            R = 100;
+            R = gameSettings.wallRadiu;
             positionCount = 360;
             angle = 360f / (positionCount - 1);
             lineRenderer = GetComponent<LineRenderer>();
+            lineRenderer.startWidth = gameSettings.wallWidth;
             edgeCollider2D = GetComponent<EdgeCollider2D>();
             lineRenderer.positionCount = positionCount;
             DrawCircle();
@@ -57,7 +58,7 @@ namespace CAG2D_01.Scripts
                 var circleCollider = gameObject.AddComponent<CircleCollider2D>();
                 circleCollider.offset = forwardPosition;
                 circleCollider.radius = lineRenderer.startWidth / 2f;
-                
+
                 // 边界碰撞体的点
                 if (positionCount > 1)
                 {
