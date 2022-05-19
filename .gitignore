@@ -1,6 +1,8 @@
 */.sync.ffs_db
 .plastic/*
-Assets/3rdAssets/*
+Assets
+!Assets/CAG*/*
+!Assets/ComplexAgentsGame*/*
 !Assets/MyPackages/*.unitypackage
 
 
