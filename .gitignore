@@ -5,7 +5,7 @@
 Assets/*
 
 
-!Assets/CAG2D_04
+!Assets/CAG2D*
 !Assets/ComplexAgentsGame
 !Assets/MyPackages/*.unitypackage
 
