@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace CAG2D_04.Scripts
@@ -9,6 +10,7 @@ namespace CAG2D_04.Scripts
         public EdgeCollider2D edgeCollider2D;
         public Rigidbody2D rigidbody2D;
 
+        private PhysicsMaterial2D physicsMaterial2D;
         Vector3 v; //圆心
         float R; //半径
         int positionCount; //完成一个圆的总点数，
@@ -23,9 +25,26 @@ namespace CAG2D_04.Scripts
             angle = 360f / (positionCount - 1);
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.startWidth = gameSettings.wallWidth;
-            edgeCollider2D = GetComponent<EdgeCollider2D>();
             lineRenderer.positionCount = positionCount;
+            edgeCollider2D = GetComponent<EdgeCollider2D>();
             DrawCircle();
+            physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
+            // physicsMaterial2D =
+            //     Resources.Load("Materials/Wall Physics Material 2D.physicsMaterial2D") as
+            //         PhysicsMaterial2D; // 加载现有2D物理材质
+            if (physicsMaterial2D != null)
+            {
+                physicsMaterial2D.friction = gameSettings.physicsMaterialsFriction;
+                physicsMaterial2D.bounciness = gameSettings.physicsMaterialsBounciness;
+                Debug.Log("正确设置Wall Physics Material 2D.physicsMaterial2D");
+            }
+            else
+            {
+                Debug.Log("没有正确设置Wall Physics Material 2D.physicsMaterial2D");
+            }
+
+            rigidbody2D.sharedMaterial = physicsMaterial2D;
+            edgeCollider2D.sharedMaterial = physicsMaterial2D;
         }
 
         void Update()

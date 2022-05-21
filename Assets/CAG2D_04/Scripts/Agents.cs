@@ -9,18 +9,23 @@ namespace CAG2D_04.Scripts
         public AgentSettings agentSettings;
         public Agent agentPrefab;
         public float radiusSize = 30f;
+        public YeeType2Y[] yeeTypes = {YeeType2Y.Yang, YeeType2Y.Yin};
 
 
         private void Awake()
         {
-            for (var i = 0; i < gameSettings.numAgent; i++)
+            foreach (var yeeType in yeeTypes)
             {
-                Agent a = Instantiate(agentPrefab);
-                agentSettings.agentName = agentSettings.agentBaseName + i;
-                Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
-                agentSettings.position = pos;
-                agentSettings.velocity = Random.insideUnitCircle;
-                a.SetAgent(agentSettings);
+                for (var i = 0; i < gameSettings.numAgent; i++)
+                {
+                    Agent a = Instantiate(agentPrefab);
+                    agentSettings.agentName = agentSettings.agentBaseName + i;
+                    Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
+                    agentSettings.position = pos;
+                    agentSettings.velocity = Random.insideUnitCircle;
+                    agentSettings.yeeType2Y = yeeType;
+                    a.SetAgent(agentSettings);
+                }
             }
         }
 

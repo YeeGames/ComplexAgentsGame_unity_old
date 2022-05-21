@@ -13,16 +13,23 @@ MonoBehaviour:
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
   agentBaseName: agent
-  agentName: agent99
+  agentName: agent9
+  isMovable: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   mass: 1
   size: 10
+  linearDrag: 0
+  angleDrag: 0
   collisionRadius: 0.5
-  position: {x: -2.5783367, y: -17.507223}
-  velocity: {x: -0.5888392, y: 0.33998165}
-  speed: 0
-  magnitudeForce: -10
+  position: {x: -19.48238, y: -21.26727}
+  velocity: {x: -0.9017924, y: -0.2874993}
+  speed: 30
+  magnitudeForce: 0
   magnitudeForceRadius: 5
+  physicsMaterialFriction: 0
+  physicsMaterialBounciness: 1
+  yeeType2Y: 1
+  yeeTypeAR: 1
   energy: 1
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}

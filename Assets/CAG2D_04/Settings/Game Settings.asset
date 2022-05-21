@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fb23bdcd8e74b26b22efac8d69e11d, type: 3}
   m_Name: Game Settings
   m_EditorClassIdentifier: 
-  agentSettings: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
   dimention: 2
-  numAgent: 100
+  numAgent: 10
   pauseTime: 0
   wallRadiu: 100
   wallWidth: 100
+  physicsMaterialsFriction: 0
+  physicsMaterialsBounciness: 1
