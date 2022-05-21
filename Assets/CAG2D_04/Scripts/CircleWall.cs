@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -27,7 +28,7 @@ namespace CAG2D_04.Scripts
             lineRenderer.startWidth = gameSettings.wallWidth;
             lineRenderer.positionCount = positionCount;
             edgeCollider2D = GetComponent<EdgeCollider2D>();
-            DrawCircle();
+
             physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
             // physicsMaterial2D =
             //     Resources.Load("Materials/Wall Physics Material 2D.physicsMaterial2D") as
@@ -36,7 +37,7 @@ namespace CAG2D_04.Scripts
             {
                 physicsMaterial2D.friction = gameSettings.physicsMaterialsFriction;
                 physicsMaterial2D.bounciness = gameSettings.physicsMaterialsBounciness;
-                Debug.Log("正确设置Wall Physics Material 2D.physicsMaterial2D");
+                // Debug.Log("正确设置Wall Physics Material 2D.physicsMaterial2D");
             }
             else
             {
@@ -45,6 +46,8 @@ namespace CAG2D_04.Scripts
 
             rigidbody2D.sharedMaterial = physicsMaterial2D;
             edgeCollider2D.sharedMaterial = physicsMaterial2D;
+            
+            DrawCircle();
         }
 
         void Update()
@@ -56,6 +59,7 @@ namespace CAG2D_04.Scripts
             R = r;
             this.positionCount = positionCount;
             this.lineRenderer = DrawCircle();
+            DrawCircle();
         }
 
         LineRenderer DrawCircle()

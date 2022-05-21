@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7fe6e90398a248baa4bf582a8360c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 859f95e6190894862ba2dd111f35d4ed, type: 3}
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
-  agentBaseName: agent
-  agentName: agent9
+  agentBaseName: 
+  agentName: 
   isMovable: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   mass: 1
@@ -21,15 +21,15 @@ MonoBehaviour:
   linearDrag: 0
   angleDrag: 0
   collisionRadius: 0.5
-  position: {x: -19.48238, y: -21.26727}
-  velocity: {x: -0.9017924, y: -0.2874993}
+  position: {x: 0, y: 0}
+  velocity: {x: 0, y: 0}
   speed: 30
   magnitudeForce: 0
   magnitudeForceRadius: 5
   physicsMaterialFriction: 0
   physicsMaterialBounciness: 1
-  yeeType2Y: 1
-  yeeTypeAR: 1
+  yeeType2Y: 0
+  yeeTypeAR: 0
   energy: 1
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}
