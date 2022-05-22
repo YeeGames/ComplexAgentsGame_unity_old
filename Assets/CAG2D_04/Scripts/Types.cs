@@ -4,11 +4,11 @@ namespace CAG2D_04.Scripts
 {
     public class YeeType : MonoBehaviour
     {
-        public YeeType2Y yeeType2E;
+        public YeeType2E yeeType2E;
         public YeeTypeAR yeeTypeAR;
     }
 
-    public enum YeeType2Y : short
+    public enum YeeType2E : short
     {
         Yang,
         Yin

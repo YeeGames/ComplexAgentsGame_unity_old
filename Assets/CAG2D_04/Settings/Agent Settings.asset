@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859f95e6190894862ba2dd111f35d4ed, type: 3}
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
-  agentBaseName: 
-  agentName: 
+  agentBaseName: agent
+  agentName: agentYin49
   isMovable: 1
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 1, a: 1}
   mass: 1
   size: 10
   linearDrag: 0
   angleDrag: 0
   collisionRadius: 0.5
-  position: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
-  speed: 30
+  position: {x: -7.8483143, y: -1.9720587}
+  velocity: {x: 0.5648475, y: 0.15833537}
+  speed: 0
   magnitudeForce: 0
-  magnitudeForceRadius: 5
+  magnitudeForceRadius: 0
   physicsMaterialFriction: 0
   physicsMaterialBounciness: 1
-  yeeType2Y: 0
+  yeeType2E: 1
   yeeTypeAR: 0
   energy: 1
   acceleration: {x: 0, y: 0}

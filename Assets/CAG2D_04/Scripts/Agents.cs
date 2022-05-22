@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,21 +10,23 @@ namespace CAG2D_04.Scripts
         public AgentSettings agentSettings;
         public Agent agentPrefab;
         public float radiusSize = 30f;
-        public YeeType2Y[] yeeTypes = {YeeType2Y.Yang, YeeType2Y.Yin};
-
+        public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};
+        public Color[] typesColors = {Color.red, Color.blue};
+        private RuleYeeType2E ruleYeeType2E;
 
         private void Awake()
         {
-            foreach (var yeeType in yeeTypes)
+            for (var t = 0; t < yeeTypes.Length; t++)
             {
                 for (var i = 0; i < gameSettings.numAgent; i++)
                 {
                     Agent a = Instantiate(agentPrefab);
-                    agentSettings.agentName = agentSettings.agentBaseName + i;
+                    agentSettings.agentName = agentSettings.agentBaseName + a.set.yeeType2E.ToString() + i.ToString();
                     Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                     agentSettings.position = pos;
                     agentSettings.velocity = Random.insideUnitCircle;
-                    agentSettings.yeeType2Y = yeeType;
+                    agentSettings.yeeType2E = yeeTypes[t];
+                    agentSettings.color = typesColors[t];
                     a.SetAgent(agentSettings);
                 }
             }
@@ -32,8 +35,9 @@ namespace CAG2D_04.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            System.Threading.Thread.Sleep(1000 * gameSettings.pauseTime);
+            // System.Threading.Thread.Sleep(1000 * gameSettings.pauseTime);
         }
+
 
         // Update is called once per frame
         void FixedUpdate()

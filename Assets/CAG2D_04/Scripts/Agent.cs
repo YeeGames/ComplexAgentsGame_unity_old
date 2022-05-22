@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 
 namespace CAG2D_04.Scripts
@@ -10,14 +11,17 @@ namespace CAG2D_04.Scripts
         public AgentSettings set;
         public string agentName;
 
-        private YeeType2Y yeeType2Y;
+        private YeeType2E yeeType2E;
 
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidbody2D;
         private PointEffector2D pointEffector;
+        private RuleYeeType2E ruleYeeType2E;
         private CircleCollider2D colliderCircleCollider2D;
         private CircleCollider2D effectorCircleCollider2D;
+        private CircleCollider2D ruleCircleCollider2D;
         private PhysicsMaterial2D physicsMaterial2D;
+        private Rules rules;
 
         public void SetPosition(Vector2 pos)
         {
@@ -43,14 +47,16 @@ namespace CAG2D_04.Scripts
             }
         }
 
+
         public void Initialize(AgentSettings agentSettings)
         {
             this.set = agentSettings;
             rigidbody2D = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            pointEffector = GetComponentInChildren<PointEffector2D>();
             colliderCircleCollider2D = GameObject.Find("AgentCollider").GetComponent<CircleCollider2D>();
             effectorCircleCollider2D = GameObject.Find("AgentEffector").GetComponent<CircleCollider2D>();
+            pointEffector = GameObject.Find("AgentEffector").GetComponent<PointEffector2D>();
+            ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             name = set.agentName;
             SetPosition(set.position);
             SetVelocity(set.velocity, set.speed);
@@ -59,6 +65,8 @@ namespace CAG2D_04.Scripts
             colliderCircleCollider2D.radius = set.collisionRadius;
             effectorCircleCollider2D.radius = set.magnitudeForceRadius;
             pointEffector.forceMagnitude = set.magnitudeForce;
+            
+            // 设置2D物理材质。
             physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
             // physicsMaterial2D =
             //     Resources.Load("Materials/Agent Physics Material 2D.physicsMaterial2D") as PhysicsMaterial2D; // 加载现有2D物理材质
@@ -66,16 +74,16 @@ namespace CAG2D_04.Scripts
             {
                 physicsMaterial2D.friction = set.physicsMaterialFriction;
                 physicsMaterial2D.bounciness = set.physicsMaterialBounciness;
-                Debug.Log("正确设置Agent Physics Material 2D.physicsMaterial2D");
+                // Debug.Log("正确设置Agent Physics Material 2D.physicsMaterial2D");
             }
-            else
-            {
-                Debug.Log("没有正确设置Agent Physics Material 2D.physicsMaterial2D");
-            }
-
+            // else
+            // {
+            // Debug.Log("没有正确设置Agent Physics Material 2D.physicsMaterial2D");
+            // }
             rigidbody2D.sharedMaterial = physicsMaterial2D;
             colliderCircleCollider2D.sharedMaterial = physicsMaterial2D;
             effectorCircleCollider2D.sharedMaterial = physicsMaterial2D;
+            ruleCircleCollider2D.sharedMaterial = physicsMaterial2D;
         }
 
         public void SetAgent(AgentSettings agentSettings)
@@ -93,10 +101,20 @@ namespace CAG2D_04.Scripts
         }
 
 
-        // private void OnTriggerStay2D(Collider2D other)
+        // private void OnTriggerStay2D(Collider2D cd_other)
         // {
-        //     throw new NotImplementedException();
+        //
+        //     cd_other.gameObject
+        //     Agent other = cd_other.GetComponentInParent<Agent>();
+        //     Rigidbody2D otherAgent_rb = cd_other.gameObject.GetComponentInParent<Rigidbody2D>();
+        //     rules.SetYeeTypeARRules(this,other, colliderCircleCollider2D,cd_other);
         // }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            // Rigidbody2D otherAgent_rb=   
+            // rules.SetYeeTypeARRules(this,collision);
+        }
 
 
         void Awake()

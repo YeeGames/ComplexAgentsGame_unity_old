@@ -22,7 +22,7 @@ namespace CAG2D_04.Scripts
         {
             v = new Vector2(0, 0);
             R = gameSettings.wallRadiu;
-            positionCount = 360;
+            positionCount = 60;
             angle = 360f / (positionCount - 1);
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.startWidth = gameSettings.wallWidth;

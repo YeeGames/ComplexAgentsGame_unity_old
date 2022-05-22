@@ -1,13 +1,14 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CAG2D_04.Scripts
 {
     public class Rules : MonoBehaviour
     {
-        private YeeType2Y yeeType2Y;
+        private YeeType2E yeeType2E;
         private YeeTypeAR yeeTypeAR;
-        
+
         private Agent a1;
         private Agent a2;
 
@@ -25,27 +26,6 @@ namespace CAG2D_04.Scripts
             tf2 = a2.gameObject.transform;
         }
 
-        /// <summary>
-        /// 设计规则YeeType2Y
-        /// </summary>
-        /// <param name="a1"></param>
-        /// <param name="a2"></param>
-        public void SetYeeType2YRules(Agent a1, Agent a2)
-        {
-            Vector2 vector_from_a1_to_a2 = (Vector2) (a2.transform.position - a1.transform.position);
-            Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
-            float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
-            if (a1.set.yeeType2Y == a2.set.yeeType2Y)
-            {
-                rb1.AddForce(-direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
-                rb2.AddForce(direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
-            }
-            else
-            {
-                rb1.AddForce(direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
-                rb2.AddForce(-direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
-            }
-        }
 
 
         /// <summary>
@@ -53,25 +33,24 @@ namespace CAG2D_04.Scripts
         /// </summary>
         /// <param name="a1"></param>
         /// <param name="a2"></param>
-        public void SetYeeTypeARRules(Agent a1, Agent a2)
+        public void SetYeeTypeARRules(Agent a1, Agent a2, Collider2D c1, Collider2D c2)
         {
             // Rigidbody2D rb1;
             // Rigidbody2D rb2;
             // Transform tf1;
             // Transform tf2;
             rb1 = a1.gameObject.GetComponent<Rigidbody2D>();
-            tf1 = a1.gameObject.transform;
+            // tf1 = a1.gameObject.transform;
 
             rb2 = a2.gameObject.GetComponent<Rigidbody2D>();
-            tf2 = a2.gameObject.transform;
+            // tf2 = a2.gameObject.transform;
 
 
             Vector2 vector_from_a1_to_a2 = (Vector2) (a2.transform.position - a1.transform.position);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
             float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
-            if (a1.set.yeeType2Y == a2.set.yeeType2Y)
+            if (a1.set.yeeType2E == a2.set.yeeType2E)
             {
-                
                 rb1.AddForce(-direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
                 rb2.AddForce(direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
             }
