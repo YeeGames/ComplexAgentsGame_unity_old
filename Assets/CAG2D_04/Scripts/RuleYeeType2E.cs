@@ -1,12 +1,14 @@
 using System;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 
 namespace CAG2D_04.Scripts
 {
     public class RuleYeeType2E : MonoBehaviour
     {
-        public float forceStrenth=1.0f;
+        private RuleSettings set;
+        public float forceStrength = 0f;
 
         private YeeType2E yeeType2E;
 
@@ -24,6 +26,21 @@ namespace CAG2D_04.Scripts
         private void GetObject(Agent a1, Agent a2)
         {
         }
+
+        public void Initialize(RuleSettings ruleSettings)
+        {
+            set = ruleSettings;
+            SetRule(set);
+        }
+
+        public void SetRule(RuleSettings ruleSettings)
+        {
+            set = ruleSettings;
+            ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            ruleCircleCollider2D.radius = set.ruleYeeType2ECircleCollider2DRadius;
+            this.forceStrength = set.ruleYeeType2EForceStrength;
+        }
+
 
         // private void YeeType2ERule(Agent a1, Agent a2)
         // {
@@ -59,19 +76,20 @@ namespace CAG2D_04.Scripts
             float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
             if (t1 == t2)
             {
-                rb1.AddForce(forceStrenth * (-direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
+                rb1.AddForce(forceStrength * (-direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
                     ForceMode2D.Force);
-                rb2.AddForce(forceStrenth * (direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
+                rb2.AddForce(forceStrength * (direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
                     ForceMode2D.Force);
             }
             else
             {
-                rb1.AddForce(forceStrenth * (direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
+                rb1.AddForce(forceStrength * (direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
                     ForceMode2D.Force);
-                rb2.AddForce(forceStrenth * (-direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
+                rb2.AddForce(forceStrength * (-direction_from_a1_to_a2) / math.pow(distance_from_a1_to_a2, pownum),
                     ForceMode2D.Force);
             }
         }
+
 
         private void Awake()
         {
@@ -80,8 +98,7 @@ namespace CAG2D_04.Scripts
             //
             // rb2 = a2.gameObject.GetComponent<Rigidbody2D>();
             // tf2 = a2.gameObject.transform;
-
-            ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            Initialize(set);
         }
 
         private void OnTriggerStay2D(Collider2D otherCollider2D)

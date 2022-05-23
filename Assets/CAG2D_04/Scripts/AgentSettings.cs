@@ -1,5 +1,4 @@
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 namespace CAG2D_04.Scripts
 {
@@ -7,10 +6,10 @@ namespace CAG2D_04.Scripts
     public class AgentSettings : ScriptableObject
     {
         private GameSettings gameSettings;
-        
+
         public string agentBaseName;
         [HideInInspector] public string agentName;
-        public bool isMovable = true;
+        [HideInInspector] public bool isMovable = true;
         public Color color = Color.white;
         public float mass = 1f;
         public float size = 10f;
@@ -19,6 +18,7 @@ namespace CAG2D_04.Scripts
         public float collisionRadius = 0.5f;
         public Vector2 position;
         public Vector2 velocity = new Vector2(0, 0);
+        public float maxSpeed = 20f;
         public float speed = 0f;
         public float magnitudeForce = -10f;
         public float magnitudeForceRadius = 5f;

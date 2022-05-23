@@ -1,4 +1,6 @@
 using System;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityVector2;
 using Cinemachine;
 using UnityEngine;
 
@@ -9,6 +11,8 @@ namespace CAG2D_04.Scripts
         [HideInInspector] public Vector2 lastVelocity;
 
         public AgentSettings set;
+        public RuleSettings ruleSet;
+
         public string agentName;
 
         private YeeType2E yeeType2E;
@@ -16,12 +20,13 @@ namespace CAG2D_04.Scripts
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidbody2D;
         private PointEffector2D pointEffector;
-        private RuleYeeType2E ruleYeeType2E;
         private CircleCollider2D colliderCircleCollider2D;
         private CircleCollider2D effectorCircleCollider2D;
         private CircleCollider2D ruleCircleCollider2D;
         private PhysicsMaterial2D physicsMaterial2D;
+        private RuleYeeType2E ruleYeeType2E;
         private Rules rules;
+        private float maxSpeed;
 
         public void SetPosition(Vector2 pos)
         {
@@ -48,15 +53,23 @@ namespace CAG2D_04.Scripts
         }
 
 
-        public void Initialize(AgentSettings agentSettings)
+        public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
+        {
+            this.SetAgent(agentSettings);
+            ruleYeeType2E.SetRule(ruleSettings);
+        }
+
+        public void SetAgent(AgentSettings agentSettings)
         {
             this.set = agentSettings;
+
             rigidbody2D = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             colliderCircleCollider2D = GameObject.Find("AgentCollider").GetComponent<CircleCollider2D>();
             effectorCircleCollider2D = GameObject.Find("AgentEffector").GetComponent<CircleCollider2D>();
             pointEffector = GameObject.Find("AgentEffector").GetComponent<PointEffector2D>();
             ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            ruleYeeType2E = GameObject.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
             name = set.agentName;
             SetPosition(set.position);
             SetVelocity(set.velocity, set.speed);
@@ -65,7 +78,8 @@ namespace CAG2D_04.Scripts
             colliderCircleCollider2D.radius = set.collisionRadius;
             effectorCircleCollider2D.radius = set.magnitudeForceRadius;
             pointEffector.forceMagnitude = set.magnitudeForce;
-            
+            maxSpeed = set.maxSpeed;
+
             // 设置2D物理材质。
             physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
             // physicsMaterial2D =
@@ -76,6 +90,7 @@ namespace CAG2D_04.Scripts
                 physicsMaterial2D.bounciness = set.physicsMaterialBounciness;
                 // Debug.Log("正确设置Agent Physics Material 2D.physicsMaterial2D");
             }
+
             // else
             // {
             // Debug.Log("没有正确设置Agent Physics Material 2D.physicsMaterial2D");
@@ -84,20 +99,17 @@ namespace CAG2D_04.Scripts
             colliderCircleCollider2D.sharedMaterial = physicsMaterial2D;
             effectorCircleCollider2D.sharedMaterial = physicsMaterial2D;
             ruleCircleCollider2D.sharedMaterial = physicsMaterial2D;
-        }
 
-        public void SetAgent(AgentSettings agentSettings)
-        {
-            set = agentSettings;
-            SetVelocity(set.velocity, set.speed);
-            spriteRenderer.color = set.color;
-            rigidbody2D.mass = set.mass;
-            rigidbody2D.velocity = set.velocity * set.speed;
-            rigidbody2D.drag = set.linearDrag;
-            rigidbody2D.angularDrag = set.angleDrag;
-            colliderCircleCollider2D.radius = set.collisionRadius;
-            effectorCircleCollider2D.radius = set.magnitudeForceRadius;
-            pointEffector.forceMagnitude = set.magnitudeForce;
+
+            // SetVelocity(set.velocity, set.speed);
+            // spriteRenderer.color = set.color;
+            // rigidbody2D.mass = set.mass;
+            // rigidbody2D.velocity = set.velocity * set.speed;
+            // rigidbody2D.drag = set.linearDrag;
+            // rigidbody2D.angularDrag = set.angleDrag;
+            // colliderCircleCollider2D.radius = set.collisionRadius;
+            // effectorCircleCollider2D.radius = set.magnitudeForceRadius;
+            // pointEffector.forceMagnitude = set.magnitudeForce;
         }
 
 
@@ -119,7 +131,7 @@ namespace CAG2D_04.Scripts
 
         void Awake()
         {
-            Initialize(set);
+            Initialize(set, ruleSet);
         }
 
         // Start is called before the first frame update
@@ -135,6 +147,7 @@ namespace CAG2D_04.Scripts
         private void FixedUpdate()
         {
             this.transform.Translate(Vector2.zero * (Time.deltaTime));
+            rigidbody2D.velocity = Vector2.ClampMagnitude(rigidbody2D.velocity, maxSpeed);
         }
     }
 }

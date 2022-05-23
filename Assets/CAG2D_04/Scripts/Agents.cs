@@ -8,6 +8,7 @@ namespace CAG2D_04.Scripts
     {
         public GameSettings gameSettings;
         public AgentSettings agentSettings;
+        public RuleSettings ruleSettings;
         public Agent agentPrefab;
         public float radiusSize = 30f;
         public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};
@@ -16,6 +17,7 @@ namespace CAG2D_04.Scripts
 
         private void Awake()
         {
+            
             for (var t = 0; t < yeeTypes.Length; t++)
             {
                 for (var i = 0; i < gameSettings.numAgent; i++)
@@ -27,7 +29,7 @@ namespace CAG2D_04.Scripts
                     agentSettings.velocity = Random.insideUnitCircle;
                     agentSettings.yeeType2E = yeeTypes[t];
                     agentSettings.color = typesColors[t];
-                    a.SetAgent(agentSettings);
+                    a.Initialize(agentSettings, ruleSettings);
                 }
             }
         }

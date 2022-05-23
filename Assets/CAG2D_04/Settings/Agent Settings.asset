@@ -21,8 +21,9 @@ MonoBehaviour:
   linearDrag: 0
   angleDrag: 0
   collisionRadius: 0.5
-  position: {x: -7.8483143, y: -1.9720587}
-  velocity: {x: 0.5648475, y: 0.15833537}
+  position: {x: -4.9800453, y: 18.322891}
+  velocity: {x: 0.7000329, y: 0.14185037}
+  maxSpeed: 10
   speed: 0
   magnitudeForce: 0
   magnitudeForceRadius: 0

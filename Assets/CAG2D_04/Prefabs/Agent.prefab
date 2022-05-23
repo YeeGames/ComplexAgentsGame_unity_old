@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd82ceb32c846b58e9035e2a1c3f9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrenth: 1
 --- !u!1 &3869045930350941929
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastVelocity: {x: 0, y: 0}
   set: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
+  ruleSet: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
   agentName: 
 --- !u!1 &8664559872414916649
 GameObject:
@@ -329,7 +329,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10
+  m_ForceMagnitude: 0
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
