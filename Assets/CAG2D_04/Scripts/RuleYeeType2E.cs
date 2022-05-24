@@ -106,12 +106,12 @@ namespace CAG2D_04.Scripts
             // Agent thisAgent = transform.parent.GetComponent<Agent>();
             // Agent otherAgent = otherCollider2D.gameObject.GetComponentInParent<Agent>();
             // YeeType2ERule(thisAgent, otherAgent);
-            Rigidbody2D thisRigidbody2D = this.gameObject.GetComponentInParent<Rigidbody2D>();
-            Rigidbody2D otherRigidbody2D = otherCollider2D.gameObject.GetComponentInParent<Rigidbody2D>();
-            Vector2 thisPosition2D = this.GetComponentInParent<Transform>().position;
-            Vector2 otherPosition2D = otherCollider2D.gameObject.GetComponentInParent<Transform>().position;
-            YeeType2E thisYeeType2E = this.gameObject.GetComponentInParent<Agent>().set.yeeType2E;
-            YeeType2E otherYeeType2E = otherCollider2D.gameObject.GetComponentInParent<Agent>().set.yeeType2E;
+            Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
+            Rigidbody2D otherRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
+            Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;
+            Vector2 otherPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
+            YeeType2E thisYeeType2E = this.gameObject.transform.GetComponentInParent<Agent>().set.yeeType2E;
+            YeeType2E otherYeeType2E = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().set.yeeType2E;
             YeeType2ERule(thisRigidbody2D, thisPosition2D, thisYeeType2E, otherRigidbody2D, otherPosition2D,
                 otherYeeType2E);
         }

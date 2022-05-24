@@ -24,8 +24,10 @@ namespace CAG2D_04.Scripts
         private CircleCollider2D effectorCircleCollider2D;
         private CircleCollider2D ruleCircleCollider2D;
         private PhysicsMaterial2D physicsMaterial2D;
+
         private RuleYeeType2E ruleYeeType2E;
-        private Rules rules;
+
+        // private Rules rules;
         private float maxSpeed;
 
         public void SetPosition(Vector2 pos)
@@ -56,6 +58,7 @@ namespace CAG2D_04.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgent(agentSettings);
+            ruleYeeType2E = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
             ruleYeeType2E.SetRule(ruleSettings);
         }
 
@@ -65,11 +68,10 @@ namespace CAG2D_04.Scripts
 
             rigidbody2D = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            colliderCircleCollider2D = GameObject.Find("AgentCollider").GetComponent<CircleCollider2D>();
-            effectorCircleCollider2D = GameObject.Find("AgentEffector").GetComponent<CircleCollider2D>();
-            pointEffector = GameObject.Find("AgentEffector").GetComponent<PointEffector2D>();
-            ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
-            ruleYeeType2E = GameObject.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
+            colliderCircleCollider2D = this.gameObject.transform.Find("AgentCollider").GetComponent<CircleCollider2D>();
+            effectorCircleCollider2D = this.gameObject.transform.Find("AgentEffector").GetComponent<CircleCollider2D>();
+            ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
             name = set.agentName;
             SetPosition(set.position);
             SetVelocity(set.velocity, set.speed);
@@ -101,33 +103,7 @@ namespace CAG2D_04.Scripts
             ruleCircleCollider2D.sharedMaterial = physicsMaterial2D;
 
 
-            // SetVelocity(set.velocity, set.speed);
-            // spriteRenderer.color = set.color;
-            // rigidbody2D.mass = set.mass;
-            // rigidbody2D.velocity = set.velocity * set.speed;
-            // rigidbody2D.drag = set.linearDrag;
-            // rigidbody2D.angularDrag = set.angleDrag;
-            // colliderCircleCollider2D.radius = set.collisionRadius;
-            // effectorCircleCollider2D.radius = set.magnitudeForceRadius;
-            // pointEffector.forceMagnitude = set.magnitudeForce;
         }
-
-
-        // private void OnTriggerStay2D(Collider2D cd_other)
-        // {
-        //
-        //     cd_other.gameObject
-        //     Agent other = cd_other.GetComponentInParent<Agent>();
-        //     Rigidbody2D otherAgent_rb = cd_other.gameObject.GetComponentInParent<Rigidbody2D>();
-        //     rules.SetYeeTypeARRules(this,other, colliderCircleCollider2D,cd_other);
-        // }
-
-        private void OnCollisionStay2D(Collision2D collision)
-        {
-            // Rigidbody2D otherAgent_rb=   
-            // rules.SetYeeTypeARRules(this,collision);
-        }
-
 
         void Awake()
         {
