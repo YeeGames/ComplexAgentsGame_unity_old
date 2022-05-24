@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Rule Settings
   m_EditorClassIdentifier: 
   ruleYeeType2EForceStrength: 10
-  ruleYeeType2ECircleCollider2DRadius: 2.5
+  ruleYeeType2ECircleCollider2DRadius: 2

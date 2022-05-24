@@ -49,7 +49,7 @@ namespace CAG2D_04.Scripts
             Vector2 vector_from_a1_to_a2 = (Vector2) (a2.transform.position - a1.transform.position);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
             float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
-            if (a1.set.yeeType2E == a2.set.yeeType2E)
+            if (a1.agentSet.yeeType2E == a2.agentSet.yeeType2E)
             {
                 rb1.AddForce(-direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
                 rb2.AddForce(direction_from_a1_to_a2 / math.pow(distance_from_a1_to_a2, 1), ForceMode2D.Force);
