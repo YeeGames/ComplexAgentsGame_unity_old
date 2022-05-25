@@ -6,8 +6,10 @@ namespace CAG2D_04.Scripts
     public class RuleSettings : ScriptableObject
     {
         // public float forceStrength = 1f;
-        public float ruleYeeType2EForceStrength = 10f;
-        public float ruleYeeType2ECircleCollider2DRadius = 2.5f;
+        public float forceStrength = 10f; // 力场强度；
+        public float forceEffectiveRadius = 2.5f; // 力场影响半径；
+        public float pownum = 2f; // 力场衰减指数系数；
+        
 
     }
 }
