@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Game Settings
   m_EditorClassIdentifier: 
   dimention: 2
-  numAgent: 200
+  numAgent: 50
   pauseTime: 0
   wallRadiu: 100
   wallWidth: 100

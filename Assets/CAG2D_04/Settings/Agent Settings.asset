@@ -21,16 +21,15 @@ MonoBehaviour:
   linearDrag: 0
   angleDrag: 0
   collisionRadius: 0.5
-  position: {x: 11.614089, y: -12.790272}
-  velocity: {x: -0.8823395, y: 0.41996747}
-  maxSpeed: 3
+  position: {x: 3.9736457, y: -3.2732265}
+  velocity: {x: -0.1350577, y: 0.07868748}
+  maxSpeed: 0.1
   speed: 0
   magnitudeForce: 0
   magnitudeForceRadius: 0
   physicsMaterialFriction: 0
-  physicsMaterialBounciness: 0.95
+  physicsMaterialBounciness: 0
   yeeType2E: 1
-  yeeTypeAR: 0
   energy: 1
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}
