@@ -25,7 +25,6 @@ namespace CAG2D_04.Scripts
         public float physicsMaterialFriction = 0.0f;
         public float physicsMaterialBounciness = 1.0f;
         public YeeType2E yeeType2E;
-        public YeeTypeAR yeeTypeAR;
         [HideInInspector] public float energy = 1f;
         [HideInInspector] public Vector2 acceleration;
         [HideInInspector] public Vector2 momentum;

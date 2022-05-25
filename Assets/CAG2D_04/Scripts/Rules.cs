@@ -7,7 +7,6 @@ namespace CAG2D_04.Scripts
     public class Rules : MonoBehaviour
     {
         private YeeType2E yeeType2E;
-        private YeeTypeAR yeeTypeAR;
 
         private Agent a1;
         private Agent a2;

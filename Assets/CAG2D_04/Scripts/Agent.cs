@@ -1,6 +1,4 @@
 using System;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityVector2;
 using Cinemachine;
 using UnityEngine;
 
