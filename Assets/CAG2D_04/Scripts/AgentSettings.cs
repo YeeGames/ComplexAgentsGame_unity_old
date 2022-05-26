@@ -14,11 +14,12 @@ namespace CAG2D_04.Scripts
         public float mass = 1f;
         public float size = 10f;
         public float linearDrag = 0;
-        public float angleDrag = 0;
+        public float angularDrag = 0;
         public float collisionRadius = 0.5f;
         public Vector2 position;
         public Vector2 velocity = new Vector2(0, 0);
         public float maxSpeed = 20f;
+        public float maxAngularSpeed = 20f;
         public float speed = 0f;
         public float magnitudeForce = -10f;
         public float magnitudeForceRadius = 5f;

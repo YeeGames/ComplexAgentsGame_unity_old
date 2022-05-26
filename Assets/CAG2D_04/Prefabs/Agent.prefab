@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd82ceb32c846b58e9035e2a1c3f9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 0
 --- !u!1 &3869045930350941929
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +251,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &7145108475166731669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,9 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0de742bba0244fbb1ca3164eb12abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastVelocity: {x: 0, y: 0}
-  agentSet: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
-  ruleSet: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
+  agentSettingsScriptableObject: {fileID: 0}
+  ruleSettingsScriptableObject: {fileID: 0}
+  agentSettings: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
+  ruleSettings: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
   agentName: 
   yeeType2E: 0
 --- !u!1 &8664559872414916649

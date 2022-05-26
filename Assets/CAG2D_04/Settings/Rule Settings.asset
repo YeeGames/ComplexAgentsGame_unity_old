@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceStrength: 10
   forceEffectiveRadius: 2.5
-  pownum: 0
+  expCoefficient: 0
+  direction: -1

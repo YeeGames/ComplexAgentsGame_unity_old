@@ -18,17 +18,18 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 1, a: 1}
   mass: 1
   size: 10
-  linearDrag: 0
-  angleDrag: 0
-  collisionRadius: 0.5
-  position: {x: 3.9736457, y: -3.2732265}
-  velocity: {x: -0.1350577, y: 0.07868748}
-  maxSpeed: 0.1
+  linearDrag: 0.1
+  angularDrag: 0.1
+  collisionRadius: 0.6
+  position: {x: 9.826598, y: -2.0730913}
+  velocity: {x: 0.42567605, y: 0.3107347}
+  maxSpeed: 10
+  maxAngularSpeed: 10
   speed: 0
   magnitudeForce: 0
   magnitudeForceRadius: 0
   physicsMaterialFriction: 0
-  physicsMaterialBounciness: 0
+  physicsMaterialBounciness: 1
   yeeType2E: 1
   energy: 1
   acceleration: {x: 0, y: 0}

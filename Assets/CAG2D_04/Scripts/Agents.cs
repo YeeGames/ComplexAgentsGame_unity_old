@@ -1,4 +1,6 @@
 using System;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,15 +9,25 @@ namespace CAG2D_04.Scripts
     public class Agents : MonoBehaviour
     {
         public GameSettings gameSettings;
+
         public AgentSettings agentSettings;
+
+        // public ScriptableObject ruleSettings =
+        //     AssetDatabase.LoadAssetAtPath<RuleSettings>(@"Assets/CAG2D_04/Settings/Rule Settings.asset"); // 代码加载脚本对象失败
+
         public RuleSettings ruleSettings;
-        public Agent agentPrefab;
+        public Agent agent;
         public float radiusSize = 30f;
         public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};
         public Color[] typesColors = {Color.red, Color.blue};
         private RuleYeeType2E ruleYeeType2E;
 
         private void Awake()
+        {
+        }
+
+        // Start is called before the first frame update
+        void Start()
         {
             for (var t = 0; t < yeeTypes.Length; t++)
             {
@@ -27,16 +39,10 @@ namespace CAG2D_04.Scripts
                     agentSettings.velocity = Random.insideUnitCircle;
                     agentSettings.yeeType2E = yeeTypes[t];
                     agentSettings.color = typesColors[t];
-                    Agent a = Instantiate(agentPrefab);
+                    Agent a = Instantiate(agent);
                     a.Initialize(agentSettings, ruleSettings);
                 }
             }
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            // System.Threading.Thread.Sleep(1000 * gameSettings.pauseTime);
         }
 
 
