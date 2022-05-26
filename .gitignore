@@ -2,12 +2,12 @@
 .plastic/*
 
 
-Assets/*
+# Assets/*
 
 
 !Assets/CAG2D*
 !Assets/ComplexAgentsGame
-!Assets/MyPackages/*.unitypackage
+!Assets/MyPackages/*
 
 
 
