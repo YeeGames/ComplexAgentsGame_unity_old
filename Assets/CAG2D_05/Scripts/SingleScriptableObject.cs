@@ -1,6 +1,10 @@
+///
+/// 来源：https://blog.csdn.net/qq_46044366/article/details/124310241
+/// 
+
 using UnityEngine;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05
 {
     public class SingleScriptableObject<T> : ScriptableObject where T : ScriptableObject
     {

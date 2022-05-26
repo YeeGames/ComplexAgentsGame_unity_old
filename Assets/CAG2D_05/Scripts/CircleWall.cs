@@ -1,8 +1,6 @@
-using System.Drawing;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05.Scripts
 {
     public class CircleWall : MonoBehaviour
     {
@@ -30,14 +28,10 @@ namespace CAG2D_04.Scripts
             edgeCollider2D = GetComponent<EdgeCollider2D>();
 
             physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
-            // physicsMaterial2D =
-            //     Resources.Load("Materials/Wall Physics Material 2D.physicsMaterial2D") as
-            //         PhysicsMaterial2D; // 加载现有2D物理材质
             if (physicsMaterial2D != null)
             {
                 physicsMaterial2D.friction = gameSettings.physicsMaterialsFriction;
                 physicsMaterial2D.bounciness = gameSettings.physicsMaterialsBounciness;
-                // Debug.Log("正确设置Wall Physics Material 2D.physicsMaterial2D");
             }
             else
             {

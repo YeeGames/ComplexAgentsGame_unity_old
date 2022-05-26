@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEditor;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05.Scripts
 {
     public class Agent : MonoBehaviour
     {
@@ -11,13 +10,10 @@ namespace CAG2D_04.Scripts
         public AgentSettings agentSettings;
 
         public RuleSettings ruleSettings;
-        // public ScriptableObject ruleSettings =
-        //     AssetDatabase.LoadAssetAtPath<RuleSettings>(@"Assets/CAG2D_04/Settings/Rule Settings.asset");
 
         [HideInInspector] public AgentSettings aset;
         [HideInInspector] public RuleSettings rset;
 
-        // public string agentName;
         [HideInInspector] public YeeType2E yeeType2E;
 
 
@@ -31,7 +27,6 @@ namespace CAG2D_04.Scripts
 
         private RuleYeeType2E ruleYeeType2E;
 
-        // private Rules rules;
         private float maxSpeed;
         private float maxAngularSpeed;
 
@@ -91,13 +86,8 @@ namespace CAG2D_04.Scripts
             {
                 this.physicsMaterial2D.friction = this.aset.physicsMaterialFriction;
                 this.physicsMaterial2D.bounciness = this.aset.physicsMaterialBounciness;
-                // Debug.Log("正确设置Agent Physics Material 2D.physicsMaterial2D");
             }
 
-            // else
-            // {                                                 
-            // Debug.Log("没有正确设置Agent Physics Material 2D.physicsMaterial2D");
-            // }
             this.rigidbody2D.sharedMaterial = this.physicsMaterial2D;
             this.colliderCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
             this.effectorCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
@@ -119,13 +109,7 @@ namespace CAG2D_04.Scripts
                 this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
             this.ruleYeeType2E = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
-
-            // this.agentSettingsScriptableObject = AssetDatabase.LoadAssetAtPath<AgentSettings>("Assets/CAG2D_04/Settings/Agent Settings.asset");
-            // this.agentSettingsScriptableObject
-
-            // this.agentSettings = this.agentSettingsScriptableObject;
-
-
+            
             Initialize(this.aset, this.rset);
         }
 

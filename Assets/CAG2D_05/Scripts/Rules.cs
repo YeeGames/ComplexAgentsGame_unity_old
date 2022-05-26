@@ -1,8 +1,7 @@
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05
 {
     public class Rules : MonoBehaviour
     {

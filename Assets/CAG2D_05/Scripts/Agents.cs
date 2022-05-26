@@ -1,21 +1,12 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05.Scripts
 {
     public class Agents : MonoBehaviour
     {
         public GameSettings gameSettings;
 
-        // public AgentSettings agentSettings;
-
-        // public ScriptableObject rset =
-        //     AssetDatabase.LoadAssetAtPath<RuleSettings>(@"Assets/CAG2D_04/Settings/Rule Settings.asset"); // 代码加载脚本对象失败
-
-        // public RuleSettings ruleSettings;
         public Agent agent;
         public float radiusSize = 30f;
         public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};

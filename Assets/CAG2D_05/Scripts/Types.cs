@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05.Scripts
 {
     public class YeeType : MonoBehaviour
     {
@@ -14,5 +14,11 @@ namespace CAG2D_04.Scripts
         Yin
     }
 
+    public enum YeeType3E : short
+    {
+        Rock,
+        Scissors,
+        Cloth
+    }
 
 }

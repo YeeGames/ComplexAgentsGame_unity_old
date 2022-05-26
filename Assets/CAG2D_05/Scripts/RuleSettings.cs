@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG2D_04.Scripts
+namespace CAG2D_05.Scripts
 {
     [CreateAssetMenu]
     public class RuleSettings : ScriptableObject
