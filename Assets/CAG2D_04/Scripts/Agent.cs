@@ -14,12 +14,15 @@ namespace CAG2D_04.Scripts
         // public ScriptableObject ruleSettings =
         //     AssetDatabase.LoadAssetAtPath<RuleSettings>(@"Assets/CAG2D_04/Settings/Rule Settings.asset");
 
-        public string agentName;
+        [HideInInspector] public AgentSettings aset;
+        [HideInInspector] public RuleSettings rset;
+
+        // public string agentName;
         [HideInInspector] public YeeType2E yeeType2E;
 
 
         private SpriteRenderer spriteRenderer;
-        private Rigidbody2D rigidbody2D;
+        private new Rigidbody2D rigidbody2D;
         private PointEffector2D pointEffector;
         private CircleCollider2D colliderCircleCollider2D;
         private CircleCollider2D effectorCircleCollider2D;
@@ -66,35 +69,28 @@ namespace CAG2D_04.Scripts
 
         public void SetAgent(AgentSettings agentSettings)
         {
-            this.agentSettings = agentSettings;
-            // this.agentSettings = GameObject.Find("Settings/Agent Settings");
-            // yeeType2E = this.agentSettings.yeeType2E;
-            // rigidbody2D = GetComponent<Rigidbody2D>();
-            // spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            // colliderCircleCollider2D = this.gameObject.transform.Find("AgentCollider").GetComponent<CircleCollider2D>();
-            // effectorCircleCollider2D = this.gameObject.transform.Find("AgentEffector").GetComponent<CircleCollider2D>();
-            // ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
-            // pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
-            this.agentName = this.agentSettings.agentName;
-            this.SetColor(this.agentSettings.color);
-            this.SetPosition(this.agentSettings.position);
-            this.SetVelocity(this.agentSettings.velocity, this.agentSettings.speed);
-            this.colliderCircleCollider2D.radius = this.agentSettings.collisionRadius;
-            this.effectorCircleCollider2D.radius = this.agentSettings.magnitudeForceRadius;
-            this.pointEffector.forceMagnitude = this.agentSettings.magnitudeForce;
-            this.maxSpeed = this.agentSettings.maxSpeed;
-            this.maxAngularSpeed = this.agentSettings.maxAngularSpeed;
-            this.rigidbody2D.mass = this.agentSettings.mass;
-            this.rigidbody2D.drag = this.agentSettings.linearDrag;
-            this.rigidbody2D.angularDrag = this.agentSettings.angularDrag;
+            this.aset = agentSettings;
+            this.yeeType2E = this.aset.yeeType2E;
+            this.name = this.aset.agentName;
+            this.SetColor(this.aset.color);
+            this.SetPosition(this.aset.position);
+            this.SetVelocity(this.aset.velocity, this.aset.initSpeed);
+            this.colliderCircleCollider2D.radius = this.aset.collisionRadius;
+            this.effectorCircleCollider2D.radius = this.aset.magnitudeForceRadius;
+            this.pointEffector.forceMagnitude = this.aset.magnitudeForce;
+            this.maxSpeed = this.aset.maxSpeed;
+            this.maxAngularSpeed = this.aset.maxAngularSpeed;
+            this.rigidbody2D.mass = this.aset.mass;
+            this.rigidbody2D.drag = this.aset.linearDrag;
+            this.rigidbody2D.angularDrag = this.aset.angularDrag;
 
 
             // 设置2D物理材质。
             this.physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
             if (this.physicsMaterial2D != null)
             {
-                this.physicsMaterial2D.friction = this.agentSettings.physicsMaterialFriction;
-                this.physicsMaterial2D.bounciness = this.agentSettings.physicsMaterialBounciness;
+                this.physicsMaterial2D.friction = this.aset.physicsMaterialFriction;
+                this.physicsMaterial2D.bounciness = this.aset.physicsMaterialBounciness;
                 // Debug.Log("正确设置Agent Physics Material 2D.physicsMaterial2D");
             }
 
@@ -110,7 +106,9 @@ namespace CAG2D_04.Scripts
 
         void Awake()
         {
-            this.yeeType2E = this.agentSettings.yeeType2E;
+            this.aset = this.agentSettings;
+            this.rset = this.ruleSettings;
+
             this.rigidbody2D = GetComponent<Rigidbody2D>();
             this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             this.colliderCircleCollider2D =
@@ -127,7 +125,8 @@ namespace CAG2D_04.Scripts
 
             // this.agentSettings = this.agentSettingsScriptableObject;
 
-            Initialize(this.agentSettings, this.ruleSettings);
+
+            Initialize(this.aset, this.rset);
         }
 
         // Start is called before the first frame update

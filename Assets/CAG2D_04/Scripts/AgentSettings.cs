@@ -7,7 +7,7 @@ namespace CAG2D_04.Scripts
     {
         private GameSettings gameSettings;
 
-        public string agentBaseName;
+        public string agentBaseName = "agent";
         [HideInInspector] public string agentName;
         [HideInInspector] public bool isMovable = true;
         public Color color = Color.white;
@@ -20,12 +20,12 @@ namespace CAG2D_04.Scripts
         public Vector2 velocity = new Vector2(0, 0);
         public float maxSpeed = 20f;
         public float maxAngularSpeed = 20f;
-        public float speed = 0f;
+        public float initSpeed = 0f;
         public float magnitudeForce = -10f;
         public float magnitudeForceRadius = 5f;
         public float physicsMaterialFriction = 0.0f;
         public float physicsMaterialBounciness = 1.0f;
-        public YeeType2E yeeType2E;
+        public YeeType2E yeeType2E = YeeType2E.Yang;
         [HideInInspector] public float energy = 1f;
         [HideInInspector] public Vector2 acceleration;
         [HideInInspector] public Vector2 momentum;

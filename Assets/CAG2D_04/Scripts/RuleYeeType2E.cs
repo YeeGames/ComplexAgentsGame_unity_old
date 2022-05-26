@@ -6,6 +6,7 @@ namespace CAG2D_04.Scripts
     public class RuleYeeType2E : MonoBehaviour
     {
         private RuleSettings ruleSettings;
+        private RuleSettings rset;
         private float forceStrength = 0f;
         private YeeType2E yeeType2E;
         private int direction = 1;
@@ -29,13 +30,13 @@ namespace CAG2D_04.Scripts
 
         public void SetRule(RuleSettings ruleSettings)
         {
-            this.ruleSettings = ruleSettings;
-            // this.ruleSettings = this.transform.GetComponent<Rules>();
-            this.ruleCircleCollider2D.radius = this.ruleSettings.forceEffectiveRadius;
-            this.forceStrength = this.ruleSettings.forceStrength;
-            this.expCoefficient = this.ruleSettings.expCoefficient;
-            this.direction = this.ruleSettings.direction;
-            Debug.Log(this.ruleSettings.direction);
+            this.rset = ruleSettings;
+            // this.rset = this.transform.GetComponent<Rules>();
+            this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
+            this.forceStrength = this.rset.forceStrength;
+            this.expCoefficient = this.rset.expCoefficient;
+            this.direction = this.rset.direction;
+            Debug.Log(this.rset.direction);
 
         }
 
@@ -98,15 +99,16 @@ namespace CAG2D_04.Scripts
 
         private void Awake()
         {
+            this.rset = this.ruleSettings;
             this.ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
 
-            // this.ruleSettings = this.gameObject.transform.GetComponent<Rules>();
-            Initialize(ruleSettings);
+            // this.rset = this.gameObject.transform.GetComponent<Rules>();
+            Initialize(rset);
         }
 
         // private void Start()
         // {
-        //     Initialize(ruleSettings);
+        //     Initialize(rset);
         // }
 
         private void OnTriggerStay2D(Collider2D otherCollider2D)

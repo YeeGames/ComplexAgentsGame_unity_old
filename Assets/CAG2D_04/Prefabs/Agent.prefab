@@ -268,6 +268,8 @@ MonoBehaviour:
   ruleSettingsScriptableObject: {fileID: 0}
   agentSettings: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
   ruleSettings: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
+  aset: {fileID: 0}
+  rset: {fileID: 0}
   agentName: 
   yeeType2E: 0
 --- !u!1 &8664559872414916649
