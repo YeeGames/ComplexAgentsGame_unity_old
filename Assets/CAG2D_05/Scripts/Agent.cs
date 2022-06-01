@@ -1,3 +1,7 @@
+using CAG2D_05.Scripts.Rules;
+using CAG2D_05.Scripts.Settings;
+using CAG2D_05.Scripts.States;
+using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 
 namespace CAG2D_05.Scripts
@@ -15,6 +19,7 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public RuleSettings rset;
 
         [HideInInspector] public YeeType2E yeeType2E;
+        [HideInInspector] public YeeType3E yeeType3E;
 
 
         private SpriteRenderer spriteRenderer;
@@ -26,9 +31,13 @@ namespace CAG2D_05.Scripts
         private PhysicsMaterial2D physicsMaterial2D;
 
         private RuleYeeType2E ruleYeeType2E;
+        private RuleYeeType2E ruleYeeType3E;
 
         private float maxSpeed;
         private float maxAngularSpeed;
+
+
+        private StateMachine<Agent> stateMachine;
 
 
         public void SetPosition(Vector2 pos)
@@ -58,11 +67,11 @@ namespace CAG2D_05.Scripts
 
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
-            this.SetAgent(agentSettings);
+            this.SetAgentSettings(agentSettings);
             ruleYeeType2E.SetRule(ruleSettings);
         }
 
-        public void SetAgent(AgentSettings agentSettings)
+        public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
             this.yeeType2E = this.aset.yeeType2E;
@@ -94,6 +103,15 @@ namespace CAG2D_05.Scripts
             this.ruleCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
         }
 
+
+        public void ChangeTypeState(YeeType3EState<Agent> yeeType3EState)
+        {
+        }
+
+        public void ChangeInterState(InterState<Agent> interState)
+        {
+        }
+
         void Awake()
         {
             this.aset = this.agentSettings;
@@ -109,7 +127,7 @@ namespace CAG2D_05.Scripts
                 this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
             this.ruleYeeType2E = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
-            
+
             Initialize(this.aset, this.rset);
         }
 
@@ -129,6 +147,7 @@ namespace CAG2D_05.Scripts
             this.transform.Translate(Vector2.zero * (Time.deltaTime));
             this.rigidbody2D.velocity = Vector2.ClampMagnitude(rigidbody2D.velocity, maxSpeed); // 限制最大速度；
             this.rigidbody2D.angularVelocity = Mathf.Max(rigidbody2D.angularVelocity, maxAngularSpeed); // 限制最大角速度；
+            this.
         }
     }
 }

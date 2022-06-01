@@ -1,3 +1,6 @@
+using CAG2D_05.Scripts.Rules;
+using CAG2D_05.Scripts.Settings;
+using CAG2D_05.Scripts.YeeTypes;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -12,7 +15,6 @@ namespace CAG2D_05.Scripts
 
         private float forceStrength = 0f;
 
-        // private YeeType3E yeeType3E;
         private int direction = 1;
         private RuleYeeType3E ruleYeeType3E;
         private float expCoefficient = 2f;

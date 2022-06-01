@@ -1,10 +1,11 @@
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05.Scripts.YeeTypes
 {
     public class YeeType : MonoBehaviour
     {
         public YeeType2E yeeType2E;
+        public YeeType3E yeeType3E;
     }
 
     

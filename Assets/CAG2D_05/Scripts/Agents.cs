@@ -1,3 +1,6 @@
+using CAG2D_05.Scripts.Rules;
+using CAG2D_05.Scripts.Settings;
+using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

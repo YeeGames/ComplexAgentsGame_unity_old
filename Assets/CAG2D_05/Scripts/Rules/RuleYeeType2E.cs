@@ -1,7 +1,9 @@
+using CAG2D_05.Scripts.Settings;
+using CAG2D_05.Scripts.YeeTypes;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05.Scripts.Rules
 {
     public class RuleYeeType2E : MonoBehaviour
     {

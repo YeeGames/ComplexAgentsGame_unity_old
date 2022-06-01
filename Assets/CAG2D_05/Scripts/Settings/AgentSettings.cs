@@ -1,6 +1,7 @@
+using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05.Scripts.Settings
 {
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject
