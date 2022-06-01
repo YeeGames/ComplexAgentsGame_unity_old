@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4302173749663084511}
   - component: {fileID: 2728862409551284498}
   - component: {fileID: 4065104668814868615}
+  - component: {fileID: 3574055923403905982}
   m_Layer: 0
   m_Name: AgentRuleEffector
   m_TagString: Untagged
@@ -61,6 +62,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5457cf8ab64ce68e6b6b837b9db058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3574055923403905982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2848418943701166495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040e7469c5164657abc688d4f44412cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisRigidbody2D: {fileID: 0}
+  thisPosition2D: {x: 0, y: 0}
+  thisYeeType3E: 0
+  a: {fileID: 0}
 --- !u!1 &3869045930350941929
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +288,7 @@ MonoBehaviour:
   aset: {fileID: 0}
   rset: {fileID: 0}
   yeeType2E: 0
+  yeeType3E: 0
 --- !u!1 &8664559872414916649
 GameObject:
   m_ObjectHideFlags: 0
