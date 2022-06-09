@@ -8,7 +8,7 @@ namespace CAG2D_05.Scripts.YeeTypes
         public YeeType3E yeeType3E;
     }
 
-    
+
     public enum YeeType2E : short
     {
         Yang,
@@ -22,4 +22,10 @@ namespace CAG2D_05.Scripts.YeeTypes
         Cloth
     }
 
+    public enum YeeTypeInter3E : short
+    {
+        Self,
+        Ke,
+        BeKe
+    }
 }

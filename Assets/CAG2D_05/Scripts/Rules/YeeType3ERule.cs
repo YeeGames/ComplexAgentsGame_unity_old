@@ -27,6 +27,36 @@ namespace CAG2D_05.Scripts
         private Transform tf1;
         private Transform tf2;
 
+        private int rowSize = 3;
+        private int colSize = 3;
+
+        /// <summary>
+        /// 起始YeeType3E类型向量
+        /// </summary>
+        private YeeType3E[] fromYeeType3Es = new YeeType3E[]
+        {
+            YeeType3E.Rock, YeeType3E.Scissors, YeeType3E.Cloth
+        };
+
+        /// <summary>
+        /// 目标YeeType3E类型向量
+        /// </summary>
+        private YeeType3E[] toYeeType3Es = new YeeType3E[]
+        {
+            YeeType3E.Rock, YeeType3E.Scissors, YeeType3E.Cloth
+        };
+
+        /// <summary>
+        /// YeeTypeInter3E之规则之邻接矩阵
+        /// </summary>
+        private YeeTypeInter3E[,] yeeType3ERuleAdjecentMatrix = new YeeTypeInter3E[,]
+        {
+            {YeeTypeInter3E.Self, YeeTypeInter3E.Ke, YeeTypeInter3E.BeKe},
+            {YeeTypeInter3E.BeKe, YeeTypeInter3E.Self, YeeTypeInter3E.Ke},
+            {YeeTypeInter3E.Ke, YeeTypeInter3E.BeKe, YeeTypeInter3E.Self}
+        };
+
+        
 
         private void GetObject(Agent a1, Agent a2)
         {
