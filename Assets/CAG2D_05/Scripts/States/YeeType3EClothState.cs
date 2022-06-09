@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace CAG2D_05.Scripts.States
 {
     public class YeeType3EClothState : YeeType3EState<Agent>
@@ -13,6 +15,11 @@ namespace CAG2D_05.Scripts.States
         }
 
         public override void Exit(Agent a)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void OnTriggerStay(Collider2D otherCollider2D)
         {
             throw new System.NotImplementedException();
         }

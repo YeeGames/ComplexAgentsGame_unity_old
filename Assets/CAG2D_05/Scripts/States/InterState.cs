@@ -5,18 +5,16 @@ namespace CAG2D_05.Scripts.States
         /// <summary>
         /// agent进入状态时
         /// </summary>
-        public abstract void Enter(T a);
- 
+        public abstract void Enter(T a1, T a2);
+
         /// <summary>
         /// agent更新状态时
         /// </summary>
-        public abstract void Execute(T a);
- 
+        public abstract void Execute(T a1, T a2);
+
         /// <summary>
         /// agent退出状态时
         /// </summary>
-        public abstract void Exit(T a);
+        public abstract void Exit(T a, T a2);
     }
-
-
 }

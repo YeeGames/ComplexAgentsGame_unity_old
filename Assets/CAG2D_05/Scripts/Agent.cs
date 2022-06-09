@@ -22,23 +22,24 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public YeeType3E yeeType3E;
 
 
-        private SpriteRenderer spriteRenderer;
-        private new Rigidbody2D rigidbody2D;
-        private PointEffector2D pointEffector;
-        private CircleCollider2D colliderCircleCollider2D;
-        private CircleCollider2D effectorCircleCollider2D;
-        private CircleCollider2D ruleCircleCollider2D;
-        private PhysicsMaterial2D physicsMaterial2D;
+        [HideInInspector] public SpriteRenderer spriteRenderer;
+        [HideInInspector] public new Rigidbody2D rigidbody2D;
+        [HideInInspector] public PointEffector2D pointEffector;
+        [HideInInspector] public CircleCollider2D colliderCircleCollider2D;
+        [HideInInspector] public CircleCollider2D effectorCircleCollider2D;
+        [HideInInspector] public CircleCollider2D ruleCircleCollider2D;
+        [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
 
-        private RuleYeeType2E ruleYeeType2E;
-        private RuleYeeType2E ruleYeeType3E;
+        [HideInInspector] public RuleYeeType2E ruleYeeType2E;
+        [HideInInspector] public RuleYeeType2E ruleYeeType3E;
 
-        private float maxSpeed;
-        private float maxAngularSpeed;
+        [HideInInspector] public float maxSpeed;
+        [HideInInspector] public float maxAngularSpeed;
 
 
-        private StateMachine<Agent> stateMachine;
-
+        // private StateMachine<Agent> stateMachine;
+        private YeeType3EState<Agent> yeeType3EState;
+        private InterState<Agent> interState;
 
         public void SetPosition(Vector2 pos)
         {
@@ -106,10 +107,16 @@ namespace CAG2D_05.Scripts
 
         public void ChangeTypeState(YeeType3EState<Agent> yeeType3EState)
         {
+            this.yeeType3EState.Exit(this);
+            this.yeeType3EState = yeeType3EState;
+            this.yeeType3EState.Enter(this);
         }
 
         public void ChangeInterState(InterState<Agent> interState)
         {
+            this.interState.Exit(this);
+            this.interState = interState;
+            this.interState.Enter(this);
         }
 
         void Awake()
@@ -147,7 +154,6 @@ namespace CAG2D_05.Scripts
             this.transform.Translate(Vector2.zero * (Time.deltaTime));
             this.rigidbody2D.velocity = Vector2.ClampMagnitude(rigidbody2D.velocity, maxSpeed); // 限制最大速度；
             this.rigidbody2D.angularVelocity = Mathf.Max(rigidbody2D.angularVelocity, maxAngularSpeed); // 限制最大角速度；
-            this.
         }
     }
 }

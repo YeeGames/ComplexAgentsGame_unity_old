@@ -1,13 +1,15 @@
+using System.Windows.Forms;
 using CAG2D_05.Scripts.Rules;
 using CAG2D_05.Scripts.Settings;
 using CAG2D_05.Scripts.YeeTypes;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 namespace CAG2D_05.Scripts
 {
-    public class RuleYeeType3E : MonoBehaviour
+    public class YeeType3ERule : MonoBehaviour
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -16,7 +18,7 @@ namespace CAG2D_05.Scripts
         private float forceStrength = 0f;
 
         private int direction = 1;
-        private RuleYeeType3E ruleYeeType3E;
+        private YeeType3ERule yeeType3ERule;
         private float expCoefficient = 2f;
         private CircleCollider2D ruleCircleCollider2D;
 
@@ -51,12 +53,14 @@ namespace CAG2D_05.Scripts
         {
         }
 
-        private void YeeType3ERule(Rigidbody2D rb1, Vector2 pos1, YeeType3E t1, Rigidbody2D rb2, Vector2 pos2,
+
+        private void Rule(Rigidbody2D rb1, Vector2 pos1, YeeType3E t1, Rigidbody2D rb2, Vector2 pos2,
             YeeType3E t2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
             float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
+
 
             if (t1 == YeeType3E.Rock && t2 == YeeType3E.Scissors)
             {
@@ -108,7 +112,7 @@ namespace CAG2D_05.Scripts
             Rigidbody2D otherRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 otherPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
             YeeType3E otherYeeType3E = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yeeType3E;
-            YeeType3ERule(thisRigidbody2D, thisPosition2D, thisYeeType3E, otherRigidbody2D, otherPosition2D,
+            Rule(thisRigidbody2D, thisPosition2D, thisYeeType3E, otherRigidbody2D, otherPosition2D,
                 otherYeeType3E);
         }
     }
