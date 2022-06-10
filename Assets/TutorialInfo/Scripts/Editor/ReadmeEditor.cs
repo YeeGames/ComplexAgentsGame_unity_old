@@ -86,7 +86,7 @@ namespace TutorialInfo.Scripts.Editor
             }
             else
             {
-                Debug.Log("Couldn't find agent readme");
+                Debug.Log("Couldn't find thisAgent readme");
                 return null;
             }
         }

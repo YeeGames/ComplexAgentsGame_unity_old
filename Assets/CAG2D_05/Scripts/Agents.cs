@@ -14,7 +14,7 @@ namespace CAG2D_05.Scripts
         public float radiusSize = 30f;
         public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};
         public Color[] typesColors = {Color.red, Color.blue};
-        private RuleYeeType2E ruleYeeType2E;
+        private YeeType2ERule yeeType2ERule;
 
         private void Awake()
         {

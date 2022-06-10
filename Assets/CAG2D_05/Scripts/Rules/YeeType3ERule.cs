@@ -14,10 +14,11 @@ namespace CAG2D_05.Scripts
         private RuleSettings ruleSettings;
         private RuleSettings rset;
         private YeeType3E yeeType3E;
+        private YeeTypeInter3E yeeTypeInter3E;
 
         private float forceStrength = 0f;
 
-        private int direction = 1;
+        private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
         private YeeType3ERule yeeType3ERule;
         private float expCoefficient = 2f;
         private CircleCollider2D ruleCircleCollider2D;
@@ -27,8 +28,8 @@ namespace CAG2D_05.Scripts
         private Transform tf1;
         private Transform tf2;
 
-        private int rowSize = 3;
-        private int colSize = 3;
+        private const int RowSize = 3;
+        private const int ColSize = 3;
 
         /// <summary>
         /// 起始YeeType3E类型向量
@@ -49,14 +50,13 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// YeeTypeInter3E之规则之邻接矩阵
         /// </summary>
-        private YeeTypeInter3E[,] yeeType3ERuleAdjecentMatrix = new YeeTypeInter3E[,]
+        private static readonly YeeTypeInter3E[,] yeeType3ERuleAdjecentMatrix = new YeeTypeInter3E[RowSize, ColSize]
         {
             {YeeTypeInter3E.Self, YeeTypeInter3E.Ke, YeeTypeInter3E.BeKe},
             {YeeTypeInter3E.BeKe, YeeTypeInter3E.Self, YeeTypeInter3E.Ke},
             {YeeTypeInter3E.Ke, YeeTypeInter3E.BeKe, YeeTypeInter3E.Self}
         };
 
-        
 
         private void GetObject(Agent a1, Agent a2)
         {
@@ -78,45 +78,61 @@ namespace CAG2D_05.Scripts
             Debug.Log(this.rset.direction);
         }
 
+        // /// <summary>
+        // /// 设置行为规则
+        // /// </summary>
+        // public void SetBehaviorRule()
+        // {
+        // }
 
-        public void SetRule()
+
+        /// <summary>
+        /// 判断类型交互规则 
+        /// </summary>
+        /// <param name="thisYeeType3E">己方YeeType3E类型</param>
+        /// <param name="thatYeeType3E">对方YeeType3E类型</param>
+        public YeeTypeInter3E GetInterRule(YeeType3E thisYeeType3E, YeeType3E thatYeeType3E)
         {
+            YeeTypeInter3E yeeTypeInter3E = yeeType3ERuleAdjecentMatrix[(int) thisYeeType3E, (int) thatYeeType3E];
+            return yeeTypeInter3E;
         }
 
-
-        private void Rule(Rigidbody2D rb1, Vector2 pos1, YeeType3E t1, Rigidbody2D rb2, Vector2 pos2,
-            YeeType3E t2)
+        /// <summary>
+        /// 应用行为规则
+        /// </summary>
+        /// <param name="a1"></param>
+        /// <param name="a2"></param>
+        /// <param name="rb1"></param>
+        /// <param name="pos1"></param>
+        /// <param name="t1"></param>
+        /// <param name="rb2"></param>
+        /// <param name="pos2"></param>
+        /// <param name="t2"></param>
+        private void ApplyBehaviorRule(YeeTypeInter3E ti3e, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
+            Vector2 pos2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
             float distance_from_a1_to_a2 = direction_from_a1_to_a2.magnitude;
 
 
-            if (t1 == YeeType3E.Rock && t2 == YeeType3E.Scissors)
+            // 应用施力规则。
+            // 如果是交互状态我方为Ke，则己方受到拉力，对方受到推力，形成效果力之于己方追逐对方逃避；
+            // 如果是交互状态我方为BeKe，则己方受到推力，对方受到拉力，形成效果力之于对方追逐我方逃避；
+            if (ti3e == YeeTypeInter3E.Ke)
             {
                 rb1.AddForce(
                     forceStrength * ((float) direction * direction_from_a1_to_a2) /
                     math.pow(distance_from_a1_to_a2, expCoefficient), ForceMode2D.Force);
                 rb2.AddForce(
-                    forceStrength * ((float) direction * direction_from_a1_to_a2) /
+                    forceStrength * ((float) -direction * direction_from_a1_to_a2) /
                     math.pow(distance_from_a1_to_a2, expCoefficient),
                     ForceMode2D.Force);
             }
-            else if (t1 == YeeType3E.Scissors && t2 == YeeType3E.Cloth)
+            else if (ti3e == YeeTypeInter3E.BeKe)
             {
                 rb1.AddForce(
-                    forceStrength * ((float) direction * direction_from_a1_to_a2) /
-                    math.pow(distance_from_a1_to_a2, expCoefficient),
-                    ForceMode2D.Force);
-                rb2.AddForce(
-                    forceStrength * ((float) direction * direction_from_a1_to_a2) /
-                    math.pow(distance_from_a1_to_a2, expCoefficient),
-                    ForceMode2D.Force);
-            }
-            else if (t1 == YeeType3E.Cloth && t2 == YeeType3E.Rock)
-            {
-                rb1.AddForce(
-                    forceStrength * ((float) direction * direction_from_a1_to_a2) /
+                    forceStrength * ((float) -direction * direction_from_a1_to_a2) /
                     math.pow(distance_from_a1_to_a2, expCoefficient),
                     ForceMode2D.Force);
                 rb2.AddForce(
@@ -139,11 +155,11 @@ namespace CAG2D_05.Scripts
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;
             YeeType3E thisYeeType3E = this.gameObject.transform.GetComponentInParent<Agent>().yeeType3E;
-            Rigidbody2D otherRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
-            Vector2 otherPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
-            YeeType3E otherYeeType3E = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yeeType3E;
-            Rule(thisRigidbody2D, thisPosition2D, thisYeeType3E, otherRigidbody2D, otherPosition2D,
-                otherYeeType3E);
+            Rigidbody2D thatRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
+            Vector2 thatPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
+            YeeType3E thatYeeType3E = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yeeType3E;
+            this.yeeTypeInter3E = GetInterRule(thisYeeType3E, thatYeeType3E);
+            ApplyBehaviorRule(this.yeeTypeInter3E, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
         }
     }
 }

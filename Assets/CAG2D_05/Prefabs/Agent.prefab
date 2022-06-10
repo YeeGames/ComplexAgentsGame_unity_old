@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4302173749663084511}
   - component: {fileID: 2728862409551284498}
   - component: {fileID: 4065104668814868615}
-  - component: {fileID: 3574055923403905982}
   m_Layer: 0
   m_Name: AgentRuleEffector
   m_TagString: Untagged
@@ -62,22 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5457cf8ab64ce68e6b6b837b9db058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3574055923403905982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2848418943701166495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040e7469c5164657abc688d4f44412cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisRigidbody2D: {fileID: 0}
-  thisPosition2D: {x: 0, y: 0}
-  thisYeeType3E: 0
-  a: {fileID: 0}
 --- !u!1 &3869045930350941929
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +102,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3869045930350941929}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 076156be27a3c47de891a4884368e305, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -289,6 +272,18 @@ MonoBehaviour:
   rset: {fileID: 0}
   yeeType2E: 0
   yeeType3E: 0
+  yeeTypeInter3E: 0
+  spriteRenderer: {fileID: 0}
+  rigidbody2D: {fileID: 0}
+  pointEffector: {fileID: 0}
+  colliderCircleCollider2D: {fileID: 0}
+  effectorCircleCollider2D: {fileID: 0}
+  ruleCircleCollider2D: {fileID: 0}
+  physicsMaterial2D: {fileID: 0}
+  yeeType2ERule: {fileID: 0}
+  ruleYeeType3E: {fileID: 0}
+  maxSpeed: 0
+  maxAngularSpeed: 0
 --- !u!1 &8664559872414916649
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +326,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 8664559872414916649}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 076156be27a3c47de891a4884368e305, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0

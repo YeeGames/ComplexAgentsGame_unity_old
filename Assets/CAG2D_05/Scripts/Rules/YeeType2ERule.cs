@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts.Rules
 {
-    public class RuleYeeType2E : MonoBehaviour
+    public class YeeType2ERule : MonoBehaviour
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -42,7 +42,7 @@ namespace CAG2D_05.Scripts.Rules
 
         }
         
-        private void YeeType2ERule(Rigidbody2D rb1, Vector2 pos1, YeeType2E t1, Rigidbody2D rb2, Vector2 pos2,
+        private void ApplyBehaviorRule(Rigidbody2D rb1, Vector2 pos1, YeeType2E t1, Rigidbody2D rb2, Vector2 pos2,
             YeeType2E t2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
@@ -87,7 +87,7 @@ namespace CAG2D_05.Scripts.Rules
             Rigidbody2D otherRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 otherPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
             YeeType2E otherYeeType2E = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yeeType2E;
-            YeeType2ERule(thisRigidbody2D, thisPosition2D, thisYeeType2E, otherRigidbody2D, otherPosition2D,
+            ApplyBehaviorRule(thisRigidbody2D, thisPosition2D, thisYeeType2E, otherRigidbody2D, otherPosition2D,
                 otherYeeType2E);
         }
     }

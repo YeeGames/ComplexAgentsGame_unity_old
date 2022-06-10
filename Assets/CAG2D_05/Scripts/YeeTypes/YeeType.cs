@@ -9,20 +9,20 @@ namespace CAG2D_05.Scripts.YeeTypes
     }
 
 
-    public enum YeeType2E : short
+    public enum YeeType2E
     {
         Yang,
         Yin
     }
 
-    public enum YeeType3E : short
+    public enum YeeType3E
     {
         Rock,
         Scissors,
         Cloth
     }
 
-    public enum YeeTypeInter3E : short
+    public enum YeeTypeInter3E
     {
         Self,
         Ke,

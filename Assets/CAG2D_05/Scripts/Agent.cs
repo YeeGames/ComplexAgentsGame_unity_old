@@ -1,6 +1,5 @@
 using CAG2D_05.Scripts.Rules;
 using CAG2D_05.Scripts.Settings;
-using CAG2D_05.Scripts.States;
 using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 
@@ -21,6 +20,8 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public YeeType2E yeeType2E;
         [HideInInspector] public YeeType3E yeeType3E;
 
+        [HideInInspector] public YeeTypeInter3E yeeTypeInter3E;
+
 
         [HideInInspector] public SpriteRenderer spriteRenderer;
         [HideInInspector] public new Rigidbody2D rigidbody2D;
@@ -30,16 +31,11 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public CircleCollider2D ruleCircleCollider2D;
         [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
 
-        [HideInInspector] public RuleYeeType2E ruleYeeType2E;
-        [HideInInspector] public RuleYeeType2E ruleYeeType3E;
+        [HideInInspector] public YeeType2ERule yeeType2ERule;
+        [HideInInspector] public YeeType3ERule ruleYeeType3E;
 
         [HideInInspector] public float maxSpeed;
         [HideInInspector] public float maxAngularSpeed;
-
-
-        // private StateMachine<Agent> stateMachine;
-        private YeeType3EState<Agent> yeeType3EState;
-        private InterState<Agent> interState;
 
         public void SetPosition(Vector2 pos)
         {
@@ -69,7 +65,7 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            ruleYeeType2E.SetRule(ruleSettings);
+            yeeType2ERule.SetRule(ruleSettings);
         }
 
         public void SetAgentSettings(AgentSettings agentSettings)
@@ -103,21 +99,7 @@ namespace CAG2D_05.Scripts
             this.effectorCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
             this.ruleCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
         }
-
-
-        public void ChangeTypeState(YeeType3EState<Agent> yeeType3EState)
-        {
-            this.yeeType3EState.Exit(this);
-            this.yeeType3EState = yeeType3EState;
-            this.yeeType3EState.Enter(this);
-        }
-
-        public void ChangeInterState(InterState<Agent> interState)
-        {
-            this.interState.Exit(this);
-            this.interState = interState;
-            this.interState.Enter(this);
-        }
+        
 
         void Awake()
         {
@@ -133,7 +115,7 @@ namespace CAG2D_05.Scripts
             this.ruleCircleCollider2D =
                 this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
-            this.ruleYeeType2E = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<RuleYeeType2E>();
+            this.yeeType2ERule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeType2ERule>();
 
             Initialize(this.aset, this.rset);
         }

@@ -8,7 +8,7 @@ namespace CAG2D_05.Scripts.Settings
     {
         private GameSettings gameSettings;
 
-        public string agentBaseName = "agent";
+        public string agentBaseName = "thisAgent";
         [HideInInspector] public string agentName;
         [HideInInspector] public bool isMovable = true;
         public Color color = Color.white;
