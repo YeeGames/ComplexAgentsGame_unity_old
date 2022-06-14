@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts.Rules
 {
-    public class YeeType2ERule : MonoBehaviour
+    public class YeeType2ERule : MonoBehaviour,IYeeTypeRule
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -30,10 +30,15 @@ namespace CAG2D_05.Scripts.Rules
             SetRule(ruleSettings);
         }
 
+        public YeeTypeRuleType GetRuleType()
+        {
+            return YeeTypeRuleType.YeeType2ERule;
+        }
+
         public void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
-            // this.rset = this.transform.GetComponent<Rules>();
+            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
             this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
             this.forceStrength = this.rset.forceStrength;
             this.expCoefficient = this.rset.expCoefficient;

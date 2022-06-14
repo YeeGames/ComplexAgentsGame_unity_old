@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class YeeType3ERule : MonoBehaviour
+    public class YeeType3ERule : MonoBehaviour,IYeeTypeRule
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -70,7 +70,7 @@ namespace CAG2D_05.Scripts
         public void SetRuleSettings(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
-            // this.rset = this.transform.GetComponent<Rules>();
+            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
             this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
             this.forceStrength = this.rset.forceStrength;
             this.expCoefficient = this.rset.expCoefficient;
@@ -96,19 +96,17 @@ namespace CAG2D_05.Scripts
             YeeTypeInter3E yeeTypeInter3E = yeeType3ERuleAdjecentMatrix[(int) thisYeeType3E, (int) thatYeeType3E];
             return yeeTypeInter3E;
         }
+        
 
         /// <summary>
         /// 应用行为规则
         /// </summary>
-        /// <param name="a1"></param>
-        /// <param name="a2"></param>
-        /// <param name="rb1"></param>
-        /// <param name="pos1"></param>
-        /// <param name="t1"></param>
-        /// <param name="rb2"></param>
-        /// <param name="pos2"></param>
-        /// <param name="t2"></param>
-        private void ApplyBehaviorRule(YeeTypeInter3E ti3e, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
+        /// <param name="yeeTypeInter3E">YeeTypeInter3E类型</param>
+        /// <param name="rb1">我方agent刚体</param>
+        /// <param name="pos1">我方agent位置</param>
+        /// <param name="rb2">对方agent刚体</param>
+        /// <param name="pos2">对方agent位置</param>
+        private void ApplyBehaviorRule(YeeTypeInter3E yeeTypeInter3E, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
             Vector2 pos2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
@@ -119,7 +117,7 @@ namespace CAG2D_05.Scripts
             // 应用施力规则。
             // 如果是交互状态我方为Ke，则己方受到拉力，对方受到推力，形成效果力之于己方追逐对方逃避；
             // 如果是交互状态我方为BeKe，则己方受到推力，对方受到拉力，形成效果力之于对方追逐我方逃避；
-            if (ti3e == YeeTypeInter3E.Ke)
+            if (yeeTypeInter3E == YeeTypeInter3E.Ke)
             {
                 rb1.AddForce(
                     forceStrength * ((float) direction * direction_from_a1_to_a2) /
@@ -129,7 +127,7 @@ namespace CAG2D_05.Scripts
                     math.pow(distance_from_a1_to_a2, expCoefficient),
                     ForceMode2D.Force);
             }
-            else if (ti3e == YeeTypeInter3E.BeKe)
+            else if (yeeTypeInter3E == YeeTypeInter3E.BeKe)
             {
                 rb1.AddForce(
                     forceStrength * ((float) -direction * direction_from_a1_to_a2) /
@@ -150,6 +148,18 @@ namespace CAG2D_05.Scripts
             Initialize(rset);
         }
 
+
+        public void SetRule(RuleSettings ruleSettings)
+        {
+            this.rset = ruleSettings;
+            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
+            this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
+            this.forceStrength = this.rset.forceStrength;
+            this.expCoefficient = this.rset.expCoefficient;
+            this.direction = this.rset.direction;
+            Debug.Log(this.rset.direction);
+        }
+
         private void OnTriggerStay2D(Collider2D otherCollider2D)
         {
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
@@ -161,5 +171,11 @@ namespace CAG2D_05.Scripts
             this.yeeTypeInter3E = GetInterRule(thisYeeType3E, thatYeeType3E);
             ApplyBehaviorRule(this.yeeTypeInter3E, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
         }
+
+        public YeeTypeRuleType GetRuleType()
+        {
+            return YeeTypeRuleType.YeeType3ERule;
+        }
+
     }
 }

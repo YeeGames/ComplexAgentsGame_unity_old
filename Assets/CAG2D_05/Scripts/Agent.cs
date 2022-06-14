@@ -17,10 +17,12 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public AgentSettings aset;
         [HideInInspector] public RuleSettings rset;
 
+        [HideInInspector] public YeeTypeType yeeTypeType;
         [HideInInspector] public YeeType2E yeeType2E;
         [HideInInspector] public YeeType3E yeeType3E;
 
         [HideInInspector] public YeeTypeInter3E yeeTypeInter3E;
+        [HideInInspector] public YeeTypeRule yeeTypeRule;
 
 
         [HideInInspector] public SpriteRenderer spriteRenderer;
@@ -32,7 +34,7 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
 
         [HideInInspector] public YeeType2ERule yeeType2ERule;
-        [HideInInspector] public YeeType3ERule ruleYeeType3E;
+        [HideInInspector] public YeeType2ERule yeeType3ERule;
 
         [HideInInspector] public float maxSpeed;
         [HideInInspector] public float maxAngularSpeed;
@@ -65,13 +67,25 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            yeeType2ERule.SetRule(ruleSettings);
+            if (yeeTypeType == YeeTypeType.YeeType2E)
+            {
+                yeeType2ERule.SetRule(ruleSettings);
+            }
+            else if (yeeTypeType == YeeTypeType.YeeType3E)
+            {
+                yeeType3ERule.SetRule(ruleSettings);
+            }
         }
 
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
+            if (yeeTypeType == YeeTypeType.YeeType2E)
+            {
+            }
+
             this.yeeType2E = this.aset.yeeType2E;
+            this.yeeType3E = this.aset.yeeType3E;
             this.name = this.aset.agentName;
             this.SetColor(this.aset.color);
             this.SetPosition(this.aset.position);
@@ -99,7 +113,7 @@ namespace CAG2D_05.Scripts
             this.effectorCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
             this.ruleCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
         }
-        
+
 
         void Awake()
         {
@@ -115,7 +129,7 @@ namespace CAG2D_05.Scripts
             this.ruleCircleCollider2D =
                 this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
-            this.yeeType2ERule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeType2ERule>();
+            this.yeeTypeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeTypeRule>();
 
             Initialize(this.aset, this.rset);
         }

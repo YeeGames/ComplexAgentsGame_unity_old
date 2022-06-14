@@ -6,8 +6,8 @@ namespace CAG2D_05.Scripts.Rules
     [CreateAssetMenu]
     public class RuleSettings : ScriptableObject
     {
-        public YeeType yeeType;
-        public Rules rules;
+        public YeeTypeType yeeTypeType;
+        public IYeeTypeRule yeeTypeRule;
         // public bool isEnableForce;
         public float forceStrength = 10f; // 力场强度；
         public float forceEffectiveRadius = 2.5f; // 力场影响半径；
