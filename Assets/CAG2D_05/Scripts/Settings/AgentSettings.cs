@@ -1,7 +1,6 @@
-using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts.Settings
+namespace CAG2D_05.Scripts
 {
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject
@@ -99,12 +98,12 @@ namespace CAG2D_05.Scripts.Settings
         public float physicsMaterialBounciness = 1.0f;
 
         /// <summary>
-        /// Yee 2元素类型之性质
+        /// YeeFamily 2元素类型之性质
         /// </summary>
         public YeeType2E yeeType2E = YeeType2E.Yang;
 
         /// <summary>
-        /// Yee 3元素类型之性质
+        /// YeeFamily 3元素类型之性质
         /// </summary>
         public YeeType3E yeeType3E = YeeType3E.Rock;
 

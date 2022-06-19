@@ -1,11 +1,9 @@
-using CAG2D_05.Scripts.Settings;
-using CAG2D_05.Scripts.YeeTypes;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts.Rules
+namespace CAG2D_05.Scripts
 {
-    public class YeeType2ERule : MonoBehaviour,IYeeTypeRule
+    public class Yee2ERule : YeeRule
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -25,20 +23,20 @@ namespace CAG2D_05.Scripts.Rules
         {
         }
 
-        public void Initialize(RuleSettings ruleSettings)
+        protected override void Initialize(RuleSettings ruleSettings)
         {
             SetRule(ruleSettings);
         }
 
-        public YeeTypeRuleType GetRuleType()
+        public YeeTypeFamily GetTypeOfYeeTypeRule()
         {
-            return YeeTypeRuleType.YeeType2ERule;
+            return YeeTypeFamily.YeeType2E;
         }
 
-        public void SetRule(RuleSettings ruleSettings)
+        protected override void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
-            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
+            // this.rset = this.transform.GetComponent<YeeTypeFamily>();
             this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
             this.forceStrength = this.rset.forceStrength;
             this.expCoefficient = this.rset.expCoefficient;
@@ -47,8 +45,8 @@ namespace CAG2D_05.Scripts.Rules
 
         }
         
-        private void ApplyBehaviorRule(Rigidbody2D rb1, Vector2 pos1, YeeType2E t1, Rigidbody2D rb2, Vector2 pos2,
-            YeeType2E t2)
+        protected void ApplyBehaviorRule(Rigidbody2D rb1, Vector2 pos1, YeeType t1, Rigidbody2D rb2, Vector2 pos2,
+            YeeType t2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
@@ -83,8 +81,8 @@ namespace CAG2D_05.Scripts.Rules
             this.ruleCircleCollider2D = GameObject.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             Initialize(rset);
         }
-        
-        private void OnTriggerStay2D(Collider2D otherCollider2D)
+
+        public override void OnTriggerStay2D(Collider2D otherCollider2D)
         {
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;

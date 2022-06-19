@@ -1,15 +1,9 @@
-using System.Windows.Forms;
-using CAG2D_05.Scripts.Rules;
-using CAG2D_05.Scripts.Settings;
-using CAG2D_05.Scripts.YeeTypes;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-
 
 namespace CAG2D_05.Scripts
 {
-    public class YeeType3ERule : MonoBehaviour,IYeeTypeRule
+    public class Yee3ERule : YeeRule /*,IYeeRule*/
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -19,7 +13,7 @@ namespace CAG2D_05.Scripts
         private float forceStrength = 0f;
 
         private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
-        private YeeType3ERule yeeType3ERule;
+        private Yee3ERule yee3ERule;
         private float expCoefficient = 2f;
         private CircleCollider2D ruleCircleCollider2D;
 
@@ -70,7 +64,7 @@ namespace CAG2D_05.Scripts
         public void SetRuleSettings(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
-            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
+            // this.rset = this.transform.GetComponent<YeeTypeFamily>();
             this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
             this.forceStrength = this.rset.forceStrength;
             this.expCoefficient = this.rset.expCoefficient;
@@ -96,7 +90,7 @@ namespace CAG2D_05.Scripts
             YeeTypeInter3E yeeTypeInter3E = yeeType3ERuleAdjecentMatrix[(int) thisYeeType3E, (int) thatYeeType3E];
             return yeeTypeInter3E;
         }
-        
+
 
         /// <summary>
         /// 应用行为规则
@@ -106,7 +100,7 @@ namespace CAG2D_05.Scripts
         /// <param name="pos1">我方agent位置</param>
         /// <param name="rb2">对方agent刚体</param>
         /// <param name="pos2">对方agent位置</param>
-        private void ApplyBehaviorRule(YeeTypeInter3E yeeTypeInter3E, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
+        protected void ApplyBehaviorRule(YeeTypeInter3E yeeTypeInter3E, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
             Vector2 pos2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
@@ -149,10 +143,10 @@ namespace CAG2D_05.Scripts
         }
 
 
-        public void SetRule(RuleSettings ruleSettings)
+        protected override void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
-            // this.rset = this.transform.GetComponent<YeeTypeRuleType>();
+            // this.rset = this.transform.GetComponent<YeeTypeFamily>();
             this.ruleCircleCollider2D.radius = this.rset.forceEffectiveRadius;
             this.forceStrength = this.rset.forceStrength;
             this.expCoefficient = this.rset.expCoefficient;
@@ -160,7 +154,7 @@ namespace CAG2D_05.Scripts
             Debug.Log(this.rset.direction);
         }
 
-        private void OnTriggerStay2D(Collider2D otherCollider2D)
+        public override void OnTriggerStay2D(Collider2D otherCollider2D)
         {
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;
@@ -171,11 +165,5 @@ namespace CAG2D_05.Scripts
             this.yeeTypeInter3E = GetInterRule(thisYeeType3E, thatYeeType3E);
             ApplyBehaviorRule(this.yeeTypeInter3E, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
         }
-
-        public YeeTypeRuleType GetRuleType()
-        {
-            return YeeTypeRuleType.YeeType3ERule;
-        }
-
     }
 }

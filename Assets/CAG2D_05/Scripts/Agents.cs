@@ -1,6 +1,4 @@
-using CAG2D_05.Scripts.Rules;
 using CAG2D_05.Scripts.Settings;
-using CAG2D_05.Scripts.YeeTypes;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,7 +12,7 @@ namespace CAG2D_05.Scripts
         public float radiusSize = 30f;
         public YeeType2E[] yeeTypes = {YeeType2E.Yang, YeeType2E.Yin};
         public Color[] typesColors = {Color.red, Color.blue};
-        private YeeType2ERule yeeType2ERule;
+        private Yee2ERule yee2ERule;
 
         private void Awake()
         {

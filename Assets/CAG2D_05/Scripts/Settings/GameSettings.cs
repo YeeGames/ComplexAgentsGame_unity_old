@@ -1,8 +1,7 @@
-using CAG2D_05.Scripts.Rules;
-using CAG2D_05.Scripts.YeeTypes;
+using CAG2D_05.Scripts;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts.Settings
+namespace CAG2D_05.Scripts
 {
     [CreateAssetMenu]
     public class GameSettings : ScriptableObject
@@ -45,11 +44,6 @@ namespace CAG2D_05.Scripts.Settings
         /// <summary>
         /// Yee类型
         /// </summary>
-        public YeeTypeType yeeTypeType = YeeTypeType.YeeType3E;
-
-        /// <summary>
-        /// Yee规则类型
-        /// </summary>
-        public YeeTypeRuleType yeeTypeRuleType = YeeTypeRuleType.YeeType3ERule;
+        public YeeTypeFamily yeeTypeFamily = YeeTypeFamily.YeeType3E;
     }
 }
