@@ -43,12 +43,12 @@ namespace CAG2D_05.Scripts
         protected abstract void SetRule(RuleSettings ruleSettings);
 
 
-        protected virtual void ApplyBehaviorRule(Rigidbody2D rb1, Vector2 pos1, YeeType t1, Rigidbody2D rb2,
-            Vector2 pos2,
-            YeeType t2)
+        protected void ApplyBehaviorRule()
         {
         }
 
+        // protected abstract void ApplyBehaviorRule();
+        
         private void Awake()
         {
             this.rset = this.ruleSettings;

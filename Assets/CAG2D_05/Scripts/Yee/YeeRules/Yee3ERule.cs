@@ -135,6 +135,11 @@ namespace CAG2D_05.Scripts
         }
 
 
+        protected void ApplyBehaviorRule()
+        {
+            throw new System.NotImplementedException();
+        }
+
         private void Awake()
         {
             this.rset = this.ruleSettings;
