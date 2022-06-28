@@ -1,4 +1,4 @@
-using CAG2D_05.Scripts.Settings;
+using CAG2D_05.Scripts;
 using UnityEngine;
 
 namespace CAG2D_05.Scripts
@@ -15,7 +15,7 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public AgentSettings aset;
         [HideInInspector] public RuleSettings rset;
 
-        [HideInInspector] public Yee.YeeTypes.YeeTypeFamily yeeTypeFamily;
+        [HideInInspector] public YeeTypeFamily yeeTypeFamily;
         [HideInInspector] public YeeType2E yeeType2E;
         [HideInInspector] public YeeType3E yeeType3E;
 
@@ -65,11 +65,11 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            if (yeeTypeFamily == Yee.YeeTypes.YeeTypeFamily.YeeType2E)
+            if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
             {
                 yee2ERule.SetRule(ruleSettings);
             }
-            else if (yeeTypeFamily == Yee.YeeTypes.YeeTypeFamily.YeeType3E)
+            else if (yeeTypeFamily == YeeTypeFamily.YeeType3E)
             {
                 yeeType3ERule.SetRule(ruleSettings);
             }
@@ -78,7 +78,7 @@ namespace CAG2D_05.Scripts
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            if (yeeTypeFamily == Yee.YeeTypes.YeeTypeFamily.YeeType2E)
+            if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
             {
             }
 
