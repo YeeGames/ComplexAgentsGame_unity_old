@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Game Settings
   m_EditorClassIdentifier: 
   dimention: 2
-  numAgent: 200
+  numAgent: 20
   pauseTime: 0
   wallRadiu: 100
   wallWidth: 100
   physicsMaterialsFriction: 0
   physicsMaterialsBounciness: 1
+  yeeTypeFamily: 1

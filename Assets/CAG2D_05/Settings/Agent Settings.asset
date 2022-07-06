@@ -13,24 +13,25 @@ MonoBehaviour:
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
   agentBaseName: agent
-  agentName: agentYin49
+  agentName: agent65536199
   isMovable: 1
-  color: {r: 0, g: 0, b: 1, a: 1}
+  color: {r: 1, g: 0, b: 0, a: 1}
   mass: 1
   size: 10
   linearDrag: 0.1
   angularDrag: 0.1
   collisionRadius: 0.6
-  position: {x: 13.187319, y: 8.667028}
-  velocity: {x: 0.7713636, y: 0.5047464}
+  position: {x: -26.578691, y: -13.047283}
+  velocity: {x: -0.0734379, y: 0.7009096}
   maxSpeed: 10
   maxAngularSpeed: 10
-  speed: 0
+  initSpeed: 0
   magnitudeForce: 0
   magnitudeForceRadius: 0
   physicsMaterialFriction: 0.1
   physicsMaterialBounciness: 0.9
-  yeeType2E: 1
+  yeeType2E: 0
+  yeeType3E: 0
   energy: 1
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}

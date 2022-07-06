@@ -1,4 +1,3 @@
-using CAG2D_05.Scripts.Settings;
 using UnityEngine;
 
 namespace CAG2D_05.Scripts

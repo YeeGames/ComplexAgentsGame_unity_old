@@ -1,5 +1,7 @@
 // using CAG2D_05.Scripts.Yee;
 
+using UnityEngine;
+
 namespace CAG2D_05.Scripts
 {
     public class YeeTypeChooser
@@ -8,17 +10,17 @@ namespace CAG2D_05.Scripts
 
         private static YeeRule yeeRule;
 
-        public static YeeRule ChooseYeeType(YeeTypeFamily yeeTypeFamily)
+        public static YeeRule ChooseYeeType(GameObject gameObject,YeeTypeFamily yeeTypeFamily)
         {
             switch (yeeTypeFamily)
             {
                 case YeeTypeFamily.YeeType2E:
-                    yeeRule = new Yee2ERule();
-                    // yeeType = YeeTypeFamily.Yee2ERule;
+                    yeeRule = gameObject.AddComponent<YeeRule2E>();
+                    // yeeRule = new YeeRule2E();
                     break;
                 case YeeTypeFamily.YeeType3E:
-                    yeeRule = new Yee3ERule();
-                    // yeeType = YeeTypeFamily.Yee3ERule;
+                    yeeRule = gameObject.AddComponent<YeeRule3E>();
+                    // yeeRule = new YeeRule3E();
                     break;
                 default:
                     break;

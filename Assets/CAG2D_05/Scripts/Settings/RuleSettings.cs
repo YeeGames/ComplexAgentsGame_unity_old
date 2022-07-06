@@ -3,10 +3,11 @@ using UnityEngine;
 namespace CAG2D_05.Scripts
 {
     [CreateAssetMenu]
+    
     public class RuleSettings : ScriptableObject
     {
-        public YeeFamily yeeTypeFamily;
-        public YeeRule yeeRule;
+        public YeeTypeFamily yeeTypeFamily;
+        // public YeeRule yeeRule;
         // public bool isEnableForce;
         public float forceStrength = 10f; // 力场强度；
         public float forceEffectiveRadius = 2.5f; // 力场影响半径；

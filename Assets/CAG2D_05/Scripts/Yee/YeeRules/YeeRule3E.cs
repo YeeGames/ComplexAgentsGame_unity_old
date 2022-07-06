@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class Yee3ERule : YeeRule /*,IYeeRule*/
+    public class YeeRule3E : YeeRule /*,IYeeRule*/
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -13,7 +13,7 @@ namespace CAG2D_05.Scripts
         private float forceStrength = 0f;
 
         private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
-        private Yee3ERule yee3ERule;
+        private YeeRule3E _yeeRule3E;
         private float expCoefficient = 2f;
         private CircleCollider2D ruleCircleCollider2D;
 
@@ -148,7 +148,7 @@ namespace CAG2D_05.Scripts
         }
 
 
-        protected override void SetRule(RuleSettings ruleSettings)
+        public override void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
             // this.rset = this.transform.GetComponent<YeeTypeFamily>();

@@ -45,11 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSettings: {fileID: 11400000, guid: 2cf5c513838cb4e59a8281b1fb0cacc1, type: 2}
-  agentSettings: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
-  ruleSettings: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
   agent: {fileID: 7145108475166731669, guid: 4554401fd90f0425499e1720dd02b071, type: 3}
   radiusSize: 30
-  yeeTypes: 00000100
+  yeeTypes: 000000000100000002000000
   typesColors:
   - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}

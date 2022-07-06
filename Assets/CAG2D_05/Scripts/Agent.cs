@@ -8,19 +8,31 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public ScriptableObject agentSettingsScriptableObject;
         [HideInInspector] public ScriptableObject ruleSettingsScriptableObject;
 
+        /// <summary>
+        /// 设置Agent设置项
+        /// </summary>
         public AgentSettings agentSettings;
 
+        /// <summary>
+        /// 设定规则设置项
+        /// </summary>
         public RuleSettings ruleSettings;
+
+        /// <summary>
+        /// 设置Yee类型族
+        /// </summary>
+        [HideInInspector] public YeeTypeFamily yeeTypeFamily;
 
         [HideInInspector] public AgentSettings aset;
         [HideInInspector] public RuleSettings rset;
 
-        [HideInInspector] public YeeTypeFamily yeeTypeFamily;
         [HideInInspector] public YeeType2E yeeType2E;
         [HideInInspector] public YeeType3E yeeType3E;
 
-        [HideInInspector] public YeeTypeInter3E yeeTypeInter3E;
+        // [HideInInspector] public YeeTypeInter3E yeeTypeInter3E;
         [HideInInspector] public YeeRule yeeRule;
+        // [HideInInspector] public YeeRule2E yeeRule2E;
+        // [HideInInspector] public YeeRule3E yeeRule3E;
 
 
         [HideInInspector] public SpriteRenderer spriteRenderer;
@@ -30,9 +42,8 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public CircleCollider2D effectorCircleCollider2D;
         [HideInInspector] public CircleCollider2D ruleCircleCollider2D;
         [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
+        [HideInInspector] public GameObject agentRuleEffector;
 
-        [HideInInspector] public Yee2ERule yee2ERule;
-        [HideInInspector] public Yee2ERule yeeType3ERule;
 
         [HideInInspector] public float maxSpeed;
         [HideInInspector] public float maxAngularSpeed;
@@ -65,22 +76,24 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
-            {
-                yee2ERule.SetRule(ruleSettings);
-            }
-            else if (yeeTypeFamily == YeeTypeFamily.YeeType3E)
-            {
-                yeeType3ERule.SetRule(ruleSettings);
-            }
+            this.yeeRule = YeeTypeChooser.ChooseYeeType(this.agentRuleEffector,this.yeeTypeFamily);
+            yeeRule.SetRule(ruleSettings);
+            // if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
+            // {
+            //     yeeRule.SetRule(ruleSettings);
+            // }
+            // else if (yeeTypeFamily == YeeTypeFamily.YeeType3E)
+            // {
+            //     yeeRule.SetRule(ruleSettings);
+            // }
         }
 
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
-            {
-            }
+            // if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
+            // {
+            // }
 
             this.yeeType2E = this.aset.yeeType2E;
             this.yeeType3E = this.aset.yeeType3E;
@@ -98,7 +111,7 @@ namespace CAG2D_05.Scripts
             this.rigidbody2D.angularDrag = this.aset.angularDrag;
 
 
-            // 设置2D物理材质。
+            // 自定义2D物理材质。
             this.physicsMaterial2D = new PhysicsMaterial2D(); // 自行新建2D物理材质
             if (this.physicsMaterial2D != null)
             {
@@ -127,7 +140,8 @@ namespace CAG2D_05.Scripts
             this.ruleCircleCollider2D =
                 this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
-            this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>();
+            this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>(); // HACK 无用
+            this.agentRuleEffector = GameObject.Find("AgentRuleEffector");
 
             Initialize(this.aset, this.rset);
         }

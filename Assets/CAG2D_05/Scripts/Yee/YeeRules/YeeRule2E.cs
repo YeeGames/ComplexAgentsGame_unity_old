@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class Yee2ERule : YeeRule
+    public class YeeRule2E : YeeRule
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -37,7 +37,7 @@ namespace CAG2D_05.Scripts
             return YeeTypeFamily.YeeType2E;
         }
 
-        protected override void SetRule(RuleSettings ruleSettings)
+        public override void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
             // this.rset = this.transform.GetComponent<YeeTypeFamily>();

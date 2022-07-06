@@ -1,11 +1,10 @@
 // using CAG2D_05.Scripts.Rules;
 
 using UnityEngine;
-using CAG2D_05.Scripts;
 
 namespace CAG2D_05.Scripts
 {
-    public abstract class YeeRule : MonoBehaviour
+    public class YeeRule : MonoBehaviour
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
@@ -26,8 +25,8 @@ namespace CAG2D_05.Scripts
         private GameSettings gameSettings;
         private YeeTypeFamily yeeTypeFamily;
 
-        private Yee2ERule yee2ERule;
-        private Yee3ERule yee3ERule;
+        private YeeRule2E _yeeRule2E;
+        private YeeRule3E _yeeRule3E;
 
         // public YeeTypeFamily GetTypeOfYeeTypeRule()
         // {
@@ -40,7 +39,10 @@ namespace CAG2D_05.Scripts
         }
 
 
-        protected abstract void SetRule(RuleSettings ruleSettings);
+        public virtual void SetRule(RuleSettings ruleSettings)
+        {
+            
+        }
 
 
         protected void ApplyBehaviorRule()
@@ -56,6 +58,9 @@ namespace CAG2D_05.Scripts
             Initialize(rset);
         }
 
-        public abstract void OnTriggerStay2D(Collider2D otherCollider2D);
+        public virtual void OnTriggerStay2D(Collider2D otherCollider2D)
+        {
+            
+        }
     }
 }

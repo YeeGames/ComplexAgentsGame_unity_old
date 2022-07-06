@@ -23,22 +23,22 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public bool isMovable = true;
 
         /// <summary>
-        /// 颜色
+        /// 颜色。默认白色
         /// </summary>
         public Color color = Color.white;
 
         /// <summary>
-        /// 质量
+        /// 质量。默认1f。
         /// </summary>
         public float mass = 1f;
 
         /// <summary>
-        /// 尺寸
+        /// 尺寸。默认10f。
         /// </summary>
         public float size = 10f;
 
         /// <summary>
-        /// 线性阻力
+        /// 线性阻力，默认0.
         /// </summary>
         public float linearDrag = 0;
 
