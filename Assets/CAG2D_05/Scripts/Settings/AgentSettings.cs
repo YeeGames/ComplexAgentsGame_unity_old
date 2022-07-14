@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CAG2D_05.Scripts
@@ -98,14 +100,23 @@ namespace CAG2D_05.Scripts
         public float physicsMaterialBounciness = 1.0f;
 
         /// <summary>
-        /// YeeFamily 2元素类型之性质
+        /// Yee类型族
         /// </summary>
-        public YeeType2E yeeType2E = YeeType2E.Yang;
+        public YeeFamily yeeFamily;
+
+        public string YeeType;
+
+        public string YeeInterType;
 
         /// <summary>
-        /// YeeFamily 3元素类型之性质
+        /// Yee 2元素类型之性质
         /// </summary>
-        public YeeType3E yeeType3E = YeeType3E.Rock;
+        // public Yee2ETypeEnum yee2ETypeEnum = Yee2ETypeEnum.Yang;
+
+        /// <summary>
+        /// Yee 3元素类型之性质
+        /// </summary>
+        // public Yee3ETypeEnum yee3ETypeEnum = Yee3ETypeEnum.Rock;
 
         [HideInInspector] public float energy = 1f;
         [HideInInspector] public Vector2 acceleration;

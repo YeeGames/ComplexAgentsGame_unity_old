@@ -8,8 +8,8 @@ namespace CAG2D_05.Scripts
     {
         private RuleSettings ruleSettings;
         private RuleSettings rset;
-        private YeeType3E yeeType3E;
-        private YeeTypeInter3E yeeTypeInter3E;
+        private Yee3ETypeEnum _yee3ETypeEnum;
+        private Yee3EInterTypeEnum _yee3EInterTypeEnum;
 
         private float forceStrength = 0f;
 
@@ -23,15 +23,15 @@ namespace CAG2D_05.Scripts
         private Transform tf2;
 
         private GameSettings gameSettings;
-        private YeeTypeFamily yeeTypeFamily;
+        private YeeTypeFamilyEnum _yeeTypeFamily;
 
-        private YeeRule2E _yeeRule2E;
-        private YeeRule3E _yeeRule3E;
+        private Yee2ERule _yee2ERule;
+        private Yee3ERule _yee3ERule;
 
-        // public YeeTypeFamily GetTypeOfYeeTypeRule()
+        // public YeeTypeFamilyEnum GetTypeOfYeeTypeRule()
         // {
-        //     this. = YeeTypeChooser.ChooseYeeType(gameSettings.yeeTypeFamily);
-        //     return this.yeeTypeFamily;
+        //     this. = YeeTypeChooser.ChooseYeeRule(gset.yeeFamily);
+        //     return this.yeeFamily;
         // }
         protected virtual void Initialize(RuleSettings ruleSettings)
         {

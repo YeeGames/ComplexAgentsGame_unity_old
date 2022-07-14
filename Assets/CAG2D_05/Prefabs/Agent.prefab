@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4302173749663084511}
   - component: {fileID: 2728862409551284498}
-  - component: {fileID: 8018880494398205417}
-  - component: {fileID: 1370579464569097748}
-  - component: {fileID: 7181441488510659965}
+  - component: {fileID: 8558305441234914220}
+  - component: {fileID: 6205253882393355350}
   m_Layer: 0
   m_Name: AgentRuleEffector
   m_TagString: Untagged
@@ -51,7 +50,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
---- !u!114 &8018880494398205417
+--- !u!114 &8558305441234914220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38aca2346f64859b528e3298b8c2b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1370579464569097748
+--- !u!114 &6205253882393355350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,19 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2848418943701166495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddd82ceb32c846b58e9035e2a1c3f9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7181441488510659965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2848418943701166495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5457cf8ab64ce68e6b6b837b9db058, type: 3}
+  m_Script: {fileID: 11500000, guid: 752abdb20bcb48e9af3c898f7367505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3869045930350941929
@@ -230,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722038911113815791}
   - component: {fileID: 8004930575998053242}
-  - component: {fileID: 7145108475166731669}
+  - component: {fileID: 486444529336302277}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -278,7 +265,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7145108475166731669
+--- !u!114 &486444529336302277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,16 +280,13 @@ MonoBehaviour:
   agentSettingsScriptableObject: {fileID: 0}
   ruleSettingsScriptableObject: {fileID: 0}
   agentSettings: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
+  gameSettings: {fileID: 11400000, guid: 2cf5c513838cb4e59a8281b1fb0cacc1, type: 2}
   ruleSettings: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
-  yeeTypeFamily: 1
+  yeeType: []
   aset: {fileID: 0}
   rset: {fileID: 0}
-  yeeType2E: 0
-  yeeType3E: 0
-  yeeTypeInter3E: 0
   yeeRule: {fileID: 0}
-  yeeRule2E: {fileID: 0}
-  yeeRule3E: {fileID: 0}
+  Yee: {fileID: 0}
   spriteRenderer: {fileID: 0}
   rigidbody2D: {fileID: 0}
   pointEffector: {fileID: 0}
@@ -310,6 +294,7 @@ MonoBehaviour:
   effectorCircleCollider2D: {fileID: 0}
   ruleCircleCollider2D: {fileID: 0}
   physicsMaterial2D: {fileID: 0}
+  agentRuleEffector: {fileID: 0}
   maxSpeed: 0
   maxAngularSpeed: 0
 --- !u!1 &8664559872414916649

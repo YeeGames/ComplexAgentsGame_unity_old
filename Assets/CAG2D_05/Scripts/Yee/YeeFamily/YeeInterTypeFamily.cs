@@ -1,11 +1,8 @@
 namespace CAG2D_05.Scripts
 {
-    /// <summary>
-    /// Yee联合类型族枚举
-    /// </summary>
-    public enum YeeInterTypeFamily
+    public class YeeInterTypeFamily
     {
-        YeeInter2EType,
-        YeeInter3EType,
+        public YeeInterTypeFamilyEnum YeeInterTypeFamilyEnum;
+        public YeeInterType YeeInterType;
     }
 }

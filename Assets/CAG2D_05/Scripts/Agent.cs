@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CAG2D_05.Scripts;
 using UnityEngine;
 
@@ -11,29 +12,32 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// 设置Agent设置项
         /// </summary>
-        public AgentSettings agentSettings;
+        public AgentSettings aset;
+
+        public GameSettings gset;
 
         /// <summary>
         /// 设定规则设置项
         /// </summary>
-        public RuleSettings ruleSettings;
+        public RuleSettings rset;
 
         /// <summary>
         /// 设置Yee类型族
         /// </summary>
-        [HideInInspector] public YeeTypeFamily yeeTypeFamily;
+        [HideInInspector] public YeeFamily yeeFamily;
 
-        [HideInInspector] public AgentSettings aset;
-        [HideInInspector] public RuleSettings rset;
+        // [HideInInspector] public AgentSettings aset;
+        // [HideInInspector] public RuleSettings rset;
 
-        [HideInInspector] public YeeType2E yeeType2E;
-        [HideInInspector] public YeeType3E yeeType3E;
+        [HideInInspector] public Yee2ETypeEnum yee2ETypeEnum;
+        [HideInInspector] public Yee3ETypeEnum yee3ETypeEnum;
 
-        // [HideInInspector] public YeeTypeInter3E yeeTypeInter3E;
+        // [HideInInspector] public Yee3EInterTypeEnum yee3EInterTypeEnum;
         [HideInInspector] public YeeRule yeeRule;
-        // [HideInInspector] public YeeRule2E yeeRule2E;
-        // [HideInInspector] public YeeRule3E yeeRule3E;
+        // [HideInInspector] public Yee2ERule _yee2ERule;
+        // [HideInInspector] public Yee3ERule Yee3ERule;
 
+        [HideInInspector] public Yee Yee;
 
         [HideInInspector] public SpriteRenderer spriteRenderer;
         [HideInInspector] public new Rigidbody2D rigidbody2D;
@@ -47,6 +51,7 @@ namespace CAG2D_05.Scripts
 
         [HideInInspector] public float maxSpeed;
         [HideInInspector] public float maxAngularSpeed;
+        
 
         public void SetPosition(Vector2 pos)
         {
@@ -76,27 +81,27 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            this.yeeRule = YeeTypeChooser.ChooseYeeType(this.agentRuleEffector,this.yeeTypeFamily);
+            this.Yee = YeeTypeChooser.ChooseYee(this.agentRuleEffector,this.gset.yeeFamily);
             yeeRule.SetRule(ruleSettings);
-            // if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
+            // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
             // {
-            //     yeeRule.SetRule(ruleSettings);
+            //     yeeRule.SetRule(rset);
             // }
-            // else if (yeeTypeFamily == YeeTypeFamily.YeeType3E)
+            // else if (yeeFamily == YeeTypeFamilyEnum.YeeType3E)
             // {
-            //     yeeRule.SetRule(ruleSettings);
+            //     yeeRule.SetRule(rset);
             // }
         }
+
 
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            // if (yeeTypeFamily == YeeTypeFamily.YeeType2E)
+            // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
             // {
             // }
 
-            this.yeeType2E = this.aset.yeeType2E;
-            this.yeeType3E = this.aset.yeeType3E;
+            this.yeeFamily = this.aset.yeeFamily;
             this.name = this.aset.agentName;
             this.SetColor(this.aset.color);
             this.SetPosition(this.aset.position);
@@ -128,8 +133,8 @@ namespace CAG2D_05.Scripts
 
         void Awake()
         {
-            this.aset = this.agentSettings;
-            this.rset = this.ruleSettings;
+            // this.aset = this.agentSettings;
+            // this.rset = this.ruleSettings;
 
             this.rigidbody2D = GetComponent<Rigidbody2D>();
             this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -149,7 +154,7 @@ namespace CAG2D_05.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            // Initialize(this.agentSettings,this.ruleSettings);
+            // Initialize(this.aset,this.rset);
         }
 
         // Update is called once per frame

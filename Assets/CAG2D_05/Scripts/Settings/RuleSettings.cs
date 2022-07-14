@@ -6,7 +6,10 @@ namespace CAG2D_05.Scripts
     
     public class RuleSettings : ScriptableObject
     {
-        public YeeTypeFamily yeeTypeFamily;
+        /// <summary>
+        /// Yee类型族
+        /// </summary>
+        public YeeTypeFamilyEnum yeeTypeFamily;
         // public YeeRule yeeRule;
         // public bool isEnableForce;
         public float forceStrength = 10f; // 力场强度；

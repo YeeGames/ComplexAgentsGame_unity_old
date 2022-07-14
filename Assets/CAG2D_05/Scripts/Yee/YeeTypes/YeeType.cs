@@ -1,12 +1,13 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace CAG2D_05.Scripts
 {
-    /// <summary>
-    /// Yee类型族
-    /// </summary>
     public class YeeType
     {
-        private YeeTypeFamily yeeType;
-        private YeeType2E yeeType2E;
-        private YeeType3E yeeType3E;
+        public Yee2ETypeEnum Yee2ETypeEnum;
+        public Yee3ETypeEnum Yee3ETypeEnum;
+
+
     }
 }

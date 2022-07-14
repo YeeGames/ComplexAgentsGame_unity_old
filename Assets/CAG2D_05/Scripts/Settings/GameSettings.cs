@@ -44,6 +44,6 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// Yee类型
         /// </summary>
-        public YeeTypeFamily yeeTypeFamily = YeeTypeFamily.YeeType3E;
+        public YeeFamilyEnum yeeFamily = YeeFamilyEnum.Yee3E;
     }
 }

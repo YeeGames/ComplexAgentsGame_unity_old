@@ -3,10 +3,10 @@
 // namespace CAG2D_05.Scripts
 // {
 //     
-//     public YeeTypeInter3E GetInterRule();
+//     public Yee3EInterTypeEnum GetInterRule();
 //     public interface IYeeRule
 //     {
-//         public YeeTypeFamily GetTypeOfYeeTypeRule();
-//         public void SetRule(RuleSettings ruleSettings);
+//         public YeeTypeFamilyEnum GetTypeOfYeeTypeRule();
+//         public void SetRule(RuleSettings rset);
 //     }
 // }
