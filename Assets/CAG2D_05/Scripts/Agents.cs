@@ -28,7 +28,7 @@ namespace CAG2D_05.Scripts
         {
             Yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamily);
 
-            for (var t = 0; t < Yee.YeeFamily.NumElement; t++) // 遍历每一类yeeType，以生成agent
+            for (var t = 0; t < YeeFamily.NumElement; t++) // 遍历每一类yeeType，以生成agent
             {
                 for (var i = 0; i < gameSettings.numAgent; i++) // 遍历单类yeeType之所有预定数量，以生成agent
                 {

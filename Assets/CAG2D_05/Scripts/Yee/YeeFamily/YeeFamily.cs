@@ -5,14 +5,18 @@ namespace CAG2D_05.Scripts
 {
     public class YeeFamily
     {
-        public int NumElement;
+        public const int NumElement = 0;
         public Color[] Colors = {Color.white};
         public Dictionary<string, object> YeeFamilyDict = new Dictionary<string, object>();
         public List<object> YeeFamily_list = new List<object>();
+
         public Dictionary<string, object> YeeType_dict = new Dictionary<string, object>();
+
         // public List<object> YeeType = new List<object>();
         public List<string> YeeType = new List<string>();
+
         public Dictionary<string, object> YeeInterType_dict = new Dictionary<string, object>();
+
         // public List<object> YeeInterType = new List<object>();
         public List<string> YeeInterType = new List<string>();
         public Dictionary<string, object> YeeRule_dict = new Dictionary<string, object>();
@@ -22,7 +26,7 @@ namespace CAG2D_05.Scripts
 
         public YeeFamily()
         {
-            NumElement = 0;
+            // NumElement = 0;
             YeeType.Add("");
             YeeType_dict.Add("YeeType", YeeType);
             YeeInterType.Add("");

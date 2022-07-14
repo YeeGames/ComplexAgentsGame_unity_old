@@ -4,6 +4,8 @@ namespace CAG2D_05.Scripts
 {
     public class Yee3E : YeeFamily
     {
+        public new const int NumElement = 3;
+
         public Color[] Colors = {Color.red, Color.yellow, Color.blue};
         // public Dictionary<string, object> Yee3EDict = new Dictionary<string, object>();
         // public List<object> Yee3EList = new List<object>();
@@ -16,7 +18,7 @@ namespace CAG2D_05.Scripts
 
         public Yee3E()
         {
-            NumElement = 3;
+            // NumElement=3;
             // YeeType.Add(Yee3ETypeEnum.Rock);
             // YeeType.Add(Yee3ETypeEnum.Scissors);
             // YeeType.Add(Yee3ETypeEnum.Cloth);

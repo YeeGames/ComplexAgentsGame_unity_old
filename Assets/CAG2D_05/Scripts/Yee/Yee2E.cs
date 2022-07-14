@@ -1,11 +1,11 @@
-
 using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
     public class Yee2E : YeeFamily
     {
-        // public string YeeRule { get; set; }
+        public new const int NumElement = 2;
+
         public Color[] Colors = {Color.red, Color.blue};
         // public Dictionary<string, object> Yee2EDict = new Dictionary<string, object>();
         // public List<object> Yee2EList = new List<object>();
@@ -17,9 +17,9 @@ namespace CAG2D_05.Scripts
         // public List<string> Yee2ERule = new List<string>();
 
         public Yee2ETypeEnum Yee2ETypeEnum;
+
         public Yee2E()
         {
-            NumElement = 2;
             // YeeType.Add(Yee2ETypeEnum.Yang);
             // YeeType.Add(Yee2ETypeEnum.Yin);
             YeeType.Add("Yang");
