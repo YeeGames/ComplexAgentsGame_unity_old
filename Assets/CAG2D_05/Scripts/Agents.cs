@@ -26,7 +26,7 @@ namespace CAG2D_05.Scripts
 
         private void Awake()
         {
-            Yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamily);
+            Yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
 
             for (var t = 0; t < YeeFamily.NumElement; t++) // 遍历每一类yeeType，以生成agent
             {

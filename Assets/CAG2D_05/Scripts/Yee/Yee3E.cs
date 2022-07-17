@@ -25,7 +25,7 @@ namespace CAG2D_05.Scripts
             YeeType.Add("Rock");
             YeeType.Add("Scissors");
             YeeType.Add("Cloth");
-            YeeType_dict.Add("YeeType", YeeType);
+            YeeType_dict.Add("YeeType", YeeType); //BUG
             // YeeInterType.Add(Yee3EInterTypeEnum.Self);
             // YeeInterType.Add(Yee3EInterTypeEnum.Ke);
             // YeeInterType.Add(Yee3EInterTypeEnum.BeKe);

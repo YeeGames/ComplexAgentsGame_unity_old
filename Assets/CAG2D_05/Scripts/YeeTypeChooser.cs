@@ -66,7 +66,7 @@ namespace CAG2D_05.Scripts
                     // _yeeListClass = gameObject.GetComponent<Yee2EDict>();
                     break;
                 case YeeFamilyEnum.Yee3E:
-                    _yee.YeeFamily = new Yee3E();
+                    _yee.YeeFamily = new Yee3E(); //BUG
                     // _yeeListClass = gameObject.GetComponent<Yee3EDict>();
                     break;
                 default:
