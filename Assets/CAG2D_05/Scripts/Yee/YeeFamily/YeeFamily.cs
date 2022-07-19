@@ -3,39 +3,39 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class YeeFamily
+    public class YeeFamily : MonoBehaviour
     {
-        public const int NumElement = 0;
-        public Color[] Colors = {Color.white};
-        public Dictionary<string, object> YeeFamilyDict = new Dictionary<string, object>();
-        public List<object> YeeFamily_list = new List<object>();
+        [HideInInspector] public int NumElement = 3;
+        [HideInInspector] public Color[] Colors = {Color.white};
+        [HideInInspector] public Dictionary<string, object> YeeFamilyDict = new Dictionary<string, object>();
+        [HideInInspector] public List<object> YeeFamily_list = new List<object>();
 
-        public Dictionary<string, object> YeeType_dict = new Dictionary<string, object>();
+        [HideInInspector] public Dictionary<string, List<string>> YeeType_dict = new Dictionary<string, List<string>>();
 
-        // public List<object> YeeType = new List<object>();
-        public List<string> YeeType = new List<string>();
+        // [HideInInspector] public List<object> YeeTypes = new List<object>();
+        [HideInInspector] public List<string> YeeTypes = new List<string>();
 
-        public Dictionary<string, object> YeeInterType_dict = new Dictionary<string, object>();
+        [HideInInspector] public Dictionary<string, object> YeeInterType_dict = new Dictionary<string, object>();
 
-        // public List<object> YeeInterType = new List<object>();
-        public List<string> YeeInterType = new List<string>();
-        public Dictionary<string, object> YeeRule_dict = new Dictionary<string, object>();
+        // [HideInInspector] public List<object> YeeInterTypes = new List<object>();
+        [HideInInspector] public List<string> YeeInterTypes = new List<string>();
+        [HideInInspector] public Dictionary<string, object> YeeRule_dict = new Dictionary<string, object>();
 
-        public YeeRule YeeRule;
-        // public List<string> YeeRule = new List<string>();
+        [HideInInspector] public YeeRule YeeRule;
+        // [HideInInspector] public List<string> YeeRule = new List<string>();
 
         public YeeFamily()
         {
-            // NumElement = 0;
-            YeeType.Add("");
-            YeeType_dict.Add("YeeType", YeeType);
-            YeeInterType.Add("");
-            YeeInterType_dict.Add("YeeInterType", YeeInterType);
-            // YeeRule.Add("");
-            YeeRule_dict.Add("YeeRule", YeeRule);
-            YeeFamily_list.Add(YeeType_dict);
-            YeeFamily_list.Add(YeeInterType_dict);
-            YeeFamily_list.Add(YeeRule_dict);
+            // // NumElement = 0;
+            // YeeTypes.Add("");
+            // YeeType_dict.Add("YeeTypes", YeeTypes);
+            // YeeInterTypes.Add("");
+            // YeeInterType_dict.Add("YeeInterTypes", YeeInterTypes);
+            // // YeeRule.Add("");
+            // YeeRule_dict.Add("YeeRule", YeeRule);
+            // YeeFamily_list.Add(YeeType_dict);
+            // YeeFamily_list.Add(YeeInterType_dict);
+            // YeeFamily_list.Add(YeeRule_dict);
         }
     }
 
@@ -53,8 +53,8 @@ namespace CAG2D_05.Scripts
 //         
 //
 //         public YeeFamilyEnum YeeFamilyEnum;
-//         public YeeType YeeType;
-//         public YeeInterType YeeInterType;
+//         public YeeTypes YeeTypes;
+//         public YeeInterTypes YeeInterTypes;
 //         public YeeRule YeeRule;
 //     }
 }

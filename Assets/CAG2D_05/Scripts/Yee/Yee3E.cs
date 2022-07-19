@@ -4,7 +4,7 @@ namespace CAG2D_05.Scripts
 {
     public class Yee3E : YeeFamily
     {
-        public new const int NumElement = 3;
+        public new int NumElement = 3;
 
         public Color[] Colors = {Color.red, Color.yellow, Color.blue};
         // public Dictionary<string, object> Yee3EDict = new Dictionary<string, object>();
@@ -19,20 +19,20 @@ namespace CAG2D_05.Scripts
         public Yee3E()
         {
             // NumElement=3;
-            // YeeType.Add(Yee3ETypeEnum.Rock);
-            // YeeType.Add(Yee3ETypeEnum.Scissors);
-            // YeeType.Add(Yee3ETypeEnum.Cloth);
-            YeeType.Add("Rock");
-            YeeType.Add("Scissors");
-            YeeType.Add("Cloth");
-            YeeType_dict.Add("YeeType", YeeType); //BUG
-            // YeeInterType.Add(Yee3EInterTypeEnum.Self);
-            // YeeInterType.Add(Yee3EInterTypeEnum.Ke);
-            // YeeInterType.Add(Yee3EInterTypeEnum.BeKe);
-            YeeInterType.Add("Self");
-            YeeInterType.Add("Ke");
-            YeeInterType.Add("BeKe");
-            YeeInterType_dict.Add("YeeInterType", YeeInterType);
+            // YeeTypes.Add(Yee3ETypeEnum.Rock);
+            // YeeTypes.Add(Yee3ETypeEnum.Scissors);
+            // YeeTypes.Add(Yee3ETypeEnum.Cloth);
+            YeeTypes.Add("Rock");
+            YeeTypes.Add("Scissors");
+            YeeTypes.Add("Cloth");
+            YeeType_dict.Add("YeeTypes", YeeTypes); //BUG
+            // YeeInterTypes.Add(Yee3EInterTypeEnum.Self);
+            // YeeInterTypes.Add(Yee3EInterTypeEnum.Ke);
+            // YeeInterTypes.Add(Yee3EInterTypeEnum.BeKe);
+            YeeInterTypes.Add("Self");
+            YeeInterTypes.Add("Ke");
+            YeeInterTypes.Add("BeKe");
+            YeeInterType_dict.Add("YeeInterTypes", YeeInterTypes);
             // YeeRule.Add("Yee3ERule");
             YeeRule_dict.Add("YeeRule", YeeRule);
             YeeFamily_list.Add(YeeType_dict);
@@ -40,7 +40,7 @@ namespace CAG2D_05.Scripts
             YeeFamily_list.Add(YeeRule_dict);
         }
     }
-//     public class Yee3EDict : Yee
+//     public class Yee3EDict : yee
 //     {
 //         public Yee3ETypeEnum Yee3ETypeEnum;
 //         public Yee3EInterTypeEnum Yee3EInterTypeEnum;
@@ -55,7 +55,7 @@ namespace CAG2D_05.Scripts
 //                     Color.blue
 //                 }
 //                 ;
-//             YeeType = YeeTypeFamilyEnum.YeeType3E;
+//             YeeTypes = YeeTypeFamilyEnum.YeeType3E;
 //             YeeInterTypeFamilyEnum = YeeInterTypeFamilyEnum.Yee3EInterType;
 //             YeeRule = new Yee3ERule();
 //         }

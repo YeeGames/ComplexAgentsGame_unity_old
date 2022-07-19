@@ -102,23 +102,24 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// Yee类型族
         /// </summary>
-        public YeeFamily yeeFamily;
+        [HideInInspector] public YeeFamily yeeFamily;
 
         public string YeeType;
 
         public string YeeInterType;
 
-        /// <summary>
-        /// Yee 2元素类型之性质
-        /// </summary>
+        // /// <summary>
+        // /// yee 2元素类型之性质
+        // /// </summary>
         // public Yee2ETypeEnum yee2ETypeEnum = Yee2ETypeEnum.Yang;
 
-        /// <summary>
-        /// Yee 3元素类型之性质
-        /// </summary>
+        // /// <summary>
+        // /// yee 3元素类型之性质
+        // /// </summary>
         // public Yee3ETypeEnum yee3ETypeEnum = Yee3ETypeEnum.Rock;
 
         [HideInInspector] public float energy = 1f;
+
         [HideInInspector] public Vector2 acceleration;
         [HideInInspector] public Vector2 momentum;
     }

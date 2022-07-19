@@ -12,15 +12,15 @@ namespace CAG2D_05.Scripts
 //如果好用，请收藏地址，帮忙分享。
 
 
-    // public class Yee<YeeType> : MonoBehaviour
+    // public class yee<YeeTypes> : MonoBehaviour
     public class Yee : MonoBehaviour
     {
         /// <summary>
         /// 
         /// </summary>
-        public Yee2ETypeEnum Yee2ETypeEnum;
+        [HideInInspector] public Yee2ETypeEnum yee2ETypeEnum;
 
-        public Yee3ETypeEnum Yee3ETypeEnum;
+        [HideInInspector] public Yee3ETypeEnum yee3ETypeEnum;
 
         public List<YeeType> enumToList<YeeType>() where YeeType:Enum
         {
@@ -37,7 +37,7 @@ namespace CAG2D_05.Scripts
         public Yee()
         {
             YeeFamily_list.Add(YeeFamily);
-            YeeFamily_dict.Add("YeeFamily", YeeFamily_list);
+            YeeFamily_dict.Add("yeeFamily", YeeFamily_list);
         }
     }
 
@@ -47,7 +47,7 @@ namespace CAG2D_05.Scripts
     //     /// <summary>
     //     /// 
     //     /// </summary>
-    //     public Yee Yee { get; set; }
+    //     public yee yee { get; set; }
     // }
 
 
@@ -56,7 +56,7 @@ namespace CAG2D_05.Scripts
     //     // private int _numElement;
     //     // private Color[] _colors;
     //
-    //     public Dictionary<string, object> YeeFamily = new Dictionary<string, object>();
+    //     public Dictionary<string, object> yeeFamily = new Dictionary<string, object>();
     //     public List<object> YeeFamilyList = new List<object>();
     //     public Dictionary<string, object> YeeTypeFamilyDict = new Dictionary<string, object>();
     //     public List<string> YeeFamilyType = new List<string>();
@@ -65,7 +65,7 @@ namespace CAG2D_05.Scripts
     //     public Dictionary<string, object> YeeRuleFamilyDict = new Dictionary<string, object>();
     //     public List<string> YeeRuleFamily = new List<string>();
     //
-    //     public Dictionary<string, object> Yee = new Dictionary<string, object>();
+    //     public Dictionary<string, object> yee = new Dictionary<string, object>();
     //     public List<object> YeeList = new List<object>();
     //     public Dictionary<string, object> Yee2E = new Dictionary<string, object>();
     //     public List<object> Yee2EList = new List<object>();
@@ -88,10 +88,10 @@ namespace CAG2D_05.Scripts
     //     public YeeListClass()
     //     {
     //         // // 方法一：
-    //         Yee yee = JsonConvert.DeserializeObject<Yee>();
+    //         yee yee = JsonConvert.DeserializeObject<yee>();
     //
     //         // // 方法二：
-    //         // Yee = setYeeFamily();
+    //         // yee = setYeeFamily();
     //     }
     //
     //     /// <summary>
@@ -119,16 +119,16 @@ namespace CAG2D_05.Scripts
     //         switch (yeeFamily)
     //         {
     //             case YeeFamilyEnum.Yee2E:
-    //                 Scripts.YeeFamily
-    //                 _yeeListClass._yeeListClass.YeeFamily.YeeTypeFamily.YeeType = new Yee2EType();
-    //                 _yeeListClass.YeeFamily.YeeInterTypeFamily.YeeInterType = new Yee2EInterType();
-    //                 _yeeListClass.YeeFamily.YeeRuleFamily.YeeRule = new Yee2ERule();
+    //                 Scripts.yeeFamily
+    //                 _yeeListClass._yeeListClass.yeeFamily.YeeTypeFamily.YeeTypes = new Yee2EType();
+    //                 _yeeListClass.yeeFamily.YeeInterTypeFamily.YeeInterTypes = new Yee2EInterType();
+    //                 _yeeListClass.yeeFamily.YeeRuleFamily.YeeRule = new Yee2ERule();
     //                 // _yee = gameObject.GetComponent<Yee2EDict>();
     //                 break;
     //             case YeeFamilyEnum.Yee3E:
-    //                 _yeeListClass.YeeFamily.YeeTypeFamily.YeeType = new Yee3EType();
-    //                 _yeeListClass.YeeFamily.YeeInterTypeFamily.YeeInterType = new Yee3EInterType();
-    //                 _yeeListClass.YeeFamily.YeeRuleFamily.YeeRule = new Yee3ERule();
+    //                 _yeeListClass.yeeFamily.YeeTypeFamily.YeeTypes = new Yee3EType();
+    //                 _yeeListClass.yeeFamily.YeeInterTypeFamily.YeeInterTypes = new Yee3EInterType();
+    //                 _yeeListClass.yeeFamily.YeeRuleFamily.YeeRule = new Yee3ERule();
     //                 // _yee = gameObject.GetComponent<Yee3EDict>();
     //                 break;
     //             default:
@@ -165,18 +165,18 @@ namespace CAG2D_05.Scripts
     //         Yee3EList.Add(Yee3ERuleDict);
     //         Yee3E.Add("Yee3EDict", Yee3EList);
     //         YeeList.Add(Yee3E);
-    //         Yee.Add("Yee", YeeList);
+    //         yee.Add("yee", YeeList);
     //
     //         // YeeFamily_dict.Add("YeeFamily_dict", YeeFamily_list);
     //         // YeeFamily_list.Add(YeeFamily_dict);
-    //         // YeeType.Add("YeeType");
-    //         // YeeFamily_list.Add(YeeType);
+    //         // YeeTypes.Add("YeeTypes");
+    //         // YeeFamily_list.Add(YeeTypes);
     //         // YeeFamily_list.Add(YeeInterTypeFaimly);
     //         // YeeFamily_list.Add(YeeRuleFaimly);
     //
-    //         Debug.Log(Yee);
+    //         Debug.Log(yee);
     //
-    //         return Yee;
+    //         return yee;
     //     }
     // }
 }

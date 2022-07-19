@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Agent Settings
   m_EditorClassIdentifier: 
   agentBaseName: agent
-  agentName: agent65536199
+  agentName: agentRock19
   isMovable: 1
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   mass: 1
   size: 10
   linearDrag: 0.1
   angularDrag: 0.1
   collisionRadius: 0.6
-  position: {x: -26.578691, y: -13.047283}
-  velocity: {x: -0.0734379, y: 0.7009096}
+  position: {x: -8.271079, y: 24.412731}
+  velocity: {x: -0.48037875, y: -0.33814627}
   maxSpeed: 10
   maxAngularSpeed: 10
   initSpeed: 0
@@ -30,8 +30,9 @@ MonoBehaviour:
   magnitudeForceRadius: 0
   physicsMaterialFriction: 0.1
   physicsMaterialBounciness: 0.9
-  yeeType2E: 0
-  yeeType3E: 0
+  yeeFamily: {fileID: 0}
+  YeeType: Rock
+  YeeInterType: 
   energy: 1
   acceleration: {x: 0, y: 0}
   momentum: {x: 0, y: 0}

@@ -6,25 +6,27 @@ namespace CAG2D_05.Scripts
 {
     public class Agent : MonoBehaviour
     {
-        [HideInInspector] public ScriptableObject agentSettingsScriptableObject;
-        [HideInInspector] public ScriptableObject ruleSettingsScriptableObject;
+        // [HideInInspector] public ScriptableObject agentSettingsScriptableObject;
+        // [HideInInspector] public ScriptableObject ruleSettingsScriptableObject;
 
         /// <summary>
-        /// 设置Agent设置项
+        /// 设定Agent设置项
         /// </summary>
         public AgentSettings aset;
 
+        /// <summary>
+        /// 设定Game设置项
+        /// </summary>
         public GameSettings gset;
 
         /// <summary>
-        /// 设定规则设置项
+        /// 设定Rule设置项
         /// </summary>
         public RuleSettings rset;
 
         /// <summary>
         /// 设置Yee类型族
         /// </summary>
-        [HideInInspector] public YeeFamily yeeFamily;
 
         // [HideInInspector] public AgentSettings aset;
         // [HideInInspector] public RuleSettings rset;
@@ -37,7 +39,8 @@ namespace CAG2D_05.Scripts
         // [HideInInspector] public Yee2ERule _yee2ERule;
         // [HideInInspector] public Yee3ERule Yee3ERule;
 
-        [HideInInspector] public Yee Yee;
+        [HideInInspector] public Yee yee;
+        [HideInInspector] public YeeFamily yeeFamily;
 
         [HideInInspector] public SpriteRenderer spriteRenderer;
         [HideInInspector] public new Rigidbody2D rigidbody2D;
@@ -51,7 +54,7 @@ namespace CAG2D_05.Scripts
 
         [HideInInspector] public float maxSpeed;
         [HideInInspector] public float maxAngularSpeed;
-        
+
 
         public void SetPosition(Vector2 pos)
         {
@@ -81,7 +84,7 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            this.Yee = YeeTypeChooser.ChooseYee(this.agentRuleEffector,this.gset.yeeFamily);
+            yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamily);
             yeeRule.SetRule(ruleSettings);
             // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
             // {
@@ -138,12 +141,9 @@ namespace CAG2D_05.Scripts
 
             this.rigidbody2D = GetComponent<Rigidbody2D>();
             this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            this.colliderCircleCollider2D =
-                this.gameObject.transform.Find("AgentCollider").GetComponent<CircleCollider2D>();
-            this.effectorCircleCollider2D =
-                this.gameObject.transform.Find("AgentEffector").GetComponent<CircleCollider2D>();
-            this.ruleCircleCollider2D =
-                this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            this.colliderCircleCollider2D = this.gameObject.transform.Find("AgentCollider").GetComponent<CircleCollider2D>();
+            this.effectorCircleCollider2D = this.gameObject.transform.Find("AgentEffector").GetComponent<CircleCollider2D>();
+            this.ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
             this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>(); // HACK 无用
             this.agentRuleEffector = GameObject.Find("AgentRuleEffector");

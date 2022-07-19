@@ -12,6 +12,6 @@ namespace CAG2D_05.Scripts
     // public class YeeFamilyClass
     // {
     //     public YeeTypeFamilyEnum;
-    //     public YeeInterType;
+    //     public YeeInterTypes;
     // }
 }

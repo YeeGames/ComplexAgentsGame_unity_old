@@ -32,7 +32,7 @@ namespace CAG2D_05.Scripts
         /// </summary>
         private string[] fromYee2ETypeArray = new string[]
         {
-            _yee2E.YeeType[0], _yee2E.YeeType[1]
+            _yee2E.YeeTypes[0], _yee2E.YeeTypes[1]
         };
 
 
@@ -41,17 +41,17 @@ namespace CAG2D_05.Scripts
         /// </summary>
         private string[] toYee2ETypeArray = new string[]
         {
-            _yee2E.YeeType[0], _yee2E.YeeType[1]
+            _yee2E.YeeTypes[0], _yee2E.YeeTypes[1]
         };
 
 
         /// <summary>
         /// Yee2ETypeInter之规则之邻接矩阵
         /// </summary>
-        private static readonly string[,] yee2ERuleAdjecentMatrix = new string[Yee2E.NumElement, Yee2E.NumElement]
+        private static readonly string[,] yee2ERuleAdjecentMatrix = new string[2, 2]
         {
-            {_yee2E.YeeInterType[0], _yee2E.YeeInterType[1]},
-            {_yee2E.YeeInterType[1], _yee2E.YeeInterType[0]},
+            {_yee2E.YeeInterTypes[0], _yee2E.YeeInterTypes[1]},
+            {_yee2E.YeeInterTypes[1], _yee2E.YeeInterTypes[0]},
         };
 
         protected override void Initialize(RuleSettings ruleSettings)

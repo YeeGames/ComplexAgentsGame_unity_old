@@ -32,7 +32,7 @@ namespace CAG2D_05.Scripts
         /// </summary>
         private string[] fromYee3ETypeArray = new string[]
         {
-            _yee3E.YeeType[0], _yee3E.YeeType[1], _yee3E.YeeType[2]
+            _yee3E.YeeTypes[0], _yee3E.YeeTypes[1], _yee3E.YeeTypes[2]
         };
         // private Yee3ETypeEnum[] fromYee3ETypeArray = new Yee3ETypeEnum[]
         // {
@@ -45,7 +45,7 @@ namespace CAG2D_05.Scripts
         /// </summary>
         private string[] toYee3ETypeArray = new string[]
         {
-            _yee3E.YeeType[0], _yee3E.YeeType[1], _yee3E.YeeType[2]
+            _yee3E.YeeTypes[0], _yee3E.YeeTypes[1], _yee3E.YeeTypes[2]
         };
         // private Yee3ETypeEnum[] toYee3ETypeArray = new Yee3ETypeEnum[]
         // {
@@ -55,11 +55,11 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// Yee3ETypeInter之规则之邻接矩阵
         /// </summary>
-        private static readonly string[,] yee3ERuleAdjecentMatrix = new string[Yee3E.NumElement, Yee3E.NumElement]
+        private static readonly string[,] yee3ERuleAdjecentMatrix = new string[3, 3]
         {
-            {_yee3E.YeeInterType[0], _yee3E.YeeInterType[1], _yee3E.YeeInterType[2]},
-            {_yee3E.YeeInterType[2], _yee3E.YeeInterType[0], _yee3E.YeeInterType[1]},
-            {_yee3E.YeeInterType[1], _yee3E.YeeInterType[0], _yee3E.YeeInterType[2]},
+            {_yee3E.YeeInterTypes[0], _yee3E.YeeInterTypes[1], _yee3E.YeeInterTypes[2]},
+            {_yee3E.YeeInterTypes[2], _yee3E.YeeInterTypes[0], _yee3E.YeeInterTypes[1]},
+            {_yee3E.YeeInterTypes[1], _yee3E.YeeInterTypes[0], _yee3E.YeeInterTypes[2]},
         };
         // private static readonly Yee3EInterTypeEnum[,] yee3ERuleAdjecentMatrix = new Yee3EInterTypeEnum[RowSize, ColSize]
         // {
@@ -162,14 +162,14 @@ namespace CAG2D_05.Scripts
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;
             string thisYeeType = this.gameObject.transform.GetComponentInParent<Agent>().aset.YeeType;
-            // string thisYeeInterType = this.gameObject.transform.GetComponentInParent<Agent>().aset.YeeInterType;
+            // string thisYeeInterType = this.gameObject.transform.GetComponentInParent<Agent>().aset.YeeInterTypes;
             Rigidbody2D thatRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thatPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
             // Yee3ETypeEnum thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yee3ETypeEnum;
-            // YeeFamily thatYeeFamily = otherCollider2D.gameObject.transform.GetComponent<Yee>().YeeFamily;
+            // yeeFamily thatYeeFamily = otherCollider2D.gameObject.transform.GetComponent<yee>().yeeFamily;
             string thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().aset.YeeType;
-            // List<string> thatYeeType = _yeeFamily.YeeType;
-            // this._yee3EInterTypeEnum = GetInterRule(thisYeeFamily.YeeType[1], thatYeeType);
+            // List<string> thatYeeType = _yeeFamily.YeeTypes;
+            // this._yee3EInterTypeEnum = GetInterRule(thisYeeFamily.YeeTypes[1], thatYeeType);
             _yeeInterType = GetInterRule(thisYeeType, thatYeeType);
             ApplyBehaviorRule(_yeeInterType, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
         }

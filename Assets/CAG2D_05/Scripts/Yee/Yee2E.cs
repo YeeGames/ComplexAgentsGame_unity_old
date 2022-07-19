@@ -20,16 +20,16 @@ namespace CAG2D_05.Scripts
 
         public Yee2E()
         {
-            // YeeType.Add(Yee2ETypeEnum.Yang);
-            // YeeType.Add(Yee2ETypeEnum.Yin);
-            YeeType.Add("Yang");
-            YeeType.Add("Yin");
-            YeeType_dict.Add("YeeType", YeeType);
-            // YeeInterType.Add(Yee2EInterTypeEnum.Me);
-            // YeeInterType.Add(Yee2EInterTypeEnum.You);
-            YeeInterType.Add("Me");
-            YeeInterType.Add("You");
-            YeeInterType_dict.Add("YeeInterType", YeeInterType);
+            // YeeTypes.Add(Yee2ETypeEnum.Yang);
+            // YeeTypes.Add(Yee2ETypeEnum.Yin);
+            YeeTypes.Add("Yang");
+            YeeTypes.Add("Yin");
+            YeeType_dict.Add("YeeTypes", YeeTypes);
+            // YeeInterTypes.Add(Yee2EInterTypeEnum.Me);
+            // YeeInterTypes.Add(Yee2EInterTypeEnum.You);
+            YeeInterTypes.Add("Me");
+            YeeInterTypes.Add("You");
+            YeeInterType_dict.Add("YeeInterTypes", YeeInterTypes);
             // YeeRule.Add("Yee2ERule");
             YeeRule_dict.Add("YeeRule", YeeRule);
             YeeFamily_list.Add(YeeType_dict);
@@ -39,7 +39,7 @@ namespace CAG2D_05.Scripts
     }
 
 
-//     public class Yee2EDict : Yee
+//     public class Yee2EDict : yee
 //     {
 //         public Yee2ETypeEnum Yee2ETypeEnum;
 //         public Yee2EInterTypeEnum Yee2EInterTypeEnum;
@@ -66,7 +66,7 @@ namespace CAG2D_05.Scripts
 //                     Color.blue
 //                 }
 //                 ;
-//             YeeType = YeeTypeFamilyEnum.YeeType2E;
+//             YeeTypes = YeeTypeFamilyEnum.YeeType2E;
 //             YeeInterTypeFamilyEnum = YeeInterTypeFamilyEnum.Yee2EInterType;
 //             YeeRule = new Yee2ERule();
 //         }
