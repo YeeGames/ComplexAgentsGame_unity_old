@@ -23,7 +23,7 @@ namespace CAG2D_05.Scripts
         private Transform tf2;
 
         private GameSettings gameSettings;
-        private YeeTypeFamilyEnum _yeeTypeFamily;
+        // private YeeTypeFamilyEnum _yeeTypeFamily;
 
         private Yee2ERule _yee2ERule;
         private Yee3ERule _yee3ERule;

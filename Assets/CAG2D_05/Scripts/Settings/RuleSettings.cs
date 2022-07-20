@@ -9,7 +9,7 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// Yee类型族
         /// </summary>
-        public YeeTypeFamilyEnum yeeTypeFamily;
+        // public YeeTypeFamilyEnum yeeTypeFamily;
         // public YeeRule yeeRule;
         // public bool isEnableForce;
         public float forceStrength = 10f; // 力场强度；

@@ -4,6 +4,8 @@ namespace CAG2D_05.Scripts
 {
     public class Yee3E : YeeFamily
     {
+        public Yee3EType Yee3EType;
+
         public new int NumElement = 3;
 
         public Color[] Colors = {Color.red, Color.yellow, Color.blue};

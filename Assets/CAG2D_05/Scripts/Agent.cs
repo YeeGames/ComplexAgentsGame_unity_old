@@ -30,8 +30,8 @@ namespace CAG2D_05.Scripts
 
         // [HideInInspector] public AgentSettings aset;
         // [HideInInspector] public RuleSettings rset;
-
         [HideInInspector] public Yee2ETypeEnum yee2ETypeEnum;
+
         [HideInInspector] public Yee3ETypeEnum yee3ETypeEnum;
 
         // [HideInInspector] public Yee3EInterTypeEnum yee3EInterTypeEnum;
@@ -49,7 +49,7 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public CircleCollider2D effectorCircleCollider2D;
         [HideInInspector] public CircleCollider2D ruleCircleCollider2D;
         [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
-        [HideInInspector] public GameObject agentRuleEffector;
+        [HideInInspector] public GameObject agentRuleEffector = GameObject.Find("AgentRuleEffector");
 
 
         [HideInInspector] public float maxSpeed;
@@ -85,7 +85,7 @@ namespace CAG2D_05.Scripts
         {
             this.SetAgentSettings(agentSettings);
             yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamily);
-            yeeRule.SetRule(ruleSettings);
+            // yeeRule.SetRule(ruleSettings);
             // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
             // {
             //     yeeRule.SetRule(rset);
@@ -146,7 +146,8 @@ namespace CAG2D_05.Scripts
             this.ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
             this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>(); // HACK 无用
-            this.agentRuleEffector = GameObject.Find("AgentRuleEffector");
+            // this.agentRuleEffector = this.gameObject.transform.GetChild("AgentRuleEffector");
+            this.agentRuleEffector = GameObject.Find("AgentRuleEffector").gameObject;
 
             Initialize(this.aset, this.rset);
         }

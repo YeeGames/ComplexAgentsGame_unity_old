@@ -25,14 +25,17 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public YeeRule yeeRule;
         [HideInInspector] public Yee yee;
         [HideInInspector] public YeeFamily yeeFamily;
+        [HideInInspector] public YeeType yeeType;
 
 
         private void Awake()
         {
             // yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
-            yeeFamily = YeeTypeChooser.ChooseYeeFamily(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
+            // yeeFamily = YeeTypeChooser.ChooseYeeFamily(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
+            yeeType = YeeTypeChooser.ChooseYeeType(gameSettings.yeeFamily);
+            // const int numElement = 3; //FIXME
 
-            for (var t = 0; t < yeeFamily.NumElement; t++) // 遍历每一类yeeType，以生成agent
+            for (var t = 0; t < yeeType.NumElement; t++) // 遍历每一类yeeType，以生成agent
             {
                 for (var i = 0; i < gameSettings.numAgent; i++) // 遍历单类yeeType之所有预定数量，以生成agent
                 {
@@ -43,7 +46,8 @@ namespace CAG2D_05.Scripts
                     a.aset.velocity = Random.insideUnitCircle;
                     a.aset.YeeType = yeeFamily.YeeTypes[t];
                     a.aset.YeeInterType = null; // FIXME
-                    a.aset.color = yeeFamily.Colors[t];
+                    // a.aset.color = yeeFamily.Colors[t];
+                    a.aset.color = yeeFamily.yeeType.Colors[t];
                     a.aset.agentName = a.aset.agentBaseName + yeeFamily.YeeTypes[t] + i.ToString();
 
                     a.Initialize(a.aset, a.rset);

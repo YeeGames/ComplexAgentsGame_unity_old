@@ -5,8 +5,9 @@ namespace CAG2D_05.Scripts
 {
     public class YeeFamily : MonoBehaviour
     {
-        [HideInInspector] public int NumElement = 3;
-        [HideInInspector] public Color[] Colors = {Color.white};
+        [HideInInspector] public YeeType yeeType;
+        // [HideInInspector] public int NumElement = 3;
+        // [HideInInspector] public Color[] Colors = {Color.white};
         [HideInInspector] public Dictionary<string, object> YeeFamilyDict = new Dictionary<string, object>();
         [HideInInspector] public List<object> YeeFamily_list = new List<object>();
 

@@ -12,6 +12,7 @@ namespace CAG2D_05.Scripts
         public static YeeType _yeeType;
         public static Yee _yee;
         public static YeeFamily _yeeFamily;
+
         public static YeeRule yeeRule;
         // public List<Enum> yeeTypeList;
         // public List<Enum> yee3ETypeList;
@@ -55,6 +56,28 @@ namespace CAG2D_05.Scripts
 
 
             return _yeeFamily;
+        }
+
+        public static YeeType ChooseYeeType(YeeFamilyEnum yeeFamilyEnum)
+        {
+            switch (yeeFamilyEnum)
+            {
+                case YeeFamilyEnum.Yee2E:
+                    _yeeType = new Yee2EType();
+                    // _yeeFamily = new Yee2E();
+                    // _yeeFamily = gameObject.AddComponent<Yee2E>();
+                    break;
+                case YeeFamilyEnum.Yee3E:
+                    _yeeType = new Yee3EType();
+                    // _yeeFamily = new Yee3E();
+                    // _yeeFamily = gameObject.AddComponent<Yee3E>();
+                    break;
+                default:
+                    break;
+            }
+
+
+            return _yeeType;
         }
 
         public static Yee ChooseYee(GameObject gameObject, YeeFamilyEnum yeeFamilyEnum)
