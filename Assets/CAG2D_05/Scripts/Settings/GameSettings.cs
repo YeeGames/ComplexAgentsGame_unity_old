@@ -44,6 +44,11 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// Yee类型
         /// </summary>
-        public YeeFamilyEnum yeeFamily = YeeFamilyEnum.Yee3E;
+        public YeeFamilyEnum yeeFamilyEnum = YeeFamilyEnum.Yee3E;
+
+
+
+        // public YeeFamily yeeFamily=new Yee3E();
+        // public Yee yee=new Yee();
     }
 }

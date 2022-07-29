@@ -1,13 +1,18 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class Yee3EType:YeeType
+    public class Yee3EType : YeeType
     {
         public Yee3ETypeEnum Yee3ETypeEnum;
         
-        public new int NumElement = 3;
-
-        public Color[] Colors = {Color.red, Color.yellow, Color.blue};
+        public Yee3EType()
+        {
+            this.NumElement = 3;
+            this.Colors = new Color[] {Color.red, Color.yellow, Color.blue};
+            this.YeeTypes = new string[] {"Rock", "Scissors", "Cloth"};
+        }
     }
 }

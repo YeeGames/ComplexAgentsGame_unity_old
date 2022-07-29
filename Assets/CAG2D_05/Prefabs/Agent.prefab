@@ -75,8 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752abdb20bcb48e9af3c898f7367505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yee2ETypeEnum: 0
-  yee3ETypeEnum: 0
 --- !u!114 &4646497305677564161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,11 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f99cd3f1d49412291cc475104fea635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumElement: 1
-  Colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  YeeType: []
-  YeeInterType: []
+  YeeTypes: []
+  YeeInterTypes: []
   YeeRule: {fileID: 0}
 --- !u!1 &3869045930350941929
 GameObject:
@@ -285,7 +280,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &486444529336302277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,12 +296,11 @@ MonoBehaviour:
   aset: {fileID: 11400000, guid: 158951c52faa34408842dc76a8ec850c, type: 2}
   gset: {fileID: 11400000, guid: 2cf5c513838cb4e59a8281b1fb0cacc1, type: 2}
   rset: {fileID: 11400000, guid: 513331da0f82742b8aed3485df722ce4, type: 2}
-  yeeFamily: {fileID: 0}
   yee2ETypeEnum: 0
   yee3ETypeEnum: 0
   yeeRule: {fileID: 0}
-  Yee: {fileID: 0}
-  YeeFamily: {fileID: 0}
+  yee: {fileID: 0}
+  yeeFamily: {fileID: 0}
   spriteRenderer: {fileID: 0}
   rigidbody2D: {fileID: 0}
   pointEffector: {fileID: 0}

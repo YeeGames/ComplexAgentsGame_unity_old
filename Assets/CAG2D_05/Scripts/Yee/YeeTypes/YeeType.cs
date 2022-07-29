@@ -3,12 +3,41 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class YeeType
+    public abstract class YeeType
     {
-        
-        public int NumElement = 3;
-        public Color[] Colors = {Color.white};
+        private int _numElement;
+        private Color[] _colors;
+        private string[] _yeeTypes;
 
+        public virtual int setNumElement()
+        {
+            _numElement = 1;
+            return _numElement;
+        }
 
+        // public YeeType(int numElement, Color[] colors, string[] yeeTypes)
+        // {
+        //     _numElement = numElement;
+        //     _colors = colors;
+        //     _yeeTypes = yeeTypes;
+        // }
+
+        public int NumElement
+        {
+            get => _numElement;
+            set => _numElement = value;
+        }
+
+        public virtual Color[] Colors
+        {
+            get => _colors;
+            set => _colors = value;
+        }
+
+        public virtual string[] YeeTypes
+        {
+            get => _yeeTypes;
+            set => _yeeTypes = value;
+        }
     }
 }

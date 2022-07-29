@@ -21,18 +21,18 @@ namespace CAG2D_05.Scripts
 
         public YeeFamilyEnum yeeFamilyEnum;
 
-        // public yeeFamily yeeFamily;
+        // public yeeFamilyEnum yeeFamilyEnum;
         [HideInInspector] public YeeRule yeeRule;
         [HideInInspector] public Yee yee;
-        [HideInInspector] public YeeFamily yeeFamily;
+        public YeeFamily yeeFamily;
         [HideInInspector] public YeeType yeeType;
 
 
         private void Awake()
         {
-            // yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
-            // yeeFamily = YeeTypeChooser.ChooseYeeFamily(agent.agentRuleEffector, gameSettings.yeeFamily); //BUG
-            yeeType = YeeTypeChooser.ChooseYeeType(gameSettings.yeeFamily);
+            // yee = YeeTypeChooser.ChooseYee(agent.agentRuleEffector, gameSettings.yeeFamilyEnum);
+            // yeeFamilyEnum = YeeTypeChooser.ChooseYeeFamily(agent.agentRuleEffector, gameSettings.yeeFamilyEnum); //BUG
+            yeeType = YeeTypeChooser.ChooseYeeType(gameSettings.yeeFamilyEnum);
             // const int numElement = 3; //FIXME
 
             for (var t = 0; t < yeeType.NumElement; t++) // 遍历每一类yeeType，以生成agent
@@ -44,11 +44,11 @@ namespace CAG2D_05.Scripts
                     Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
                     a.aset.position = pos;
                     a.aset.velocity = Random.insideUnitCircle;
-                    a.aset.YeeType = yeeFamily.YeeTypes[t];
+                    a.aset.YeeType = yeeType.YeeTypes[t];
                     a.aset.YeeInterType = null; // FIXME
-                    // a.aset.color = yeeFamily.Colors[t];
-                    a.aset.color = yeeFamily.yeeType.Colors[t];
-                    a.aset.agentName = a.aset.agentBaseName + yeeFamily.YeeTypes[t] + i.ToString();
+                    // a.aset.color = yeeFamilyEnum.Colors[t];
+                    a.aset.color = yeeType.Colors[t];
+                    a.aset.agentName = a.aset.agentBaseName + a.aset.YeeType + i.ToString();
 
                     a.Initialize(a.aset, a.rset);
                 }

@@ -49,7 +49,7 @@ namespace CAG2D_05.Scripts
         [HideInInspector] public CircleCollider2D effectorCircleCollider2D;
         [HideInInspector] public CircleCollider2D ruleCircleCollider2D;
         [HideInInspector] public PhysicsMaterial2D physicsMaterial2D;
-        [HideInInspector] public GameObject agentRuleEffector = GameObject.Find("AgentRuleEffector");
+        [HideInInspector] public GameObject agentRuleEffector;
 
 
         [HideInInspector] public float maxSpeed;
@@ -84,13 +84,13 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
-            yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamily);
+            yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamilyEnum);
             // yeeRule.SetRule(ruleSettings);
-            // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
+            // if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType2E)
             // {
             //     yeeRule.SetRule(rset);
             // }
-            // else if (yeeFamily == YeeTypeFamilyEnum.YeeType3E)
+            // else if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType3E)
             // {
             //     yeeRule.SetRule(rset);
             // }
@@ -100,7 +100,7 @@ namespace CAG2D_05.Scripts
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            // if (yeeFamily == YeeTypeFamilyEnum.YeeType2E)
+            // if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType2E)
             // {
             // }
 

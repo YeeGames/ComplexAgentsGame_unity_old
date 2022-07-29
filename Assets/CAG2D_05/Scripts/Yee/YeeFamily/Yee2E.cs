@@ -46,7 +46,7 @@ namespace CAG2D_05.Scripts
 //         public Yee2ETypeEnum Yee2ETypeEnum;
 //         public Yee2EInterTypeEnum Yee2EInterTypeEnum;
 //
-//         // public Yee2EDict(int numElement, Color[] colors, YeeTypeFamilyEnum yeeFamily, YeeRule yeeRule, YeeTypeFamilyEnum yeeFamily, YeeInterTypeFamilyEnum yeeInterType, YeeRule yeeRule) : base(numElement, colors, yeeFamily, yeeInterType, yeeRule)
+//         // public Yee2EDict(int numElement, Color[] colors, YeeTypeFamilyEnum yeeFamilyEnum, YeeRule yeeRule, YeeTypeFamilyEnum yeeFamilyEnum, YeeInterTypeFamilyEnum yeeInterType, YeeRule yeeRule) : base(numElement, colors, yeeFamilyEnum, yeeInterType, yeeRule)
 //         // {
 //         //     numElement = 2;
 //         //     colors = new Color[]
@@ -54,7 +54,7 @@ namespace CAG2D_05.Scripts
 //         //             Color.red, Color.blue
 //         //         }
 //         //         ;
-//         //     yeeFamily = yeeFamily;
+//         //     yeeFamilyEnum = yeeFamilyEnum;
 //         //     yeeRule = yeeInterType;
 //         //     yeeRule = new Yee2ERule();
 //         // }

@@ -24,7 +24,7 @@ namespace CAG2D_05.Scripts
         public Yee()
         {
             YeeFamily_list.Add(YeeFamily);
-            YeeFamily_dict.Add("yeeFamily", YeeFamily_list);
+            YeeFamily_dict.Add("yeeFamilyEnum", YeeFamily_list);
         }
     }
 }

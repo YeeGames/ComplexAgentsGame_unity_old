@@ -5,10 +5,12 @@ namespace CAG2D_05.Scripts
     public class Yee2EType : YeeType
     {
         private Yee2ETypeEnum Yee2ETypeEnum;
-        
-        public new const int NumElement = 2;
 
-        public Color[] Colors = {Color.red, Color.blue};
-
+        public Yee2EType()
+        {
+            this.NumElement = 2;
+            this.Colors = new Color[] {Color.red, Color.blue};
+            this.YeeTypes = new string[] {"Yang", "Yin"};
+        }
     }
 }

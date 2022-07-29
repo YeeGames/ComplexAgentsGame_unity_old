@@ -166,7 +166,7 @@ namespace CAG2D_05.Scripts
             Rigidbody2D thatRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thatPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
             // Yee3ETypeEnum thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yee3ETypeEnum;
-            // yeeFamily thatYeeFamily = otherCollider2D.gameObject.transform.GetComponent<yee>().yeeFamily;
+            // yeeFamilyEnum thatYeeFamily = otherCollider2D.gameObject.transform.GetComponent<yee>().yeeFamilyEnum;
             string thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().aset.YeeType;
             // List<string> thatYeeType = _yeeFamily.YeeTypes;
             // this._yee3EInterTypeEnum = GetInterRule(thisYeeFamily.YeeTypes[1], thatYeeType);

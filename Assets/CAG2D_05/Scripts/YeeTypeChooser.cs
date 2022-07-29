@@ -8,8 +8,10 @@ namespace CAG2D_05.Scripts
 {
     public class YeeTypeChooser
     {
-        public static YeeTypeFamilyEnum _yeeTypeFamily;
+        // public static YeeTypeFamilyEnum _yeeTypeFamily;
         public static YeeType _yeeType;
+        public static Yee2EType _yee2EType;
+        public static Yee3EType _yee3EType;
         public static Yee _yee;
         public static YeeFamily _yeeFamily;
 
@@ -18,24 +20,24 @@ namespace CAG2D_05.Scripts
         // public List<Enum> yee3ETypeList;
 
 
-        public static YeeRule ChooseYeeRule(GameObject gameObject, YeeTypeFamilyEnum yeeTypeFamily)
-        {
-            switch (yeeTypeFamily)
-            {
-                case YeeTypeFamilyEnum.YeeType2E:
-                    yeeRule = gameObject.AddComponent<Yee2ERule>();
-                    // yeeFamily = YeeTypeFamilyEnum.YeeType2E;
-                    break;
-                case YeeTypeFamilyEnum.YeeType3E:
-                    yeeRule = gameObject.AddComponent<Yee3ERule>();
-                    // yeeFamily = YeeTypeFamilyEnum.YeeType3E;
-                    break;
-                default:
-                    break;
-            }
-
-            return yeeRule;
-        }
+        // public static YeeRule ChooseYeeRule(GameObject gameObject, YeeTypeFamilyEnum yeeTypeFamily)
+        // {
+        //     switch (yeeTypeFamily)
+        //     {
+        //         case YeeTypeFamilyEnum.YeeType2E:
+        //             yeeRule = gameObject.AddComponent<Yee2ERule>();
+        //             // yeeFamilyEnum = YeeTypeFamilyEnum.YeeType2E;
+        //             break;
+        //         case YeeTypeFamilyEnum.YeeType3E:
+        //             yeeRule = gameObject.AddComponent<Yee3ERule>();
+        //             // yeeFamilyEnum = YeeTypeFamilyEnum.YeeType3E;
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        //
+        //     return yeeRule;
+        // }
 
 
         public static YeeFamily ChooseYeeFamily(GameObject gameObject, YeeFamilyEnum yeeFamilyEnum)
@@ -60,15 +62,16 @@ namespace CAG2D_05.Scripts
 
         public static YeeType ChooseYeeType(YeeFamilyEnum yeeFamilyEnum)
         {
+            YeeType yeeType = null;
             switch (yeeFamilyEnum)
             {
                 case YeeFamilyEnum.Yee2E:
-                    _yeeType = new Yee2EType();
+                    yeeType = new Yee2EType();
                     // _yeeFamily = new Yee2E();
                     // _yeeFamily = gameObject.AddComponent<Yee2E>();
                     break;
                 case YeeFamilyEnum.Yee3E:
-                    _yeeType = new Yee3EType();
+                    yeeType = new Yee3EType();
                     // _yeeFamily = new Yee3E();
                     // _yeeFamily = gameObject.AddComponent<Yee3E>();
                     break;
@@ -77,7 +80,7 @@ namespace CAG2D_05.Scripts
             }
 
 
-            return _yeeType;
+            return yeeType;
         }
 
         public static Yee ChooseYee(GameObject gameObject, YeeFamilyEnum yeeFamilyEnum)

@@ -30,8 +30,8 @@ namespace CAG2D_05.Scripts
 
         // public YeeTypeFamilyEnum GetTypeOfYeeTypeRule()
         // {
-        //     this. = YeeTypeChooser.ChooseYeeRule(gset.yeeFamily);
-        //     return this.yeeFamily;
+        //     this. = YeeTypeChooser.ChooseYeeRule(gset.yeeFamilyEnum);
+        //     return this.yeeFamilyEnum;
         // }
         protected virtual void Initialize(RuleSettings ruleSettings)
         {
