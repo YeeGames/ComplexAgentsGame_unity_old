@@ -10,6 +10,9 @@ namespace CAG2D_05.Scripts
         private RuleSettings rset;
         private Yee3ETypeEnum _yee3ETypeEnum;
         private Yee3EInterTypeEnum _yee3EInterTypeEnum;
+        
+        private static YeeFamily _yeeFamily;
+        private static Yee3E _yee3E;
 
         private float forceStrength = 0f;
 
@@ -25,18 +28,73 @@ namespace CAG2D_05.Scripts
         private GameSettings gameSettings;
         // private YeeTypeFamilyEnum _yeeTypeFamily;
 
-        private Yee2ERule _yee2ERule;
-        private Yee3ERule _yee3ERule;
+        // private Yee2ERule _yee2ERule;
+        // private Yee3ERule _yee3ERule;
 
-        // public YeeTypeFamilyEnum GetTypeOfYeeTypeRule()
-        // {
-        //     this. = YeeTypeChooser.ChooseYeeRule(gset.yeeFamilyEnum);
-        //     return this.yeeFamilyEnum;
-        // }
-        protected virtual void Initialize(RuleSettings ruleSettings)
+        
+        /// <summary>
+        /// 起始YeeType向量
+        /// </summary>
+        public string[] fromYeeTypeArray = new string[]
         {
-            SetRule(ruleSettings);
-        }
+        };
+        
+        /// <summary>
+        /// 目标YeeType向量
+        /// </summary>
+        public string[] toYeeTypeArray = new string[]
+        {
+        };
+        
+        /// <summary>
+        /// YeeTypeInter之规则之邻接矩阵
+        /// </summary>
+        public string[,] yeeRuleAdjecentMatrix = new string[,]
+        {
+        };
+        
+        
+        // /// <summary>
+        // /// 起始YeeType向量
+        // /// </summary>
+        // public string[] fromYeeTypeArray = 
+        // {
+        //     YeeFamily.YeeTypes[0], YeeFamily.YeeTypes[1], YeeFamily.YeeTypes[2]
+        // };
+        // // private Yee3ETypeEnum[] fromYeeTypeArray = new Yee3ETypeEnum[]
+        // // {
+        //
+        // //     Yee3ETypeEnum.Rock, Yee3ETypeEnum.Scissors, Yee3ETypeEnum.Cloth
+        // // };
+        //
+        // /// <summary>
+        // /// 目标YeeType向量
+        // /// </summary>
+        // public string[] toYeeTypeArray = 
+        // {
+        //     Yee3E.YeeTypes[0], Yee3E.YeeTypes[1], Yee3E.YeeTypes[2]
+        // };
+        // // private Yee3ETypeEnum[] toYeeTypeArray = new Yee3ETypeEnum[]
+        // // {
+        // //     Yee3ETypeEnum.Rock, Yee3ETypeEnum.Scissors, Yee3ETypeEnum.Cloth
+        // // };
+        //
+        // /// <summary>
+        // /// YeeTypeInter之规则之邻接矩阵
+        // /// </summary>
+        // public string[,] yeeRuleAdjecentMatrix = 
+        // {
+        //     {Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[2]},
+        //     {Yee3E.YeeInterTypes[2], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1]},
+        //     {Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[2]},
+        // };
+        // // private static readonly Yee3EInterTypeEnum[,] yeeRuleAdjecentMatrix = new Yee3EInterTypeEnum[RowSize, ColSize]
+        // // {
+        // //     {Yee3EInterTypeEnum.Self, Yee3EInterTypeEnum.Ke, Yee3EInterTypeEnum.BeKe},
+        // //     {Yee3EInterTypeEnum.BeKe, Yee3EInterTypeEnum.Self, Yee3EInterTypeEnum.Ke},
+        // //     {Yee3EInterTypeEnum.Ke, Yee3EInterTypeEnum.BeKe, Yee3EInterTypeEnum.Self}
+        // // };
+
 
 
         public virtual void SetRule(RuleSettings ruleSettings)
@@ -44,6 +102,12 @@ namespace CAG2D_05.Scripts
             
         }
 
+                
+        protected virtual void Initialize(RuleSettings ruleSettings)
+        {
+            SetRule(ruleSettings);
+            
+        }
 
         protected void ApplyBehaviorRule()
         {

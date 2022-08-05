@@ -39,37 +39,5 @@ namespace CAG2D_05.Scripts
             YeeFamily_list.Add(YeeRule_dict);
         }
     }
-
-
-//     public class Yee2EDict : yee
-//     {
-//         public Yee2ETypeEnum Yee2ETypeEnum;
-//         public Yee2EInterTypeEnum Yee2EInterTypeEnum;
-//
-//         // public Yee2EDict(int numElement, Color[] colors, YeeTypeFamilyEnum yeeFamilyEnum, YeeRule yeeRule, YeeTypeFamilyEnum yeeFamilyEnum, YeeInterTypeFamilyEnum yeeInterType, YeeRule yeeRule) : base(numElement, colors, yeeFamilyEnum, yeeInterType, yeeRule)
-//         // {
-//         //     numElement = 2;
-//         //     colors = new Color[]
-//         //         {
-//         //             Color.red, Color.blue
-//         //         }
-//         //         ;
-//         //     yeeFamilyEnum = yeeFamilyEnum;
-//         //     yeeRule = yeeInterType;
-//         //     yeeRule = new Yee2ERule();
-//         // }
-//
-//         public Yee2EDict()
-//         {
-//             NumElement = 2;
-//             Colors = new Color[]
-//                 {
-//                     Color.red,
-//                     Color.blue
-//                 }
-//                 ;
-//             YeeTypes = YeeTypeFamilyEnum.YeeType2E;
-//             YeeInterTypeFamilyEnum = YeeInterTypeFamilyEnum.Yee2EInterType;
-//             YeeRule = new Yee2ERule();
-//         }
+    
 }

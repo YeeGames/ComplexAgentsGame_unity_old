@@ -15,12 +15,6 @@ namespace CAG2D_05.Scripts
             return _numElement;
         }
 
-        // public YeeType(int numElement, Color[] colors, string[] yeeTypes)
-        // {
-        //     _numElement = numElement;
-        //     _colors = colors;
-        //     _yeeTypes = yeeTypes;
-        // }
 
         public int NumElement
         {

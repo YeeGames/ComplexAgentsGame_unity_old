@@ -6,9 +6,6 @@ namespace CAG2D_05.Scripts
 {
     public class Agent : MonoBehaviour
     {
-        // [HideInInspector] public ScriptableObject agentSettingsScriptableObject;
-        // [HideInInspector] public ScriptableObject ruleSettingsScriptableObject;
-
         /// <summary>
         /// 设定Agent设置项
         /// </summary>
@@ -27,21 +24,12 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// 设置Yee类型族
         /// </summary>
-
-        // [HideInInspector] public AgentSettings aset;
-        // [HideInInspector] public RuleSettings rset;
         [HideInInspector] public Yee2ETypeEnum yee2ETypeEnum;
 
         [HideInInspector] public Yee3ETypeEnum yee3ETypeEnum;
-
-        // [HideInInspector] public Yee3EInterTypeEnum yee3EInterTypeEnum;
         [HideInInspector] public YeeRule yeeRule;
-        // [HideInInspector] public Yee2ERule _yee2ERule;
-        // [HideInInspector] public Yee3ERule Yee3ERule;
-
         [HideInInspector] public Yee yee;
         [HideInInspector] public YeeFamily yeeFamily;
-
         [HideInInspector] public SpriteRenderer spriteRenderer;
         [HideInInspector] public new Rigidbody2D rigidbody2D;
         [HideInInspector] public PointEffector2D pointEffector;
@@ -84,26 +72,16 @@ namespace CAG2D_05.Scripts
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
+            // this.agentRuleEffector = this.gameObject.transform.Find("AgentRuleEffector").gameObject;
             yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamilyEnum);
-            // yeeRule.SetRule(ruleSettings);
-            // if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType2E)
-            // {
-            //     yeeRule.SetRule(rset);
-            // }
-            // else if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType3E)
-            // {
-            //     yeeRule.SetRule(rset);
-            // }
+            // yee = YeeTypeChooser.ChooseYee(this.agentRuleEffector, this.gset.yeeFamilyEnum);
+            this.yeeRule = YeeTypeChooser.ChooseYeeRule(agentRuleEffector, gset.yeeFamilyEnum);
         }
 
 
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            // if (yeeFamilyEnum == YeeTypeFamilyEnum.YeeType2E)
-            // {
-            // }
-
             this.yeeFamily = this.aset.yeeFamily;
             this.name = this.aset.agentName;
             this.SetColor(this.aset.color);
@@ -136,20 +114,17 @@ namespace CAG2D_05.Scripts
 
         void Awake()
         {
-            // this.aset = this.agentSettings;
-            // this.rset = this.ruleSettings;
-
             this.rigidbody2D = GetComponent<Rigidbody2D>();
             this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             this.colliderCircleCollider2D = this.gameObject.transform.Find("AgentCollider").GetComponent<CircleCollider2D>();
             this.effectorCircleCollider2D = this.gameObject.transform.Find("AgentEffector").GetComponent<CircleCollider2D>();
             this.ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
             this.pointEffector = this.gameObject.transform.Find("AgentEffector").GetComponent<PointEffector2D>();
-            this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>(); // HACK 无用
-            // this.agentRuleEffector = this.gameObject.transform.GetChild("AgentRuleEffector");
-            this.agentRuleEffector = GameObject.Find("AgentRuleEffector").gameObject;
+            this.agentRuleEffector = this.gameObject.transform.Find("AgentRuleEffector").gameObject;
+            // this.yeeRule = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<YeeRule>();
+            // this.yeeRule = YeeTypeChooser.ChooseYeeRule(agentRuleEffector, gset.yeeFamilyEnum);
 
-            Initialize(this.aset, this.rset);
+            // Initialize(this.aset, this.rset);
         }
 
         // Start is called before the first frame update
