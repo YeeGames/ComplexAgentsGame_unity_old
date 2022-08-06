@@ -3,12 +3,13 @@ using UnityEngine;
 namespace CAG2D_05.Scripts
 {
     [CreateAssetMenu]
-    
     public class RuleSettings : ScriptableObject
     {
         /// <summary>
         /// Yee类型族
         /// </summary>
+        public YeeType YeeType = new YeeType();
+
         // public YeeTypeFamilyEnum yeeTypeFamily;
         // public YeeRule yeeRule;
         // public bool isEnableForce;

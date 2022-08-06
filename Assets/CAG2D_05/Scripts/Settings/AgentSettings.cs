@@ -15,6 +15,11 @@ namespace CAG2D_05.Scripts
         public string agentBaseName = "thisAgent";
 
         /// <summary>
+        /// id
+        /// </summary>
+        public string id = "";
+
+        /// <summary>
         /// 全名
         /// </summary>
         [HideInInspector] public string agentName;
@@ -28,6 +33,25 @@ namespace CAG2D_05.Scripts
         /// 颜色。默认白色
         /// </summary>
         public Color color = Color.white;
+
+        /// <summary>
+        /// Yee类型族
+        /// </summary>
+        [HideInInspector] public YeeFamily yeeFamily;
+
+        public string YeeType;
+
+        // public string YeeInterType;
+
+        // /// <summary>
+        // /// yee 2元素类型之性质
+        // /// </summary>
+        // public Yee2ETypeEnum yee2ETypeEnum = Yee2ETypeEnum.Yang;
+
+        // /// <summary>
+        // /// yee 3元素类型之性质
+        // /// </summary>
+        // public Yee3ETypeEnum yee3ETypeEnum = Yee3ETypeEnum.Rock;
 
         /// <summary>
         /// 质量。默认1f。
@@ -98,25 +122,6 @@ namespace CAG2D_05.Scripts
         /// 物理材质之弹性
         /// </summary>
         public float physicsMaterialBounciness = 1.0f;
-
-        /// <summary>
-        /// Yee类型族
-        /// </summary>
-        [HideInInspector] public YeeFamily yeeFamily;
-
-        public string YeeType;
-
-        public string YeeInterType;
-
-        // /// <summary>
-        // /// yee 2元素类型之性质
-        // /// </summary>
-        // public Yee2ETypeEnum yee2ETypeEnum = Yee2ETypeEnum.Yang;
-
-        // /// <summary>
-        // /// yee 3元素类型之性质
-        // /// </summary>
-        // public Yee3ETypeEnum yee3ETypeEnum = Yee3ETypeEnum.Rock;
 
         [HideInInspector] public float energy = 1f;
 

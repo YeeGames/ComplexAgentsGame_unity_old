@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class Yee2ERule : YeeRule
+    public class Yee2ERule : YeeRule //TODO 仿照Yee3eRule改造。
     {
         private RuleSettings rset;
 
@@ -54,7 +54,7 @@ namespace CAG2D_05.Scripts
             {_yee2E.YeeInterTypes[1], _yee2E.YeeInterTypes[0]},
         };
 
-        protected override void Initialize(RuleSettings ruleSettings)
+        public override void Initialize(RuleSettings ruleSettings)
         {
             SetRule(ruleSettings);
         }
@@ -83,10 +83,7 @@ namespace CAG2D_05.Scripts
         }
 
 
-        protected void ApplyBehaviorRule(string yeeInterType, Rigidbody2D rb1, Vector2 pos1,
-            Rigidbody2D rb2,
-            Vector2 pos2
-        )
+        protected void ApplyBehaviorRule(string yeeInterType, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2, Vector2 pos2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
@@ -151,7 +148,7 @@ namespace CAG2D_05.Scripts
             Initialize(rset);
         }
 
-        public override void OnTriggerStay2D(Collider2D otherCollider2D)
+        public void OnTriggerStay2D(Collider2D otherCollider2D)
         {
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;

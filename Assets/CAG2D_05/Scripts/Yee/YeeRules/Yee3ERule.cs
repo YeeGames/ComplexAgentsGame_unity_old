@@ -5,63 +5,65 @@ using UnityEngine;
 
 namespace CAG2D_05.Scripts
 {
-    public class Yee3ERule : YeeRule
+    // public class Yee3ERule : MonoBehaviour,IYeeRule
+    public class Yee3ERule :YeeRule
     {
-        private RuleSettings rset;
+        [SerializeField] private RuleSettings rset;
 
-        public static YeeFamily YeeFamily;
-        public static Yee3E Yee3E;
-        private Yee _yee;
-        private string _yeeInterType;
+        // private static YeeFamily YeeFamily;
+        // private static Yee3E Yee3E;
+        [SerializeField] private Yee3EType Yee3EType = new Yee3EType();
 
-
-        private float forceStrength = 0f;
-        private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
-        private float expCoefficient = 2f;
-        private CircleCollider2D ruleCircleCollider2D;
-
-        private Rigidbody2D rb1;
-        private Rigidbody2D rb2;
-        private Transform tf1;
-        private Transform tf2;
+        // private static List<string> yeeTypes;
+        // private Yee _yee;
+        [SerializeField] private string YeeInterType;
 
 
-        
-        /// <summary>
-        /// 起始YeeType向量
-        /// </summary>
-        public string[] fromYeeTypeArray = new string[]
-        {
-            YeeFamily.YeeTypes[0], YeeFamily.YeeTypes[1], YeeFamily.YeeTypes[2]
-        };
-        // private Yee3ETypeEnum[] fromYeeTypeArray = new Yee3ETypeEnum[]
+        [SerializeField] private float forceStrength = 0f;
+        [SerializeField] private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
+        [SerializeField] private float expCoefficient = 2f;
+        [SerializeField] private CircleCollider2D ruleCircleCollider2D;
+
+        [SerializeField] private Rigidbody2D rb1;
+        [SerializeField] private Rigidbody2D rb2;
+        [SerializeField] private Transform tf1;
+        [SerializeField] private Transform tf2;
+
+
+        // /// <summary>
+        // /// 起始YeeType向量
+        // /// </summary>
+        // private string[] FromYeeTypeArray = new string[]
         // {
-
-        //     Yee3ETypeEnum.Rock, Yee3ETypeEnum.Scissors, Yee3ETypeEnum.Cloth
+        //     Yee3E.YeeTypes[0], Yee3E.YeeTypes[1], Yee3E.YeeTypes[2]
         // };
-
-        /// <summary>
-        /// 目标YeeType向量
-        /// </summary>
-        public string[] toYeeTypeArray = new string[] 
-        {
-            Yee3E.YeeTypes[0], Yee3E.YeeTypes[1], Yee3E.YeeTypes[2]
-        };
-        // private Yee3ETypeEnum[] toYeeTypeArray = new Yee3ETypeEnum[]
+        // private Yee3ETypeEnum[] FromYeeTypeArray = new Yee3ETypeEnum[]
         // {
         //     Yee3ETypeEnum.Rock, Yee3ETypeEnum.Scissors, Yee3ETypeEnum.Cloth
         // };
 
-        /// <summary>
-        /// YeeTypeInter之规则之邻接矩阵
-        /// </summary>
-        public string[,] yeeRuleAdjecentMatrix = new string[,]
-        {
-            {Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[2]},
-            {Yee3E.YeeInterTypes[2], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1]},
-            {Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[2]},
-        };
-        // private static readonly Yee3EInterTypeEnum[,] yeeRuleAdjecentMatrix = new Yee3EInterTypeEnum[RowSize, ColSize]
+        // /// <summary>
+        // /// 目标YeeType向量
+        // /// </summary>
+        // private string[] ToYeeTypeArray = new string[] 
+        // {
+        //     Yee3E.YeeTypes[0], Yee3E.YeeTypes[1], Yee3E.YeeTypes[2]
+        // };
+        // private Yee3ETypeEnum[] ToYeeTypeArray = new Yee3ETypeEnum[]
+        // {
+        //     Yee3ETypeEnum.Rock, Yee3ETypeEnum.Scissors, Yee3ETypeEnum.Cloth
+        // };
+
+        // /// <summary>
+        // /// YeeTypeInter之规则之邻接矩阵
+        // /// </summary>
+        // private string[,] YeeRuleAdjecentMatrix = new string[,]
+        // {
+        //     {Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[2]},
+        //     {Yee3E.YeeInterTypes[2], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[1]},
+        //     {Yee3E.YeeInterTypes[1], Yee3E.YeeInterTypes[0], Yee3E.YeeInterTypes[2]},
+        // };
+        // private static readonly Yee3EInterTypeEnum[,] YeeRuleAdjecentMatrix = new Yee3EInterTypeEnum[RowSize, ColSize]
         // {
         //     {Yee3EInterTypeEnum.Self, Yee3EInterTypeEnum.Ke, Yee3EInterTypeEnum.BeKe},
         //     {Yee3EInterTypeEnum.BeKe, Yee3EInterTypeEnum.Self, Yee3EInterTypeEnum.Ke},
@@ -69,14 +71,12 @@ namespace CAG2D_05.Scripts
         // };
 
 
-
-
         /// <summary>
         /// 设置规则
         /// </summary>
         /// <param name="ruleSettings"></param>
         // public override void SetRule(RuleSettings ruleSettings)
-        public void SetRule(RuleSettings ruleSettings)
+        public override void SetRule(RuleSettings ruleSettings)
         {
             this.rset = ruleSettings;
             // this.rset = this.transform.GetComponent<YeeTypeFamilyEnum>();
@@ -86,9 +86,9 @@ namespace CAG2D_05.Scripts
             this.direction = this.rset.direction;
             Debug.Log(this.rset.direction);
         }
-        
+
         // protected override void Initialize(RuleSettings ruleSettings)
-        protected void Initialize(RuleSettings ruleSettings)
+        public override void Initialize(RuleSettings ruleSettings)
         {
             SetRule(ruleSettings);
         }
@@ -99,10 +99,9 @@ namespace CAG2D_05.Scripts
         /// </summary>
         /// <param name="thisYeeType">己方YeeType3E类型</param>
         /// <param name="thatYeeType">对方YeeType3E类型</param>
-        public string GetInterRule(string thisYeeType, string thatYeeType)
+        public override string GetInterRule(string thisYeeType, string thatYeeType)
         {
-            string yeeInterType = yeeRuleAdjecentMatrix[Array.IndexOf(fromYeeTypeArray, thisYeeType), Array.IndexOf(toYeeTypeArray, thatYeeType)];
-            return yeeInterType;
+            return Yee3EType.YeeRuleAdjecentMatrix[Array.IndexOf(Yee3EType.FromYeeTypeArray, thisYeeType), Array.IndexOf(Yee3EType.ToYeeTypeArray, thatYeeType)]; //BUG
         }
 
 
@@ -114,8 +113,7 @@ namespace CAG2D_05.Scripts
         /// <param name="pos1">我方agent位置</param>
         /// <param name="rb2">对方agent刚体</param>
         /// <param name="pos2">对方agent位置</param>
-        protected void ApplyBehaviorRule(string yeeInterType, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2,
-            Vector2 pos2)
+        public override void ApplyBehaviorRule(string yeeInterType, Rigidbody2D rb1, Vector2 pos1, Rigidbody2D rb2, Vector2 pos2)
         {
             Vector2 vector_from_a1_to_a2 = (Vector2) (pos2 - pos1);
             Vector2 direction_from_a1_to_a2 = vector_from_a1_to_a2.normalized;
@@ -149,15 +147,12 @@ namespace CAG2D_05.Scripts
         }
 
 
-        protected void ApplyBehaviorRule()
-        {
-            throw new System.NotImplementedException();
-        }
-
         private void Awake()
         {
-            this.ruleCircleCollider2D = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
-            Initialize(rset);
+            // this.ruleCircleCollider2D = this.transform.Find("AgentRuleEffector").GetComponent<CircleCollider2D>();
+            this.ruleCircleCollider2D = this.gameObject.transform.GetComponent<CircleCollider2D>(); //BUG
+            // this.Yee3E = this.gameObject.transform.Find("AgentRuleEffector").GetComponent<Yee3E>();
+            // Initialize(rset);
         }
 
 
@@ -166,17 +161,17 @@ namespace CAG2D_05.Scripts
         {
             Rigidbody2D thisRigidbody2D = this.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thisPosition2D = this.gameObject.transform.GetComponentInParent<Transform>().position;
-            string thisYeeType = this.gameObject.transform.GetComponentInParent<Agent>().aset.YeeType;
+            string thisYeeType = this.gameObject.transform.GetComponentInParent<Agent>().YeeType;
             // string thisYeeInterType = this.gameObject.transform.GetComponentInParent<Agent>().aset.YeeInterTypes;
             Rigidbody2D thatRigidbody2D = otherCollider2D.gameObject.transform.GetComponentInParent<Rigidbody2D>();
             Vector2 thatPosition2D = otherCollider2D.gameObject.transform.GetComponentInParent<Transform>().position;
             // Yee3ETypeEnum thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().yee3ETypeEnum;
             // yeeFamilyEnum thatYeeFamily = otherCollider2D.gameObject.transform.GetComponent<yee>().yeeFamilyEnum;
-            string thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().aset.YeeType;
+            string thatYeeType = otherCollider2D.gameObject.transform.GetComponentInParent<Agent>().YeeType;
             // List<string> thatYeeType = YeeFamily.YeeTypes;
             // this._yee3EInterTypeEnum = GetInterRule(thisYeeFamily.YeeTypes[1], thatYeeType);
-            _yeeInterType = GetInterRule(thisYeeType, thatYeeType);
-            ApplyBehaviorRule(_yeeInterType, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
+            YeeInterType = GetInterRule(thisYeeType, thatYeeType);
+            ApplyBehaviorRule(YeeInterType, thisRigidbody2D, thisPosition2D, thatRigidbody2D, thatPosition2D);
         }
     }
 }

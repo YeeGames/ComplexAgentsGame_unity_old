@@ -46,6 +46,7 @@ namespace CAG2D_05.Scripts
         /// </summary>
         public YeeFamilyEnum yeeFamilyEnum = YeeFamilyEnum.Yee3E;
 
+        public YeeType YeeType = new YeeType();
 
 
         // public YeeFamily yeeFamily=new Yee3E();

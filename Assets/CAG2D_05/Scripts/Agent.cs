@@ -9,27 +9,47 @@ namespace CAG2D_05.Scripts
         /// <summary>
         /// 设定Agent设置项
         /// </summary>
-        public AgentSettings aset;
+        [HideInInspector] public AgentSettings aset;
+
 
         /// <summary>
         /// 设定Game设置项
         /// </summary>
-        public GameSettings gset;
+        [HideInInspector] public GameSettings gset;
 
         /// <summary>
         /// 设定Rule设置项
         /// </summary>
-        public RuleSettings rset;
+        [HideInInspector] public RuleSettings rset;
+
 
         /// <summary>
-        /// 设置Yee类型族
+        /// id
         /// </summary>
-        [HideInInspector] public Yee2ETypeEnum yee2ETypeEnum;
+        [SerializeField] private string id;
 
-        [HideInInspector] public Yee3ETypeEnum yee3ETypeEnum;
-        [HideInInspector] public YeeRule yeeRule;
-        [HideInInspector] public Yee yee;
-        [HideInInspector] public YeeFamily yeeFamily;
+        /// <summary>
+        /// Yee类型
+        /// </summary>
+        [SerializeField] private string yeeType;
+
+        public string YeeType
+        {
+            get => yeeType;
+            set => yeeType = value;
+        }
+
+
+        [SerializeField] private YeeRule yeeRule;
+        // public IYeeRule yeeRule;
+
+
+        // [HideInInspector] public Yee yee;
+        // [HideInInspector] public YeeFamily yeeFamily;
+
+        // private YeeTypeChooserNotStatics _yeeTypeChooserNotStatics = new YeeTypeChooserNotStatics();
+
+
         [HideInInspector] public SpriteRenderer spriteRenderer;
         [HideInInspector] public new Rigidbody2D rigidbody2D;
         [HideInInspector] public PointEffector2D pointEffector;
@@ -68,22 +88,37 @@ namespace CAG2D_05.Scripts
             }
         }
 
-
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="agentSettings"></param>
+        /// <param name="ruleSettings"></param>
         public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
         {
             this.SetAgentSettings(agentSettings);
             // this.agentRuleEffector = this.gameObject.transform.Find("AgentRuleEffector").gameObject;
-            yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamilyEnum);
+            // this.yeeFamily = YeeTypeChooser.ChooseYeeFamily(this.agentRuleEffector, this.gset.yeeFamilyEnum);
             // yee = YeeTypeChooser.ChooseYee(this.agentRuleEffector, this.gset.yeeFamilyEnum);
+
             this.yeeRule = YeeTypeChooser.ChooseYeeRule(agentRuleEffector, gset.yeeFamilyEnum);
+            // this.yeeRule = _yeeTypeChooserNotStatics.ChooseYeeRule(agentRuleEffector, this.gset.yeeFamilyEnum);
+            // YeeRule yeeRule = _yeeTypeChooserNotStatics.ChooseYeeRule(agentRuleEffector, gset.yeeFamilyEnum);
+
+            // this.yeeRule.Initialize(ruleSettings);
         }
 
 
+        /// <summary>
+        /// 设置agent
+        /// </summary>
+        /// <param name="agentSettings"></param>
         public void SetAgentSettings(AgentSettings agentSettings)
         {
             this.aset = agentSettings;
-            this.yeeFamily = this.aset.yeeFamily;
-            this.name = this.aset.agentName;
+            // this.yeeFamily = this.aset.yeeFamily;
+            this.id = this.aset.id;
+            this.yeeType = this.aset.YeeType;
+            this.name = this.aset.agentBaseName + this.aset.YeeType + this.id;
             this.SetColor(this.aset.color);
             this.SetPosition(this.aset.position);
             this.SetVelocity(this.aset.velocity, this.aset.initSpeed);
@@ -143,6 +178,7 @@ namespace CAG2D_05.Scripts
             this.transform.Translate(Vector2.zero * (Time.deltaTime));
             this.rigidbody2D.velocity = Vector2.ClampMagnitude(rigidbody2D.velocity, maxSpeed); // 限制最大速度；
             this.rigidbody2D.angularVelocity = Mathf.Max(rigidbody2D.angularVelocity, maxAngularSpeed); // 限制最大角速度；
+            // Debug.Log("updated");
         }
     }
 }
