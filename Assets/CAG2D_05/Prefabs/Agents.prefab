@@ -47,6 +47,7 @@ MonoBehaviour:
   gameSettings: {fileID: 11400000, guid: 2cf5c513838cb4e59a8281b1fb0cacc1, type: 2}
   agent: {fileID: 486444529336302277, guid: 4554401fd90f0425499e1720dd02b071, type: 3}
   radiusSize: 30
+  _yee2ERule: {fileID: 0}
   yeeFamilyEnum: 1
   yeeRule: {fileID: 0}
-  Yee: {fileID: 0}
+  yee: {fileID: 0}

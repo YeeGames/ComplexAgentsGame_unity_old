@@ -19,4 +19,4 @@ MonoBehaviour:
   wallWidth: 100
   physicsMaterialsFriction: 0
   physicsMaterialsBounciness: 1
-  yeeTypeFamily: 1
+  yeeFamilyEnum: 1

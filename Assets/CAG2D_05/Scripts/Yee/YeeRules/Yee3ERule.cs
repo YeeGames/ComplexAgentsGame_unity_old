@@ -19,15 +19,15 @@ namespace CAG2D_05.Scripts
         [SerializeField] private string YeeInterType;
 
 
-        [SerializeField] private float forceStrength = 0f;
+        [SerializeField] private float forceStrength = 10f;
         [SerializeField] private int direction = 1; // 方向取值1与-1。1表示推力方向，-1表示拉力方向；
         [SerializeField] private float expCoefficient = 2f;
         [SerializeField] private CircleCollider2D ruleCircleCollider2D;
 
-        [SerializeField] private Rigidbody2D rb1;
-        [SerializeField] private Rigidbody2D rb2;
-        [SerializeField] private Transform tf1;
-        [SerializeField] private Transform tf2;
+        // [SerializeField] private Rigidbody2D rb1;
+        // [SerializeField] private Rigidbody2D rb2;
+        // [SerializeField] private Transform tf1;
+        // [SerializeField] private Transform tf2;
 
 
         // /// <summary>

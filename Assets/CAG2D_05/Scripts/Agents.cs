@@ -12,7 +12,7 @@ namespace CAG2D_05.Scripts
 
         [HideInInspector] public Agent agent;
 
-        [SerializeField] private float radiusSize = 30f;
+        public float radiusSize = 30f;
 
         [SerializeField] private Yee2ERule _yee2ERule;
 
@@ -20,6 +20,7 @@ namespace CAG2D_05.Scripts
 
         [SerializeField] private YeeRule yeeRule;
         [SerializeField] private Yee yee;
+
         [SerializeField] private YeeType yeeType;
         // private YeeTypeChooserNotStatics _yeeTypeChooserNotStatics = new YeeTypeChooserNotStatics();
 
@@ -45,7 +46,7 @@ namespace CAG2D_05.Scripts
                     a.aset.color = yeeType.Colors[t];
                     // a.aset.agentName = a.aset.agentBaseName + a.aset.YeeType + i.ToString();
 
-                    a.Initialize(a.aset, a.rset);
+                    a.Initialize(a.aset);
 
                     // a.agentRuleEffector = GameObject.Find("AgentRuleEffector").gameObject;
                     // a.yeeRule = YeeTypeChooser.ChooseYeeRule(a.agentRuleEffector, gameSettings.yeeFamilyEnum);

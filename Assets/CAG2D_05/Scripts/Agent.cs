@@ -93,7 +93,7 @@ namespace CAG2D_05.Scripts
         /// </summary>
         /// <param name="agentSettings"></param>
         /// <param name="ruleSettings"></param>
-        public void Initialize(AgentSettings agentSettings, RuleSettings ruleSettings)
+        public void Initialize(AgentSettings agentSettings)
         {
             this.SetAgentSettings(agentSettings);
             // this.agentRuleEffector = this.gameObject.transform.Find("AgentRuleEffector").gameObject;
