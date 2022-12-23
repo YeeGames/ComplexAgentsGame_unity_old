@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class Yee2ERule : YeeRule //TODO 仿照Yee3eRule改造。
     {

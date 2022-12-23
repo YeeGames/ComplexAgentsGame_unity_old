@@ -1,6 +1,6 @@
-// using CAG2D_05.Scripts;
+// using CAG2D_05;
 //
-// namespace CAG2D_05.Scripts
+// namespace CAG2D_05
 // {
 //     
 //     public Yee3EInterTypeEnum GetInterRule();
@@ -11,11 +11,11 @@
 //     }
 // }
 
-// using CAG2D_05.Scripts.Rules;
+// using CAG2D_05;
 
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public interface IYeeRule
     {

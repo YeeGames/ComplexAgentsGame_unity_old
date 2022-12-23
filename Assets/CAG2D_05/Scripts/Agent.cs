@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using CAG2D_05.Scripts;
+using CAG2D_05;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class Agent : MonoBehaviour
     {

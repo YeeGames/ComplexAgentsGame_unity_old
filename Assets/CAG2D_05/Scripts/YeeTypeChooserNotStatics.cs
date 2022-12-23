@@ -1,10 +1,10 @@
-// using CAG2D_05.Scripts.yee;
+// using CAG2D_05;
 
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class YeeTypeChooserNotStatics //NOW
     {

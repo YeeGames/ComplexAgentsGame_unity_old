@@ -1,8 +1,8 @@
-// using CAG2D_05.Scripts.Rules;
+// using CAG2D_05;
 
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public abstract class YeeRule : MonoBehaviour
     {

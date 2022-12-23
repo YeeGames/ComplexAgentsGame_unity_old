@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // using Newtonsoft.Json;
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class Yee : MonoBehaviour 
     {

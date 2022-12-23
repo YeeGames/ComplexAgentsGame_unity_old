@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class Main : MonoBehaviour
     {

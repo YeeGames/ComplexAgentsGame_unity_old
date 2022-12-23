@@ -2,9 +2,9 @@ using System;
 using System.CodeDom;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using CAG2D_05.Scripts;
+using CAG2D_05;
 
-namespace CAG2D_05.Scripts
+namespace CAG2D_05
 {
     public class Agents : MonoBehaviour
     {
