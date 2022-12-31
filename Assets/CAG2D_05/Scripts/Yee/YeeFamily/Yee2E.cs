@@ -1,4 +1,5 @@
-using UnityEngine;
+
+using System.Drawing;
 
 namespace CAG2D_05
 {
@@ -8,7 +9,7 @@ namespace CAG2D_05
         
         public new const int NumElement = 2;
 
-        public Color[] Colors = {Color.red, Color.blue};
+        public Color[] Colors = {Color.Red, Color.Blue};
         // public Dictionary<string, object> Yee2EDict = new Dictionary<string, object>();
         // public List<object> Yee2EList = new List<object>();
         // public Dictionary<string, object> Yee2ETypeDict = new Dictionary<string, object>();

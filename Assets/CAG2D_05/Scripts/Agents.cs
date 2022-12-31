@@ -4,6 +4,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using CAG2D_05;
 
+// using Unity.Mathematics;
+
 namespace CAG2D_05
 {
     public class Agents : MonoBehaviour
@@ -11,6 +13,9 @@ namespace CAG2D_05
         [HideInInspector] public GameSettings gameSettings;
 
         [HideInInspector] public Agent agent;
+
+        private int _totalAgent;
+
 
         public float radiusSize = 30f;
 
@@ -53,18 +58,15 @@ namespace CAG2D_05
                     // a.yeeRule = YeeTypeChooser.ChooseYeeRule(a.agentRuleEffector, gameSettings.yeeFamilyEnum);
                 }
             }
-            
-            //TODO 构建矩阵描述粒子之间之距离
-            
-            //TODO 构建矩阵描述粒子间是否有交互
-            //TODO 构建矩阵描述粒子间之力大小与方向
+
+            // 计算agent总数
+            _totalAgent = gameSettings.numAgent * yeeType.NumElement;
         }
 
 
         // Start is called before the first frame update
         void Start()
         {
-
         }
 
 
@@ -72,7 +74,7 @@ namespace CAG2D_05
         void FixedUpdate()
         {
             //TODO 获取所有的粒子对象
-            
+            YeeInteraction.CreateAdjecancyMatrix(totalAgent: _totalAgent);
             //
         }
     }

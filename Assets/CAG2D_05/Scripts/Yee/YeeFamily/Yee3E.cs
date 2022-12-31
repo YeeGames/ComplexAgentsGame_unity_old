@@ -1,5 +1,5 @@
-using System;
-using UnityEngine;
+
+using System.Drawing;
 
 namespace CAG2D_05
 {
@@ -9,7 +9,7 @@ namespace CAG2D_05
 
         public new int NumElement = 3;
 
-        public Color[] Colors = {Color.red, Color.yellow, Color.blue};
+        public Color[] Colors = {Color.Red, Color.Yellow, Color.Blue};
 
         public Yee3E()
         {
